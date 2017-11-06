@@ -56,8 +56,9 @@ This software tool implements the SMR & HEIDI methods to test for pleiotropic as
              
                         
 <hr><h3 id="credits">Credits</h3>
-<p>  <a href="http://researchers.uq.edu.au/researcher/3051" target="_blank">Zhihong Zhu </a> and <a href="http://researchers.uq.edu.au/researcher/2713" target="_blank">Jian Yang </a> developed the methods. <a href="http://researchers.uq.edu.au/researcher/12709" target="_blank">Futao Zhang</a>, <a href="mailto:zhilizheng@outlook.com">Zhili Zheng</a>, <a href="http://researchers.uq.edu.au/researcher/3051" target="_blank">Zhihong Zhu </a> and <a href="http://researchers.uq.edu.au/researcher/2713" target="_blank">Jian Yang </a> designed and developed the software and webpages.</p>
-     
+<p> <a href="http://researchers.uq.edu.au/researcher/12709" target="_blank">Futao Zhang </a> developed the software tool and webpages with supports from <a href="mailto:zhilizheng@outlook.com">Zhili Zheng</a>, <a href="http://researchers.uq.edu.au/researcher/3051" target="_blank"> Zhihong Zhu </a>, <a href="http://researchers.uq.edu.au/researcher/15871" target="_blank">Ting Qi</a> and <a href="http://researchers.uq.edu.au/researcher/2713" target="_blank"> Jian Yang</a>.</p><p> 
+<a href="http://researchers.uq.edu.au/researcher/3051" target="_blank">Zhihong Zhu</a> and <a href="http://researchers.uq.edu.au/researcher/2713" target="_blank">Jian Yang</a> developed the SMR and HEIDI methods. </p><p>
+<a href="http://researchers.uq.edu.au/researcher/15871" target="_blank">Ting Qi</a> and <a href="http://researchers.uq.edu.au/researcher/2713" target="_blank">Jian Yang</a> developed the MeCS method. </p>
 
 <hr><h3 id="questionsandhelprequests">Questions and Help Requests</h3>
 <p>Bug reports or questions to Jian Yang (<a href="mailto:jian.yang@uq.edu.au" target="_blank">jian.yang@uq.edu.au</a>) at Institute for Molecular Bioscience, The University of Queensland.
@@ -1510,8 +1511,37 @@ threshold of eQTL p-value to select eQTLs for the HEIDI test. The default value 
       </tr>
     </table>
     </code></pre>          
+<h2 id="reference">MeCS</h2>
+<h4># Overview</h4>
+		<p>			
+            MeCS is a method that only requires summary-level cis-eQTL data to perform a meta-analysis of cis-eQTL from multiple cohorts (or tissues) with sample overlaps. It estimates the proportion of sample overlap from null SNPs in the cis-regions and meta-analysed the eQTL effects using a generalized least squares approach. The method can be applied to data from genetic studies of molecular phenotypes (e.g. DNA methylation and histone modification).</p>       
+            
+     <p>Bug reports or questions to Jian Yang (<a href="mailto:jian.yang@uq.edu.au" target="_blank">jian.yang@uq.edu.au</a>) at Institute for Molecular Bioscience, The University of Queensland.
+		</p>
+    	
+      <h4>#Citation</h4> 
+        
+    <p> Qi et al. Identifying gene targets for brain-related traits using transcriptomic and methylomic data from blood. <i>Submitted</i>.<br>
+    </p>
 
+    
+    <h4># Tutorial</h4>
+    
+ 
+    <p>Example</p>
+    <pre class="r"><code> smr --besd-flist my_file.list --mecs --thread-num 5 --out mecs_result </code></pre>
+    <ul>
+	<li>
+    <p> <strong><font color="#993333">--mecs</font></strong> implements the MeCS analysis.</p></li>
+ 
+   <li>
+    <p> <strong><font color="#993333">--meta</font></strong> implements the conventional inverse-variance-weighted meta-analysis assuming all the cohorts are independent.</p></li></ul>
+    <p>Example</p>
+    <pre class="r"><code> smr --besd-flist my_file.list --meta --thread-num 5 --out meta_result </code></pre>
+    
 
+     
+   
 <h2 id="reference">Options Reference</h2>
  <table width="1000" border="0" style="font-family:arial; font-size:14px; align-self:center" >
       <tr>
