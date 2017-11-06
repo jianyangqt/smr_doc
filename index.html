@@ -105,7 +105,7 @@ This software tool implements the SMR & HEIDI methods to test for pleiotropic as
         <p> <strong>16.</strong>  &nbsp; (12 September, 2017): Luke R. Lloyd-Jones et al. released CAGE eQTL summary statistics for SMR analysis.</p>
         <p> <strong>17.</strong>  &nbsp; Version 0.69 (7 October, 2017): added features to run multi-SNP based SMR and SMR analysis of two molecular traits. Also add a feature to remove technical eQTLs.</p>
 <h2 id="basicoptions" class="expand">Basic Options</h2>
-<hr><h3 id="smr"  >SMR</h3>
+<hr><h3 id="smroption">SMR</h3>
 
 
     <pre class="r"><code>smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --out mysmr --thread-num 10 </code></pre>
@@ -577,7 +577,7 @@ threshold of eQTL p-value to select eQTLs for the HEIDI test. The default value 
       </p></li></ul>
 
 
-<h2 id="basicoptions" class="expand">Data Management</h2>
+<h2 id="dm" class="expand">Data Management</h2>
 <p>		
             eQTL summary data are usually generated from association tools such as PLINK and stored in separate files in text format (usually one file for each probe) with a very large file size in total. Here we provide an efficient way to store the eQTL summary data in binary format (BESD), with flexible options to query the data for any subset of SNPs and/or probes (see <a href="#QueryeQTLResults" >Query eQTL Results</a>). We further provide a sparse version of the BESD format (used as default), which is extremely storage-efficient without losing too much information. The basic idea is that we store summary data of all SNPs within 2Mb of a probe in either direction, all SNPs within 1Mb of any trans-eQTL in either direction, and all SNPs with p < 1e-5 in the rest of the genome (note that all these parameters can be specified by users). We also provide several options to import data in various of formats (e.g. PLINK, GEMMA, BOLT-LMM and other text formats).
 </p>
@@ -1511,7 +1511,7 @@ threshold of eQTL p-value to select eQTLs for the HEIDI test. The default value 
       </tr>
     </table>
     </code></pre>          
-<h2 id="reference">MeCS</h2>
+<h2 id="mecs">MeCS</h2>
 <h4># Overview</h4>
 		<p>			
             MeCS is a method that only requires summary-level cis-eQTL data to perform a meta-analysis of cis-eQTL from multiple cohorts (or tissues) with sample overlaps. It estimates the proportion of sample overlap from null SNPs in the cis-regions and meta-analysed the eQTL effects using a generalized least squares approach. The method can be applied to data from genetic studies of molecular phenotypes (e.g. DNA methylation and histone modification).</p>       
