@@ -1932,10 +1932,12 @@ gene3
 MeCS
 ----
 
+#### MeCS: Meta-analysis of cis-eQTL in Correlated Samples
+
 #### \# Overview {#overview}
 
 MeCS is a method that only requires summary-level cis-eQTL data to
-perform a meta-analysis of cis-eQTL from multiple cohorts (or tissues)
+perform a meta-analysis of cis-eQTLs from multiple cohorts (or tissues)
 with sample overlaps. It estimates the proportion of sample overlap from
 null SNPs in the cis-regions and meta-analysed the eQTL effects using a
 generalized least squares approach. The method can be applied to data
@@ -1945,7 +1947,7 @@ histone modification).
 Bug reports or questions to Jian Yang (<jian.yang@uq.edu.au>) at
 Institute for Molecular Bioscience, The University of Queensland.
 
-#### \#Citation
+#### \# Citation
 
 Qi et al. Identifying gene targets for brain-related traits using
 transcriptomic and methylomic data from blood. *Submitted*.\
