@@ -1,6 +1,8 @@
 
 ## MeCS
 
+### MeCS: Meta-analysis of cis-eQTL in Correlated Samples
+
 #### \# Overview
 
 MeCS is a method that only requires summary-level cis-eQTL data to
