@@ -1,7 +1,7 @@
 
 ## MeCS
 
-### MeCS: Meta-analysis of cis-eQTL in Correlated Samples
+#### MeCS: Meta-analysis of cis-eQTL in Correlated Samples
 
 #### \# Overview
 
@@ -15,11 +15,6 @@ histone modification).
 
 Bug reports or questions to Jian Yang (<jian.yang@uq.edu.au>) at
 Institute for Molecular Bioscience, The University of Queensland.
-
-#### \# Citation
-
-Qi et al. Identifying gene targets for brain-related traits using
-transcriptomic and methylomic data from blood. *Submitted*.
 
 #### \# Tutorial
 
