@@ -25,7 +25,7 @@ developed the SMR and HEIDI methods.
 
 [Ting Qi](http://researchers.uq.edu.au/researcher/15871) 
 and [Jian Yang](http://researchers.uq.edu.au/researcher/2713) 
-developed the MeCSmethod.
+developed the MeCS method.
 
 ### Questions and Help Requests 
 Bug reports or questions to Jian Yang (<jian.yang@uq.edu.au>) at
