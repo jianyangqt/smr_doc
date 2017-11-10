@@ -36,6 +36,7 @@ Columns are chromosome, SNP, genetic distance (can be any arbitary value
 since it will not be used in the SMR analysis), basepair position, the
 effect (coded) allele, the other allele and frequency of the effect
 allele.
+
 ***myeqtl.epi***
 ```
 1	probe1001	0	924243	Gene01	+
