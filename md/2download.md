@@ -43,6 +43,8 @@ McRae et al. mQTL summary data [([Allan McRae et al. 2017 bioRxiv])](https://www
 
 [LBC\_BSGS\_meta.tar.gz (hg19)](http://cnsgenomics.com/data/SMR/LBC_BSGS_meta.tar.gz)
 
+This is a set of mQTL summary data from a meta-analysis of the BSGS and LBC data (McRae et al. 2017 bioRxiv). Only the DNA methylation probes with at least an cis-mQTL at P < 5e-8 and only SNPs within 2Mb distance from each probe are available. 
+
 ### R script for SMR locus plot 
 
 R script and sample file for SMR locus plot:
