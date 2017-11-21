@@ -81,7 +81,7 @@ formats.
 
 To compile data in sparse BESD format
 
-``` bash
+```
 smr --eqtl-flist my.flist --make-besd --out mybesd 
 ```
 
@@ -123,7 +123,7 @@ efficiency of the analysis can be largely improved by adding the
 \--geno-uni option. This option call be used in all the commands of this
 section.
 
-``` {.r}
+```
 smr --eqtl-flist my.flist --make-besd --geno-uni --out mybesd 
 ```
 
@@ -132,7 +132,7 @@ smr --eqtl-flist my.flist --make-besd --geno-uni --out mybesd
 To compile eQTL summary data in sparse BESD format with user-specified
 parameters
 
-``` {.r}
+```
 smr --eqtl-flist my.flist --make-besd  --cis-wind 2000 --trans-wind 1000 --peqtl-trans 5.0e-8 --peqtl-other 1.0e-5 --out mybesd 
 ```
 
@@ -171,7 +171,7 @@ information. We therefore need to read the alleles from a PLINK .bim
 file. The file path of the PLINK .bim file needs to be added as the last
 column of the .flist file (see the example below).
 
-``` {.r}
+```
 smr --eqtl-flist my.flist  --plink-qassoc-format --make-besd --out mybesd 
 ```
 
@@ -191,7 +191,7 @@ path\_assoc/my03.qassoc.tar.gz
 
 #### \# Make a BESD file from eQTL summary data in GEMMA output format
 
-``` {.r}
+```
 smr --eqtl-flist my.flist --gemma-format --make-besd --out mybesd 
 ```
 
@@ -213,7 +213,7 @@ lambda and p-value
 
 #### \# Make a BESD file from eQTL summary data in BOLT-LMM output format
 
-``` {.r}
+```
 smr --eqtl-flist my.flist  --bolt-assoc-format --make-besd --out mybesd 
 ```
 
@@ -236,7 +236,7 @@ p-value
 
 #### \# Make a BESD file from a single text file (in SMR query output format)
 
-``` {.r}
+```
 smr --qfile myquery.txt --make-besd --out mybesd 
 ```
 
@@ -248,18 +248,18 @@ file](#QueryeQTLResults)).
 
 To make a sparse BESD file from a single dense BESD file
 
-``` {.r}
+```
 smr --beqtl-summary my_beqtl --make-besd --out my_sparse 
 ```
 
-``` {.r}
+```
 smr --beqtl-summary my_beqtl --cis-wind 2000 --trans-wind 1000 --peqtl-trans 5.0e-8 --peqtl-other 1.0e-5 --make-besd --out my_sparse
 ```
 
 To make a sparse BESD file from multiple sparse or dense BESD files (can
 be a mixture of both types)
 
-``` {.r}
+```
 smr --besd-flist my_file.list --make-besd --out my_sparse  
 ```
 
@@ -282,13 +282,13 @@ the analysis using the **\--geno-uni** option.
 
 To extract a subset of SNPs and/or probes
 
-``` {.r}
+```
 smr --beqtl-summary myeqtl --extract-snp mysnp.list --extract-probe myprobe.list  --make-besd --out mybesd 
 ```
 
 To remove a subset of SNPs and/or probes
 
-``` {.r}
+```
 smr --beqtl-summary myeqtl --exclude-snp mysnp.list --exclude-probe myprobe.list  --make-besd --out mybesd 
 ```
 
@@ -296,7 +296,7 @@ smr --beqtl-summary myeqtl --exclude-snp mysnp.list --exclude-probe myprobe.list
 
 To add or update the frequencies of the effect alleles
 
-``` {.r}
+```
 smr --beqtl-summary myeqtl --update-freq mysnp.freq 
 ```
 
@@ -327,7 +327,7 @@ SMR Query format (see [Query eQTL Results for the format of a query
 output file](#QueryeQTLResults)). The default p-value threshold is 5e-8,
 which can be changed by the **\--p-technical** (see below).
 
-``` {.r}
+```
 
 smr --beqtl-summary myeqtl --rm-technical probe_hybrid.txt --make-besd --out mybesd
 
@@ -347,7 +347,7 @@ This is a text file **without headers**. Columns are chromosome, probe
 ID, start of the hybridization region and end of the hybridization
 region.
 
-``` {.r}
+```
 
 smr --beqtl-summary myeqtl --rm-technical probe_hybrid.txt --p-technical 5e-8 --make-besd --out mybesd
 
@@ -360,7 +360,7 @@ eQTLs. The default value is 5e-8.
 
 #### \# Extract cis-regions of eQTL summary data
 
-``` {.r}
+```
 
 smr --beqtl-summary myeqtl --extract-cis --make-besd --out mybesd
 

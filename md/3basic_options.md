@@ -5,7 +5,7 @@
 
 #### \# run SMR and HEIDI test
 
-``` {.r}
+```
 smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --out mysmr --thread-num 10 
 ```
 **\--bfile** reads individual-level SNP genotype data (in PLINK
@@ -54,7 +54,7 @@ parallel computing. The default value is 1.
 
 #### \# Specify a method for HEIDI test
 
-``` {.r}
+```
 smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --heidi-mtd 0 --out mysmr 
 ```
 
@@ -70,7 +70,7 @@ SNPs (m) with a peak at m = \~20.
 
 #### \# Filter SNPs by MAF (in the reference sample)
 
-``` {.r}
+```
 smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --maf 0.01 --out mysmr  
 ```
 
@@ -80,7 +80,7 @@ smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --maf 0.01 --
 
 #### \# Include or exclude a subset of individuals
 
-``` {.r}
+```
 smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --keep myindi.list --out mysmr 
 ```
 
@@ -101,7 +101,7 @@ sample from the analysis.
 
 #### \# Include or exclude a subset of eQTL summary data
 
-``` {.r}
+```
 smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --extract-snp mysnp.list --extract-probe myprobe.list --out mysmr 
 ```
 
@@ -131,7 +131,7 @@ probe1003
 
 #### \# Other parameters
 
-``` {.r}
+```
 smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --peqtl-smr 5e-8 --ld-pruning 0.9 --peqtl-heidi 1.57e-3 --heidi-m 3 --cis-wind 2000 --thread-num 5 --out mysmr   
 ```
 
@@ -167,7 +167,7 @@ heterogeneity in the HEIDI test. You can also specific the target by the
 following option. Note that this option will ignore p-value specified by
 the \--peqtl-smr option (\--peqtl-heidi still applies).
 
-``` {.r}
+```
 smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --target-snp rs12345 --out mysmr 
 ```
 
@@ -176,7 +176,7 @@ HEIDI tests as described above.
 
 #### \# Turn off the HEIDI test
 
-``` {.r}
+```
 smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --heidi-off --out mysmr 
 ```
 
@@ -186,7 +186,7 @@ smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --heidi-off -
 The trans-eQTLs are defined as the eQTLs that are more than 5Mb away
 from the probe.
 
-``` {.r}
+```
 smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --out mytrans --trans --trans-wind 1000 
 ```
 
@@ -226,13 +226,13 @@ The SNPs are pruned for LD using a weighted vertex coverage algorithm
 with a LD r2 threshold (the default value is 0.9 which can be modified
 by the flag **--ld-pruning**) and eQTL p-value as the weight.
 
-``` {.r}
+```
 smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --out mymulti --smr-multi 
 ```
 
 **\--smr-multi** turns on set-based SMR test in the cis-region.
 
-``` {.r}
+```
 smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --out mymulti --smr-multi --set-wind 500 
 ```
 
@@ -247,7 +247,7 @@ molecular traits using summary data. Take the analysis of DNA
 methylation and gene expression data as an example. In this case, we
 will need mQTL and eQTL summary data in BESD format.
 
-``` {.r}
+```
 smr --bfile mydata --beqtl-summary myexposure --beqtl-summary myoutcome  --out myomics
 
 ```
@@ -256,7 +256,7 @@ smr --bfile mydata --beqtl-summary myexposure --beqtl-summary myoutcome  --out m
 exposure. The second one reads eQTL summary data from as the
 outcome.
 
-``` {.r}
+```
 smr --bfile mydata --beqtl-summary myexposure --beqtl-summary myoutcome --extract-exposure-probe myeprobein.list --out myomics
 
 ```
@@ -273,7 +273,7 @@ from analysis.
 **\--exclude-outcome-probe** excludes a subset of outcome probes
 from analysis.
 
-``` {.r}
+```
 smr --bfile mydata --beqtl-summary myexposure --beqtl-summary myoutcome --extract-single-exposure-probe eprobe1 --extract-single-outcome-probe oprobe1 --out myomics
 
 ```
@@ -284,7 +284,7 @@ probe for analysis.
 **\--extract-single-outcome-probe** extracts a single outcome probe
 for analysis.
 
-``` {.r}
+```
 smr --bfile mydata --beqtl-summary myexposure --beqtl-summary myoutcome --exclude-single-exposure-probe eprobe1 --exclude-single-outcome-probe oprobe1 --out myomics
 
 ```

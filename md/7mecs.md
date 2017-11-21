@@ -20,7 +20,7 @@ Institute for Molecular Bioscience, The University of Queensland.
 
 >Example
 
-``` {.r}
+```
 smr --besd-flist my_file.list --mecs --thread-num 5 --out mecs_result 
 ```
 
@@ -31,6 +31,6 @@ meta-analysis assuming all the cohorts are independent.
 
 >Example
 
-``` {.r}
+```
 smr --besd-flist my_file.list --meta --thread-num 5 --out meta_result 
 ```

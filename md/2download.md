@@ -37,6 +37,12 @@ generated.
 Please see the associated [Shiny App](http://cnsgenomics.com/shiny/CAGE/) for further interactive
 interrogation of the results generated in the CAGE analysis.
 
+#### \# McRae et al. mQTL summary data
+
+McRae et al. mQTL summary data [([Allan McRae et al. 2017 bioRxiv])](https://www.biorxiv.org/content/early/2017/07/21/166710) in SMR binary (BESD) format:
+
+[LBC\_BSGS\_meta.tar.gz (hg19)](http://cnsgenomics.com/data/SMR/LBC_BSGS_meta.tar.gz)
+
 ### R script for SMR locus plot 
 
 R script and sample file for SMR locus plot:

@@ -9,7 +9,7 @@ script is avaliable at [Download](#Download).
 
 #### \# SMR command line to generate a data file for plot
 
-``` {.r}
+```
 smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --out myplot --plot --probe ILMN_123 --probe-wind 500 --gene-list glist-hg19 
 ```
 
@@ -57,7 +57,7 @@ This is a text file without headers. The columns are chromosome code,
 start of gene, end of gene, gene ID and gene strand.
 
 #### \# R commands to draw the plots
-``` {.r}
+```
 
 source("plot_SMR.r") 
 # Read the data file in R:

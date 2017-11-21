@@ -12,7 +12,7 @@ specified eQTL p-value threshold.
 
 To query the eQTL resutls for a single SNP, we could use this command
 
-``` {.r}
+```
 smr --beqtl-summary myeqtl --query 5.0e-8 --snp rs123 --out myquery 
 ```
 
@@ -32,7 +32,7 @@ rs01	1	1001	A	G	0.06	cg02	1	1201	gene2	-	0.043	0.007	8.1e-10
 ```
 To query eQTL resutls for a range of SNPs in a genomic region
 
-``` {.r}
+```
 smr --beqtl-summary myeqtl --query 5.0e-8 --from-snp rs123 --to-snp rs456 --out myquery 
 ```
 
@@ -44,7 +44,7 @@ smr --beqtl-summary myeqtl --query 5.0e-8 --from-snp rs123 --to-snp rs456 --out 
 
 To query eQTL results for all SNP on a chromosome
 
-``` {.r}
+```
 smr --beqtl-summary myeqtl --query 5.0e-8 --snp-chr 1 
 ```
 
@@ -55,7 +55,7 @@ there are *trans*-eQTLs.
 
 To query SNPs based on physical positions
 
-``` {.r}
+```
 smr --beqtl-summary myeqtl --query 5.0e-8 --snp-chr 1 --from-snp-kb 100 --to-snp-kb 200 --out myquery 
 ```
 
@@ -69,7 +69,7 @@ option) when using this option.
 
 To query based on a flanking region of a SNP
 
-``` {.r}
+```
 smr --beqtl-summary myeqtl --query 5.0e-8 --snp rs123 --snp-wind 50 --out myquery 
 ```
 
@@ -79,7 +79,7 @@ smr --beqtl-summary myeqtl --query 5.0e-8 --snp rs123 --snp-wind 50 --out myquer
 
 To query based on a single probe
 
-``` {.r}
+```
 smr --beqtl-summary myeqtl --query 5.0e-8 --probe cg123 --out myquery 
 ```
 
@@ -87,7 +87,7 @@ smr --beqtl-summary myeqtl --query 5.0e-8 --probe cg123 --out myquery
 
 To query based on a range of probes
 
-``` {.r}
+```
 smr --beqtl-summary myeqtl --query 5.0e-8 --from-probe cg123 --to-probe cg456 --out myquery 
 ```
 
@@ -99,7 +99,7 @@ NOTE : All probes should be on the same chromosome.
 
 To query based on a chromosome
 
-``` {.r}
+```
 smr --beqtl-summary myeqtl --query 5.0e-8 --probe-chr 1 
 ```
 
@@ -110,7 +110,7 @@ are *trans*-eQTLs.
 
 To query based on physical positions of the probes
 
-``` {.r}
+```
 smr --beqtl-summary myeqtl --query 5.0e-8 --probe-chr 1 --from-probe-kb 1000 --to-probe-kb 2000 --out myquery 
 ```
 
@@ -125,7 +125,7 @@ option) when using this option.
 
 To query based on a flanking region of a probe
 
-``` {.r}
+```
 smr --beqtl-summary myeqtl --query 5.0e-8 --probe cg123 --probe-wind 1000 --out myquery 
 ```
 
@@ -133,7 +133,7 @@ smr --beqtl-summary myeqtl --query 5.0e-8 --probe cg123 --probe-wind 1000 --out 
 
 To query based on a gene
 
-``` {.r}
+```
 smr --beqtl-summary myeqtl --query 5.0e-8 --gene gene1 --out myquery 
 ```
 
@@ -141,7 +141,7 @@ smr --beqtl-summary myeqtl --query 5.0e-8 --gene gene1 --out myquery
 
 #### \# Command line option for cis-region
 
-``` {.r}
+```
 smr --beqtl-summary myeqtl --query 5.0e-8 --probe cg123 --cis-wind 2000 --out myquery 
 ```
 
@@ -149,19 +149,19 @@ smr --beqtl-summary myeqtl --query 5.0e-8 --probe cg123 --cis-wind 2000 --out my
 
 To query based on a list of SNPs
 
-``` {.r}
+```
 smr --beqtl-summary myeqtl --extract-snp snp.list --query 5.0e-8 --out myquery 
 ```
 
 To query based on a list of probes
 
-``` {.r}
+```
 smr --beqtl-summary myeqtl --extract-probe probe.list --query 5.0e-8 --out myquery
 ```
 
 To qurey based on a list of genes
 
-``` {.r}
+```
 smr --beqtl-summary myeqtl --genes gene.list --query 5.0e-8 --out myquery 
 ```
 
