@@ -1,5 +1,5 @@
 
-## Basic options
+## SMR & HEIDI analysis
 
 ### SMR
 
@@ -132,7 +132,7 @@ probe1003
 #### \# Other parameters
 
 ```
-smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --peqtl-smr 5e-8 --ld-pruning 0.9 --peqtl-heidi 1.57e-3 --heidi-m 3 --cis-wind 2000 --thread-num 5 --out mysmr   
+smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --peqtl-smr 5e-8 --ld-upper-limit 0.9 --ld-lower-limit 0.05 --peqtl-heidi 1.57e-3 --heidi-m 3 --cis-wind 2000 --thread-num 5 --out mysmr   
 ```
 
 **\--peqtl-smr** p-value threshold to select the top associated eQTL
@@ -144,9 +144,13 @@ SMR analysis in trans regions.
 HEIDI test. The default value is 1.57e-3, which is equivalent to a
 chi-squared value (df=1) of 10.
 
-**\--ld-pruning** LD r-squared threshold for pruning SNPs (eQTLs) in
+**\--ld-upper-limit** LD r-squared threshold for pruning SNPs (eQTLs) in
 HEIDI test, removing SNPs in high LD with the top associated eQTL.
 The default value is 0.9.
+
+**\--ld-lower-limit** LD r-squared threshold for pruning SNPs (eQTLs) in
+HEIDI test, removing SNPs in low LD with the top associated eQTL.
+The default value is 0.05.
 
 **\--heidi-m** minimum requirement of the number of eQTLs used in
 the HEIDI test. We will skip the HEIDI test if the number of SNPs is

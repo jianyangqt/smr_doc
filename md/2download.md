@@ -1,6 +1,6 @@
 
 ## Download {: .expand}
-### Executable Files (version 0.69) 
+### Executable Files (version 0.70) 
 
 [smr\_Linux.zip](download/smr_Linux.zip)
 
@@ -117,4 +117,7 @@ eQTL summary statistics for SMR analysis.
 **17.**   Version 0.69 (7 October, 2017): added features to run
 multi-SNP based SMR and SMR analysis of two molecular traits. Also add a
 feature to remove technical eQTLs.
+
+**18.**   Version 0.70 (8 December, 2017): updated some parameters in HEIDI test. 
+A lower limit of LD R-square threshold (the default value is 0.05) has been implmented. The best number of SNPs which contain the top SNP for the HEIDI test is changed to 31.
 
