@@ -1,5 +1,5 @@
 
-## SMR & HEIDI analysis
+## SMR & HEIDI analysis {: .expand}
 
 ### SMR
 
