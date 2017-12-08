@@ -118,6 +118,6 @@ eQTL summary statistics for SMR analysis.
 multi-SNP based SMR and SMR analysis of two molecular traits. Also add a
 feature to remove technical eQTLs.
 
-**18.**   Version 0.70 (8 December, 2017): updated some parameters in HEIDI test. 
-A lower limit of LD R-square threshold (the default value is 0.05) has been implmented. The best number of SNPs which contain the top SNP for the HEIDI test is changed to 41.
+**18.**   Version 0.70 (8 December, 2017): updated some parameters used in the HEIDI test. 
+A lower limit of LD R-square threshold (the default value is 0.05) has been added to remove SNPs that are in low LD or not in LD with the top eQTL. The number of SNPs used in the HEIDI test has been changed to 40 (i.e. top 40 SNPs ranked by eQTL p-value).
 

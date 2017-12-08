@@ -144,12 +144,12 @@ SMR analysis in trans regions.
 HEIDI test. The default value is 1.57e-3, which is equivalent to a
 chi-squared value (df=1) of 10.
 
-**\--ld-upper-limit** LD r-squared threshold for pruning SNPs (eQTLs) in
-HEIDI test, removing SNPs in high LD with the top associated eQTL.
+**\--ld-upper-limit** LD r-squared threshold used to prune SNPs (eQTLs) in the
+HEIDI test, i.e. removing SNPs in very strong LD with the top associated eQTL.
 The default value is 0.9.
 
-**\--ld-lower-limit** LD r-squared threshold for pruning SNPs (eQTLs) in
-HEIDI test, removing SNPs in low LD with the top associated eQTL.
+**\--ld-lower-limit** LD r-squared threshold used to prune SNPs (eQTLs) in the
+HEIDI test, i.e. removing SNPs in low LD or not in LD with the top associated eQTL.
 The default value is 0.05.
 
 **\--heidi-m** minimum requirement of the number of eQTLs used in
