@@ -152,14 +152,14 @@ The default value is 0.9.
 HEIDI test, i.e. removing SNPs in low LD or not in LD with the top associated eQTL.
 The default value is 0.05.
 
-**\--heidi-min-m** minimum requirement of the number of eQTLs used in
+**\--heidi-min-m** minimum requirement of the number of cis-SNPs used in
 the HEIDI test. We will skip the HEIDI test if the number of SNPs is
 smaller than the threshold. This is because if the number of SNPs is
 too small, HEIDI test has little power to detect heterogeneity and
 possibly generates misleading result. The default value is 3.
 
-**\--heidi-max-m** maximum requirement of the number of eQTLs used in
-the HEIDI test. The default value is 20.
+**\--heidi-max-m** maximum number of eQTLs used in
+the HEIDI test. If the number of cis-SNPs included in the HEIDI test after LD pruning is larger than m, then only the top m SNPs (ranked by eQTL p-value) will be used in the test. The default value is 20.
 
 **\--cis-wind** defines a window centred around the probe to select
 cis-eQTLs (passing a p-value threshold) for the SMR analysis. The
