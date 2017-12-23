@@ -76,8 +76,11 @@ and SE being exact the same as the original p-value.
 See below for options to make a BESD file from data in several different
 formats.
 
-### Make a BESD file 
-#### \# Make a BESD file from eQTL summary data in ESD format
+### Make a BESD file
+
+We provide 6 different ways of converting cis-eQTL data in other formats to BESD format.
+
+#### 1. Make a BESD file from eQTL summary data in ESD format
 
 To compile data in sparse BESD format
 
@@ -164,7 +167,7 @@ smr --eqtl-flist my.flist --make-besd-dense --out mybesd
 
 **NOTE** : the **\--make-besd-dense** option can be used in all the commands above and below.
 
-#### \# Make a BESD file from eQTL summary data in PLINK-qassoc output format
+#### 2. Make a BESD file from eQTL summary data in PLINK-qassoc output format
 
 The output file from a PLINK \--assoc analysis does not contain allele
 information. We therefore need to read the alleles from a PLINK .bim
@@ -189,7 +192,7 @@ Chr	ProbeID	GeneticDistance	ProbeBp	Gene	Orientation	PathOfEsd	PathOfBim
 **NOTE** : The program is able to read \*.tar.gz file, e.g.
 path\_assoc/my03.qassoc.tar.gz
 
-#### \# Make a BESD file from eQTL summary data in GEMMA output format
+#### 3. Make a BESD file from eQTL summary data in GEMMA output format
 
 ```
 smr --eqtl-flist my.flist --gemma-format --make-besd --out mybesd 
@@ -211,7 +214,7 @@ allele, frequency of the effect allele, effect size, standard error,
 lambda and p-value
 ([[http://www.xzlab.org/software.html]](http://www.xzlab.org/software.html)).
 
-#### \# Make a BESD file from eQTL summary data in BOLT-LMM output format
+#### 4. Make a BESD file from eQTL summary data in BOLT-LMM output format
 
 ```
 smr --eqtl-flist my.flist  --bolt-assoc-format --make-besd --out mybesd 
@@ -234,7 +237,7 @@ association test p-value, and non-infinitesimal model association test
 p-value
 ([[https://data.broadinstitute.org/alkesgroup/BOLT-LMM/\#x1-440008.1]](https://data.broadinstitute.org/alkesgroup/BOLT-LMM/#x1-440008.1)).
 
-#### \# Make a BESD file from a single text file (in SMR query output format)
+#### 5. Make a BESD file from a single text file (in SMR query output format)
 
 ```
 smr --qfile myquery.txt --make-besd --out mybesd 
@@ -244,7 +247,7 @@ smr --qfile myquery.txt --make-besd --out mybesd
 [Query eQTL Results for the format of a query output
 file](#QueryeQTLResults)).
 
-#### \# Make a BESD file from BESD file(s)
+#### 6. Make a BESD file from BESD file(s)
 
 To make a sparse BESD file from a single dense BESD file
 
@@ -278,7 +281,8 @@ path3/my_besd3
 **HINT** : if the SNPs in all the .esi files are identical, you can speed up
 the analysis using the **\--geno-uni** option.
 
-#### \# Extract or remove a subset of eQTL summary data (subset BESD)
+
+### Extract or remove a subset of eQTL summary data (subset BESD)
 
 To extract a subset of SNPs and/or probes
 
@@ -292,7 +296,8 @@ To remove a subset of SNPs and/or probes
 smr --beqtl-summary myeqtl --exclude-snp mysnp.list --exclude-probe myprobe.list  --make-besd --out mybesd 
 ```
 
-#### \# Update frequency of the effect allele
+
+### Update frequency of the effect allele
 
 To add or update the frequencies of the effect alleles
 
@@ -315,6 +320,7 @@ effect allele, the other allele and frequency of the effect allele.
 
 **NOTE** : the SMR program is compatibile with .esi files with or without
 frequency information.
+
 
 ### Remove technical eQTLs
 
