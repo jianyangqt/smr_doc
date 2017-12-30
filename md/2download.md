@@ -14,7 +14,7 @@ The executable files (binary code) are released under MIT lincense.
 
 #### \# Westra eQTL summary data
 
-Westra eQTL summary data [([Westra et al. 2013 Nat Genet])](http://www.ncbi.nlm.nih.gov/pubmed/24013639) in SMR
+Westra eQTL summary data [(Westra et al. 2013 Nat Genet)](http://www.ncbi.nlm.nih.gov/pubmed/24013639) in SMR
 binary (BESD) format:
 
 [westra\_eqtl\_data\_hg18.zip (hg18)](download/westra_eqtl_hg18.zip)
@@ -24,7 +24,7 @@ binary (BESD) format:
 
 #### \# CAGE eQTL summary data
 
-CAGE eQTL summary data [([Luke R. Lloyd-Jones et al. 2017 AJHG])](http://www.cell.com/ajhg/abstract/S0002-9297(16)30532-8) in SMR binary (BESD) format:
+CAGE eQTL summary data [(Luke R. Lloyd-Jones et al. 2017 AJHG)](http://www.cell.com/ajhg/abstract/S0002-9297(16)30532-8) in SMR binary (BESD) format:
 
 [cage\_eqtl\_data\_hg19.tgz (hg19)](http://www.cnsgenomics.com/data/CAGE/cage_eqtl_data_hg19.tgz)
 
@@ -39,7 +39,7 @@ interrogation of the results generated in the CAGE analysis.
 
 #### \# McRae et al. mQTL summary data
 
-McRae et al. mQTL summary data [([Allan McRae et al. 2017 bioRxiv])](https://www.biorxiv.org/content/early/2017/07/21/166710) in SMR binary (BESD) format:
+McRae et al. mQTL summary data [(Allan McRae et al. 2017 bioRxi)](https://www.biorxiv.org/content/early/2017/07/21/166710) in SMR binary (BESD) format:
 
 [LBC\_BSGS\_meta.tar.gz (hg19)](http://cnsgenomics.com/data/SMR/LBC_BSGS_meta.tar.gz)
 
