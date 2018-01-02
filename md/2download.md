@@ -45,6 +45,14 @@ McRae et al. mQTL summary data [(Allan McRae et al. 2017 bioRxi)](https://www.bi
 
 This is a set of mQTL summary data from a meta-analysis of the BSGS and LBC data (McRae et al. 2017 bioRxiv). Only the DNA methylation probes with at least an cis-mQTL at P < 5e-8 and only SNPs within 2Mb distance from each probe are available. 
 
+#### \# V7 release of the GTEx eQTL summary data
+
+V7 release of the GTEx eQTL summary data in SMR binary (BESD) format:
+
+[GTExV7\_cis_eqtl\_data.tar.gz](http://www.cnsgenomics.com/data/SMR/GTExV7_cis_eqtl_data.tar.gz)
+
+This is a set of cis-eQTL summary data across 48 human tissues from the GTEx project. Only SNPs within 1Mb of the transcription start site are available. The standard errors in the BESD files were re-computed from the observed effect sizes and p-values based on a chi-squared distribution with 1 degree of freedom. The forth column of the *.epi file is the middle position of the probe sequence rather than the transcription start site. See [GTEx Portal](http://www.gtexportal.org/) for details about the eQTL analysis.
+
 ### R script for SMR locus plot 
 
 R script and sample file for SMR locus plot:
@@ -119,3 +127,5 @@ multi-SNP based SMR and SMR analysis of two molecular traits. Also add a
 feature to remove technical eQTLs.
 
 **18.**   Version 0.701 (22 December, 2017): 1) Updated some parameters used in the HEIDI test. A lower limit of LD r-squared threshold (the default value is 0.05) has been added to remove SNPs that are not in LD or in low LD with the top eQTL. 2) Added a flag --heidi-max-m to specify the maximum number of SNPs used in the HEIDI test. 
+
+**19.**   (02 January, 2018): Released the GTEx eQTL summary data in SMR binary (BESD) format.
