@@ -282,7 +282,7 @@ path3/my_besd3
 the analysis using the **\--geno-uni** option.
 
 
-### Extract or remove a subset of eQTL summary data (subset BESD)
+### Extract/remove a subset of data
 
 To extract a subset of SNPs and/or probes
 
