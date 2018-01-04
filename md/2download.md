@@ -49,7 +49,7 @@ This is a set of mQTL summary data from a meta-analysis of the BSGS and LBC data
 
 V7 release of the GTEx eQTL summary data in SMR binary (BESD) format:
 
-[GTExV7\_cis_eqtl\_data.tar.gz](http://www.cnsgenomics.com/data/SMR/GTExV7_cis_eqtl_data.tar.gz)
+[GTExV7\_cis_eqtl\_data.tar.gz](https://nextcloud.qriscloud.org.au/index.php/s/GR4KmzQWggQgniO)
 
 This is a set of cis-eQTL summary data across 48 human tissues from the GTEx project. Only SNPs within 1Mb of the transcription start site are available. The standard errors in the BESD files were re-computed from the observed effect sizes and p-values based on a chi-squared distribution with 1 degree of freedom. The forth column of the *.epi file is the middle position of the probe sequence rather than the transcription start site. See [GTEx Portal](http://www.gtexportal.org/) for details about the eQTL analysis.
 
