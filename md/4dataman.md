@@ -296,6 +296,19 @@ To remove a subset of SNPs and/or probes
 smr --beqtl-summary myeqtl --exclude-snp mysnp.list --exclude-probe myprobe.list  --make-besd --out mybesd 
 ```
 
+To extract a subset of SNPs with p < a threshold
+
+```
+smr --beqtl-summary myeqtl --extract-snp-p 1e-5  --make-besd --out mybesd 
+```
+**\--extract-snp-p** reads a p-value threshold to extract SNPs
+
+To remove a subset of SNPs with p < a threshold
+
+```
+smr --beqtl-summary myeqtl --exclude-snp-p 1e-5  --make-besd --out mybesd 
+```
+**\--exclude-snp-p** reads a p-value threshold to exclude SNPs
 
 ### Update frequency of the effect allele
 
