@@ -14,7 +14,7 @@ binary format) from a reference sample for LD estimation, i.e. .bed,
 
 **\--gwas-summary** reads summary-level data from GWAS. The input
 format follows that for GCTA-COJO analysis (
-<http://cnsgenomics.com/software/gcta/#Conditionalanalysis>).
+<http://cnsgenomics.com/software/gcta/#COJO>).
 
 ***mygwas.ma***
 ```
