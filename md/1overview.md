@@ -16,7 +16,8 @@ can therefore be used to prioritize genes underlying GWAS hits for follow-up fun
 [Futao Zhang](http://researchers.uq.edu.au/researcher/12709) developed
 the software tool and webpages with supports from [Zhili Zheng](mailto:zhilizheng@outlook.com), 
 [Zhihong Zhu](http://researchers.uq.edu.au/researcher/3051), 
-[Ting Qi](http://researchers.uq.edu.au/researcher/15871) 
+[Ting Qi](http://researchers.uq.edu.au/researcher/15871),
+[Yang Wu](y.wu2@uq.edu.au), 
 and [Jian Yang](http://researchers.uq.edu.au/researcher/2713).
 
 [Zhihong Zhu](http://researchers.uq.edu.au/researcher/3051) 
