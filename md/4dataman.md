@@ -67,13 +67,13 @@ We only store effect size (b) and SE in the BESD file, and re-calculate
 p-value for analysis when necessary, assuming b / SE follows a standard
 normal distribution, i.e. N(0, 1). Strictly speaking, b / SE follows a
 t-distribution which is approximately N(0, 1) if sample size is large.
-For data sets with sample sizes (e.g. GTEx), this might lead to a bias
-in p-value. We therefore compute z\* based on the original p-value from
+For data sets with small sample sizes (e.g. GTEx), this might lead to a bias
+in p-value. In this scenario, we recommend users to compute z\* based on the original p-value from
 a standard normal distribution, and adjust the standard error as SE = b
 / z\*. This adjustment guarantees that the re-computed p-value from b
 and SE being exact the same as the original p-value.
 
-See below for options to make a BESD file from data in several different
+See [below](#MakeaBESDfile) for options to make a BESD file from data in several different
 formats.
 
 ### Make a BESD file

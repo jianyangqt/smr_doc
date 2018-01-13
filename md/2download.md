@@ -49,7 +49,7 @@ This is a set of mQTL summary data from a meta-analysis of the BSGS and LBC data
 
 #### \# V7 release of the GTEx eQTL summary data
 
-V7 release of the GTEx eQTL summary data in SMR binary (BESD) format:
+V7 release of the GTEx eQTL summary data [(GTEx Consortium 2017 Nature)](https://www.nature.com/articles/nature24277) in SMR binary (BESD) format:
 
 [GTEx\_V7\_cis_eqtl\_summary.tar.gz (hg19)](https://nextcloud.qriscloud.org.au/index.php/s/ppnjr9vIpcCeMsR) (53.6 GB)
 
