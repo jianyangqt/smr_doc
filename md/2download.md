@@ -45,13 +45,17 @@ McRae et al. mQTL summary data [(Allan McRae et al. 2017 bioRxi)](https://www.bi
 
 [LBC\_BSGS\_meta.tar.gz (hg19)](https://nextcloud.qriscloud.org.au/index.php/s/v5WoHlCHGt2mm3r) (7.4 GB)
 
+[LBC\_BSGS\_meta\_lite.tar.gz (hg19)](https://nextcloud.qriscloud.org.au/index.php/s/ceaMaixp98T0RBN) Lite version of the McRae et al. mQTL data (only SNPs with P < 1e-5 are included; 220.8 MB)
+
 This is a set of mQTL summary data from a meta-analysis of the BSGS and LBC data (McRae et al. 2017 bioRxiv). Only the DNA methylation probes with at least an cis-mQTL at P < 5e-8 and only SNPs within 2Mb distance from each probe are available. 
 
 #### \# V7 release of the GTEx eQTL summary data
 
 V7 release of the GTEx eQTL summary data [(GTEx Consortium 2017 Nature)](https://www.nature.com/articles/nature24277) in SMR binary (BESD) format:
 
-[GTEx\_V7\_cis_eqtl\_summary.tar.gz (hg19)](https://nextcloud.qriscloud.org.au/index.php/s/ppnjr9vIpcCeMsR) (53.6 GB)
+[GTEx\_V7\_cis\_eqtl\_summary.tar.gz (hg19)](https://nextcloud.qriscloud.org.au/index.php/s/ppnjr9vIpcCeMsR) (53.6 GB)
+
+[GTEx\_V7\_cis\_eqtl\_summary\_lite.tar.gz (hg19)](https://nextcloud.qriscloud.org.au/index.php/s/4xMerGdkA7fY6uP) Lite version of the GTEx V7 data (only SNPs with P < 1e-5 are included; 357.6 MB)
 
 This is a set of cis-eQTL summary data across 48 human tissues from the GTEx project. Only SNPs within 1Mb of the transcription start site are available. The standard errors in the BESD files were re-computed from the observed effect sizes and p-values based on a chi-squared distribution with 1 degree of freedom. The forth column of the *.epi file is the middle position of the probe sequence rather than the transcription start site. See [GTEx Portal](http://www.gtexportal.org/) for details about the eQTL analysis.
 
@@ -134,5 +138,5 @@ feature to remove technical eQTLs.
 
 **20.**   Version 0.702 (07 January, 2018): added flags --extract-snp-p and --exclude-snp-p to make a subset of BESD with a p-value threshold. 
 
-**21.**   Version 0.703 (13 January, 2018): 1) added flags --add-n to add the sample size to BESD file and --show-n to display the sample size on screen. 2) added flag --matrix-eqtl-format to transform the eQTL summary statistics in Matrix eQTL output format to SMR BESD format. 3) added flags --fastqtl-nominal-format and --fastqtl-permu-format to transform the eQTL summary statistics in FastQTL outformat to SMR BESD format. 4) added flags --update-epi and --update-esi to update or complete the information in .epi file and .esi file respectively.
+**21.**   Version 0.703 (19 January, 2018): 1) added flags --add-n to add the sample size to BESD file and --show-n to display the sample size on screen. 2) added flag --matrix-eqtl-format to transform the eQTL summary statistics in Matrix eQTL output format to SMR BESD format. 3) added flag --fastqtl-nominal-format to transform the eQTL summary statistics in FastQTL outformat to SMR BESD format. 4) added flags --update-epi and --update-esi to update or complete the information in .epi file and .esi file respectively.
 
