@@ -281,6 +281,92 @@ path3/my_besd3
 **HINT** : if the SNPs in all the .esi files are identical, you can speed up
 the analysis using the **\--geno-uni** option.
 
+#### 7. Make a BESD file from a single text file (in Matrix eQTL output format)
+
+```
+smr --eqtl-summary mateQTL.txt --matrix-eqtl-format --make-besd --out mybesd 
+```
+**\--eqtl-summary** reads eQTL summary statistics in text format.
+
+**\--matrix-eqtl-format** indicates eQTL summary data in Matrix eQTL output format.
+
+***mateQTL.txt***
+```
+SNP	gene	beta	t-stat	p-value	FDR
+rs13258200	ENSG00000071894.10	-1.00783189089702	-16.641554315712	2.3556801409867e-24	1.12905157909337e-18
+rs6599528	ENSG00000071894.10	-1.06253739134798	-15.8412867110849	2.73027622294589e-23	5.51886367106636e-18
+rs2272666	ENSG00000071894.10	-1.04810713295621	-15.6736668186937	4.6058755123246e-23	5.51886367106636e-18
+rs4313195	ENSG00000071894.10	-1.04810713295621	-15.6736668186937	4.6058755123246e-23	5.51886367106636e-18
+rs2280836	ENSG00000071894.10	-1.00773805984667	-15.2332537951202	1.84980830591084e-22	1.77318554626341e-17
+...
+```
+This file has headers. The 6 columns are: SNP, gene, beta, t-statistic, FDR
+([[http://www.bios.unc.edu/research/genomic_software/Matrix_eQTL/]](http://www.bios.unc.edu/research/genomic_software/Matrix_eQTL/)).
+
+**NOTE** : The program is able to read \*.tar.gz file.
+
+#### 8. Make a BESD file from a single text file (in FastQTL output format)
+
+```
+smr --eqtl-summary fastqtlnomi.txt --fastqtl-nominal-format --make-besd --out mybesd 
+```
+**\--fastqtl-nominal-format** indicates eQTL summary data in FastQTL nominal pass output format.
+
+***fastqtlnomi.txt***
+```
+ENSG00000237438.1 indel:4D_22_16518157 -999303 0.542909 -0.0510761
+ENSG00000237438.1 snp_22_16519289 -998171 0.432764 0.124424
+ENSG00000237438.1 snp_22_16520141 -997319 0.0945196 -0.251906
+ENSG00000237438.1 snp_22_16520948 -996512 0.102846 -0.274157
+ENSG00000237438.1 snp_22_16523696 -993764 0.0676318 -0.324492
+ENSG00000237438.1 snp_22_16523730 -993730 0.0674215 -0.206578
+...
+```
+This file has **no headers**. the 5 columns are: gene ID, SNP, Distance in bp between the SNP and the gene, p-value and the slope
+([[http://fastqtl.sourceforge.net/pages/cis_nominal.html]](http://fastqtl.sourceforge.net/pages/cis_nominal.html)).
+
+**NOTE** : The input file should be generated with FastQTL in version > v2.184
+
+**NOTE** : The program is able to read \*.tar.gz file.
+
+
+<font color='red'>**The following option is TBD **</font>.
+
+```
+smr --eqtl-summary fastqtlpermu.txt --fastqtl-permu-format --make-besd --out mybesd 
+```
+**\--fastqtl-permu-format** indicates eQTL summary data in FastQTL permutation pass output format.
+
+***fastqtlpermu.txt***
+```
+ENSG00000237438.1 7966 0.994618 2803.18 368.065 snp_22_17542810 25350 5.48728e-13 -0.547704 9.9999e-06 2.11873e-09
+ENSG00000177663.8 8165 1.08244 3079.93 376.308 snp_22_17497295 -68549 0.000167489 -0.33122 0.367273 0.332148
+ENSG00000183307.3 8279 1.01808 2419.25 362.848 snp_22_17587975 -14282 3.11324e-08 -0.436689 8.99991e-05 8.96609e-05
+ENSG00000069998.8 8466 1.018 2602.88 363.5 snp_22_17639837 -6340 5.01155e-11 -1.1834 9.9999e-06 1.53338e-07
+ENSG00000093072.10 8531 1.01906 4380.63 388.572 snp_22_17699299 -39826 9.028e-05 0.267016 0.235431 0.228073
+...
+```
+This file has **no headers**. the 11 columns are: gene ID, Number of SNPs tested for this gene, MLE of the shape1 parameter of the Beta distribution, MLE of the shape2 parameter of the Beta distribution,Dummy, the best SNP ID, Distance between the molecular phenotype - variant pair, p-value, the slope, A first permutation p-value and A second permutation p-value
+([[http://fastqtl.sourceforge.net/pages/cis_permutation.html]](http://fastqtl.sourceforge.net/pages/cis_permutation.html)).
+
+<font color='red'>**Hi, Jian, it seems the permutation pass is a gene-based test. One probe one output with the best variant. Do you think we should keep this flag? **</font>.
+
+#### 9. update .esi file and .epi file
+
+The information such as the SNP chromosome, the SNP BP, the effect allele, the other allele, the probe chromosome and the probe BP is essential to SMR analysis, however it's absent from the Matrix eQTL output format and the FastQTL output format. So it is necessary to be noticed that the .esi file and .epi file must be updated before being applied to SMR analysis, otherwise the software tool would throw an exception. 
+
+Users can update the .esi file and .epi file manually, but please keep in mind ** DO NOT** change the order of SNPs in the .esi file or probes in the .epi file because they are associated with the information in the .besd file. We also provide flags to accomplish this task with an annotation pool file in .esi / .epi file format. It is efficient when generating once and updating multiple times.
+
+```
+smr --beqtl-summary my_beqtl --update-esi mybigpool.esi 
+```
+**\--update-esi** reads an annotation .esi file to update and backup the target .esi file.
+
+```
+smr --beqtl-summary my_beqtl --update-epi mybigpool.epi
+```
+**\--update-epi** reads an annotation .epi file to update and backup the target .epi file.
+
 
 ### Extract/remove a subset of data
 
@@ -347,7 +433,6 @@ output file](#QueryeQTLResults)). The default p-value threshold is 5e-8,
 which can be changed by the **\--p-technical** (see below).
 
 ```
-
 smr --beqtl-summary myeqtl --rm-technical probe_hybrid.txt --make-besd --out mybesd
 
 ```
@@ -387,4 +472,26 @@ smr --beqtl-summary myeqtl --extract-cis --make-besd --out mybesd
 
 **\--extract-cis** extracts the cis-eQTL summary data.
 
+### Manage the sample size
+
+#### \# Add or update the sample size to the BESD file
+
+```
+smr --beqtl-summary myeqtl --add-n 1000 --make-besd --out mybesd
+
+```
+**\--add-n** reads a sample size.
+
+**NOTE** : The flag is valid across the data management. for example: 
+
+
+```
+smr --qfile myquery.txt --add-n 100 --make-besd --out mybesd 
+```
+#### \# Show the sample size on the screen
+
+```
+smr --beqtl-summary myeqtl --show-n 
+```
+**\--show-n** shows the sample size on the screen.
 
