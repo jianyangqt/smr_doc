@@ -136,7 +136,7 @@ feature to remove technical eQTLs.
 
 **19.**   (02 January, 2018): Released the GTEx eQTL summary data in SMR binary (BESD) format.
 
-**20.**   Version 0.702 (07 January, 2018): added flags --extract-snp-p and --exclude-snp-p to make a subset of BESD with a p-value threshold. 
+**20.**   Version 0.702 (07 January, 2018): Added flags --extract-snp-p and --exclude-snp-p to make a subset of BESD with a p-value threshold. 
 
-**21.**   Version 0.703 (19 January, 2018): 1) added flags --add-n to add the sample size to BESD file and --show-n to display the sample size on screen. 2) added flag --matrix-eqtl-format to transform the eQTL summary statistics in Matrix eQTL output format to SMR BESD format. 3) added flag --fastqtl-nominal-format to transform the eQTL summary statistics in FastQTL outformat to SMR BESD format. 4) added flags --update-epi and --update-esi to update or complete the information in .epi file and .esi file respectively.
+**21.**   Version 0.703 (19 January, 2018): 1) Added flags --add-n to add sample size in a BESD file and --show-n to display the sample size on screen or in a log output. 2) Added flag --matrix-eqtl-format to transform the eQTL summary statistics in Matrix eQTL output format to SMR BESD format. 3) Added flag --fastqtl-nominal-format to transform the eQTL summary statistics in FastQTL outformat to SMR BESD format. 4) Added flags --update-epi and --update-esi to update or complete the information in .epi file and .esi file respectively.
 
