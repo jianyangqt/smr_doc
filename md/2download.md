@@ -63,13 +63,11 @@ This is a set of cis-eQTL summary data across 48 human tissues from the GTEx pro
 
 Geuvadis eQTL summary data [(Lappalainen et al. 2013 Nature)](https://www.nature.com/articles/nature12531) in SMR binary (BESD) format:
 
-[geuvadis\_EUR\_rsid.tar.gz (hg19)](https://nextcloud.qriscloud.org.au/) (1.3 GB)
+[geuvadis\_EUR\_rsid.tar.gz (hg19)](https://nextcloud.qriscloud.org.au/index.php/s/tYcd45MasYtPjCQ) (650.5MB)
 
 We would like to acknowledge [Mikhail Spivakov](mailto:Mikhail.Spivakov@babraham.ac.uk) for his effort in transforming the data to SMR BESD format and writing the description below.
 
-Unthresholded Geuvadis eQTL data for lymphoblastoid cell lines isolated from 373 EUR individuals were used, with YRI individuals excluded. 
-
-The eQTL summary data were from [EUR373.gene.K10.noplim.cis\_assembled.txt.gz](http://jungle.unige.ch/~lappalainen/geuvadis/EUR373.gene.K10.noplim.cis_assembled.txt.gz). Since betas are not available for the unthresholded dataset (as confirmed with Tuuli), they were estimated from t-values, allele freqs and n=373 according to Formula (6) in the SMR paper [(Zhu et al. 2016 Nat Genet)](http://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3538.html). Geuvadis SNP ids were converted to rsids for compatibility with external GWAS data and plink 1KG files. The data are based on GRCh37 assembly, and gene IDs deprecated in the GRCh37 version of Ensembl were removed. 
+Unthresholded Geuvadis eQTL data for lymphoblastoid cell lines isolated from 373 EUR individuals were used, with YRI individuals excluded. The eQTL summary data were from [EUR373.gene.K10.noplim.cis\_assembled.txt.gz](http://jungle.unige.ch/~lappalainen/geuvadis/EUR373.gene.K10.noplim.cis_assembled.txt.gz). Since betas are not available for the unthresholded dataset (as confirmed with Tuuli), they were estimated from t-values, allele freqs and n=373 according to Formula (6) in the SMR paper [(Zhu et al. 2016 Nat Genet)](http://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3538.html). Geuvadis SNP ids were converted to rsids for compatibility with external GWAS data and plink 1KG files. The data are based on GRCh37 assembly, and gene IDs deprecated in the GRCh37 version of Ensembl were removed. 
 
 ### R script for SMR locus plot 
 
