@@ -1,6 +1,6 @@
 
 ## Download {: .expand}
-### Executable Files (version 0.704) 
+### Executable Files (version 0.705) 
 
 [smr\_Linux.zip](download/smr_Linux.zip)
 
@@ -151,4 +151,7 @@ feature to remove technical eQTLs.
 **21.**   Version 0.703 (19 January, 2018): 1) Added flags --add-n to add sample size in a BESD file and --show-n to display the sample size on screen or in a log output. 2) Added flag --matrix-eqtl-format to transform the eQTL summary statistics in Matrix eQTL output format to SMR BESD format. 3) Added flag --fastqtl-nominal-format to transform the eQTL summary statistics in FastQTL outformat to SMR BESD format. 4) Added flags --update-epi and --update-esi to update or complete the information in .epi file and .esi file respectively.
 
 **22.**   Version 0.704 (01 Feburary, 2018): Fixed a bug in making BESD files. 
+
+**23.**   Version 0.705 (16 Feburary, 2018): Updated MeCS and removed some confusing log information when making BESD files. 
+
 

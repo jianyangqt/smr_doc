@@ -26,11 +26,17 @@ smr --besd-flist my_file.list --mecs --thread-num 5 --out mecs_result
 
 **\--mecs** implements the MeCS analysis.
 
-**\--meta** implements the conventional inverse-variance-weighted
-meta-analysis assuming all the cohorts are independent.
+Specify a p-value threshold to exclude the significant SNPs from calculating the cohort correlation matrix.
+```
+osca --besd-flist my_file.list --mecs --pmecs 0.01 --out mymecs
+```
+**\--pmecs** reads a p-value threshold to exclude the significant SNPs from calculating the cohort correlation matrix. The default value is 0.01. 
+
+
 
 >Example
 
 ```
 smr --besd-flist my_file.list --meta --thread-num 5 --out meta_result 
 ```
+**\--meta** implements the conventional inverse-variance-weighted meta-analysis assuming all the cohorts are independent.
