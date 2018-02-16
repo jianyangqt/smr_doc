@@ -61,19 +61,15 @@ This is a set of cis-eQTL summary data across 48 human tissues from the GTEx pro
 
 #### \# Geuvadis eQTL summary data
 
-Geuvadis eQTL summary data [( Lappalainen et al. 2013 Nature)](https://www.nature.com/articles/nature12531) in SMR binary (BESD) format:
+Geuvadis eQTL summary data [(Lappalainen et al. 2013 Nature)](https://www.nature.com/articles/nature12531) in SMR binary (BESD) format:
 
 [geuvadis\_EUR\_rsid.tar.gz (hg19)](https://nextcloud.qriscloud.org.au/) (1.3 GB)
 
-We would like to acknowledge [Mikhail Spivakov](mailto:Mikhail.Spivakov@babraham.ac.uk) for his effort to tramform the data to SMR BESD format.
+We would like to acknowledge [Mikhail Spivakov](mailto:Mikhail.Spivakov@babraham.ac.uk) for his effort in transforming the data to SMR BESD format and writing the description below.
 
 Unthresholded Geuvadis eQTL data for lymphoblastoid cell lines isolated from 373 EUR individuals were used, with YRI individuals excluded. 
 
-The genotype data (including EUR allele frequencies) were extracted from [GEUVADIS.chr<n>.PH1PH2\_465.IMPFRQFILT\_BIALLELIC\_PH.annotv2.genotypes.vcf.gz](https://www.ebi.ac.uk/arrayexpress/files/E-GEUV-1) files (where <n> is chromosome number)]. 
-
-The eQTL summary data were from [EUR373.gene.K10.noplim.cis\_assembled.txt.gz](http://jungle.unige.ch/~lappalainen/geuvadis/EUR373.gene.K10.noplim.cis_assembled.txt.gz). Since betas are not available for the unthresholded dataset (as confirmed with Tuuli), they were estimated from t-values, allele freqs and n=373 according to Formula (6) in the SMR paper. Geuvadis SNP ids were converted to rsids for compatibility with external GWAS data and plink 1KG files. 
-
-The data are based on GRCh37 assembly, and gene IDs deprecated in the GRCh37 version of Ensembl were removed. 
+The eQTL summary data were from [EUR373.gene.K10.noplim.cis\_assembled.txt.gz](http://jungle.unige.ch/~lappalainen/geuvadis/EUR373.gene.K10.noplim.cis_assembled.txt.gz). Since betas are not available for the unthresholded dataset (as confirmed with Tuuli), they were estimated from t-values, allele freqs and n=373 according to Formula (6) in the SMR paper [(Zhu et al. 2016 Nat Genet)](http://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3538.html). Geuvadis SNP ids were converted to rsids for compatibility with external GWAS data and plink 1KG files. The data are based on GRCh37 assembly, and gene IDs deprecated in the GRCh37 version of Ensembl were removed. 
 
 ### R script for SMR locus plot 
 
@@ -158,4 +154,3 @@ feature to remove technical eQTLs.
 
 **22.**   Version 0.704 (01 Feburary, 2018): Fixed a bug in making BESD files. 
 
-**23.**   (16 Feburary, 2018):  Mikhail Spivakov released GEUVADIS eQTL summary statistics for SMR analysis.
