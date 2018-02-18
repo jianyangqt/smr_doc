@@ -40,3 +40,7 @@ osca --besd-flist my_file.list --mecs --pmecs 0.01 --out mymecs
 smr --besd-flist my_file.list --meta --thread-num 5 --out meta_result 
 ```
 **\--meta** implements the conventional inverse-variance-weighted meta-analysis assuming all the cohorts are independent.
+
+#### Citations
+ 
+Qi et al. (2018) Identifying gene targets for brain-related traits using transcriptomic and methylomic data from blood. Submitted.
