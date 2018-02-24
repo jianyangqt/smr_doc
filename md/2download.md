@@ -17,18 +17,18 @@ The executable files (binary code) are released under MIT lincense.
 Westra eQTL summary data [(Westra et al. 2013 Nat Genet)](http://www.ncbi.nlm.nih.gov/pubmed/24013639) in SMR
 binary (BESD) format:
 
-[westra\_eqtl\_data\_hg18.zip (hg18)](https://nextcloud.qriscloud.org.au/index.php/s/U6oh8SKSWfyfhT4) (10.3 MB)
+[westra\_eqtl\_data\_hg18.zip (hg18)](../../data/SMR/westra_eqtl_hg18.zip) (10.3 MB)
 
-[westra\_eqtl\_data\_hg19.zip (hg19)](https://nextcloud.qriscloud.org.au/index.php/s/b4uHQzoKAbGbSFc) (10.3 MB)
+[westra\_eqtl\_data\_hg19.zip (hg19)](../../data/SMR/westra_eqtl_hg19.zip) (10.3 MB)
 
 
 #### \# CAGE eQTL summary data
 
 CAGE eQTL summary data [(Luke R. Lloyd-Jones et al. 2017 AJHG)](http://www.cell.com/ajhg/abstract/S0002-9297(16)30532-8) in SMR binary (BESD) format:
 
-[cage\_eqtl\_data\_hg19.tgz (hg19)](https://nextcloud.qriscloud.org.au/index.php/s/52V62aEFNxrf8h7) (3.8 GB)
+[cage\_eqtl\_data\_hg19.tgz (hg19)](../../data/SMR/cage_eqtl_data_hg19.tgz) (3.8 GB)
 
-[cage\_eqtl\_data\_lite\_hg19.tgz (hg19)](https://nextcloud.qriscloud.org.au/index.php/s/nvGmXefCxiHPAz4) Lite version of the CAGE data (only SNPs with P < 1e-5 are included; 86.1 MB)
+[cage\_eqtl\_data\_lite\_hg19.tgz (hg19)](../../data/SMR/cage_eqtl_data_lite_hg19.tar.gz) Lite version of the CAGE data (only SNPs with P < 1e-5 are included; 86.1 MB)
 
 The CAGE eQTL results have finer coverage than the Westra et al. 2013
 results with comparable power. Please note that the EGCUT cohort is
@@ -43,9 +43,9 @@ interrogation of the results generated in the CAGE analysis.
 
 McRae et al. mQTL summary data [(Allan McRae et al. 2017 bioRxi)](https://www.biorxiv.org/content/early/2017/07/21/166710) in SMR binary (BESD) format:
 
-[LBC\_BSGS\_meta.tar.gz (hg19)](https://nextcloud.qriscloud.org.au/index.php/s/v5WoHlCHGt2mm3r) (7.4 GB)
+[LBC\_BSGS\_meta.tar.gz (hg19)](../../data/SMR/LBC_BSGS_meta.tar.gz) (7.4 GB)
 
-[LBC\_BSGS\_meta\_lite.tar.gz (hg19)](https://nextcloud.qriscloud.org.au/index.php/s/ceaMaixp98T0RBN) Lite version of the McRae et al. mQTL data (only SNPs with P < 1e-5 are included; 220.8 MB)
+[LBC\_BSGS\_meta\_lite.tar.gz (hg19)](../../data/SMR/LBC_BSGS_meta_lite.tar.gz) Lite version of the McRae et al. mQTL data (only SNPs with P < 1e-5 are included; 220.8 MB)
 
 This is a set of mQTL summary data from a meta-analysis of the BSGS and LBC data (McRae et al. 2017 bioRxiv). Only the DNA methylation probes with at least an cis-mQTL at P < 5e-8 and only SNPs within 2Mb distance from each probe are available. 
 
@@ -53,9 +53,9 @@ This is a set of mQTL summary data from a meta-analysis of the BSGS and LBC data
 
 V7 release of the GTEx eQTL summary data [(GTEx Consortium 2017 Nature)](https://www.nature.com/articles/nature24277) in SMR binary (BESD) format:
 
-[GTEx\_V7\_cis\_eqtl\_summary.tar.gz (hg19)](https://nextcloud.qriscloud.org.au/index.php/s/ppnjr9vIpcCeMsR) (53.6 GB)
+[GTEx\_V7\_cis\_eqtl\_summary.tar.gz (hg19)](../../data/SMR/GTEx_V7_cis_eqtl_summary.tar.gz) (53.6 GB)
 
-[GTEx\_V7\_cis\_eqtl\_summary\_lite.tar.gz (hg19)](https://nextcloud.qriscloud.org.au/index.php/s/4xMerGdkA7fY6uP) Lite version of the GTEx V7 data (only SNPs with P < 1e-5 are included; 357.6 MB)
+[GTEx\_V7\_cis\_eqtl\_summary\_lite.tar.gz (hg19)](../../data/SMR/GTEx_V7_cis_eqtl_summary_lite.tar.gz) Lite version of the GTEx V7 data (only SNPs with P < 1e-5 are included; 357.6 MB)
 
 This is a set of cis-eQTL summary data across 48 human tissues from the GTEx project. Only SNPs within 1Mb of the transcription start site are available. The standard errors in the BESD files were re-computed from the observed effect sizes and p-values based on a chi-squared distribution with 1 degree of freedom. The forth column of the *.epi file is the middle position of the probe sequence rather than the transcription start site. See [GTEx Portal](http://www.gtexportal.org/) for details about the eQTL analysis.
 
@@ -63,7 +63,7 @@ This is a set of cis-eQTL summary data across 48 human tissues from the GTEx pro
 
 Geuvadis eQTL summary data [(Lappalainen et al. 2013 Nature)](https://www.nature.com/articles/nature12531) in SMR binary (BESD) format:
 
-[geuvadis\_EUR\_rsid.tar.gz (hg19)](https://nextcloud.qriscloud.org.au/index.php/s/tYcd45MasYtPjCQ) (650.5MB)
+[geuvadis\_EUR\_rsid.tar.gz (hg19)](../../data/SMR/geuvadis_EUR_rsid.tar.gz) (650.5MB)
 
 We would like to acknowledge [Mikhail Spivakov](mailto:Mikhail.Spivakov@babraham.ac.uk) for his effort in transforming the data to SMR BESD format and writing the description below.
 
