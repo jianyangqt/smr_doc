@@ -5,7 +5,7 @@
 This software tool implements the SMR & HEIDI methods to test for
 pleiotropic association between the expression level of a gene and a
 complex trait of interest using summary-level data from GWAS and
-expression quantitative trait loci (eQTL) studies [(Zhu et al. 2016 Nat Genet)](http://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3538.html).
+expression quantitative trait loci (eQTL) studies [(Zhu et al. 2016 Nature Genetics)](http://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3538.html).
 The methodology can be interpreted as an analysis to test if the effect
 size of a SNP on the phenotype is mediated by gene expression. This tool
 can therefore be used to prioritize genes underlying GWAS hits for follow-up functional studies.
@@ -37,11 +37,10 @@ Institute for Molecular Bioscience, The University of Queensland.
 
 **SMR & HEIDI methods and software tool**
 
-Zhihong Zhu, Futao Zhang, Han Hu, Andrew Bakshi, Matthew R. Robinson,
-Joseph E. Powell, Grant W. Montgomery, Michael E. Goddard, Naomi R.
-Wray, Peter M. Visscher & Jian Yang (2016) Integration of summary data
+Zhu Z, Zhang F, Hu H, Bakshi A, Robinson MR,
+Powell JE, Montgomery GW, Goddard ME, Wray NR, Visscher PM & Yang J (2016) Integration of summary data
 from GWAS and eQTL studies predicts complex trait gene targets. 
-[*Nat Genet*, 48:481-487.](http://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3538.html)
+[*Nature Genetics*, 48:481-487.](http://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3538.html)
 
 **Multi-SNP-based SMR method**
 
