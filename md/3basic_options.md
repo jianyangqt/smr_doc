@@ -222,12 +222,12 @@ study, p-value from eQTL study, effect size from SMR, SE from SMR,
 p-value from SMR, p-value from HEIDI test, and number of SNPs used in
 the HEIDI test.
 
-### Multi-SNP based SMR test
+### Multi-SNP-based SMR test
 
 Below shows an option to combine the information from all the SNPs in a
 region that pass a p-value threshold (the default value is 5.0e-8 which
-can be modified by the flag **\--peqtl-smr**) to conduct a set-based SMR
-analysis.
+can be modified by the flag **\--peqtl-smr**) to conduct a multi-SNP-based SMR
+analysis ([Wu et al. 2018 Nature Communications](https://www.nature.com/articles/s41467-018-03371-0)).
 
 The SNPs are pruned for LD using a weighted vertex coverage algorithm
 with a LD r2 threshold (the default value is 0.9 which can be modified

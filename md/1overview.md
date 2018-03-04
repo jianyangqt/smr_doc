@@ -39,10 +39,10 @@ Institute for Molecular Bioscience, The University of Queensland.
 
 Zhihong Zhu, Futao Zhang, Han Hu, Andrew Bakshi, Matthew R. Robinson,
 Joseph E. Powell, Grant W. Montgomery, Michael E. Goddard, Naomi R.
-Wray, Peter M. Visscher and Jian Yang (2016) Integration of summary data
+Wray, Peter M. Visscher & Jian Yang (2016) Integration of summary data
 from GWAS and eQTL studies predicts complex trait gene targets. 
 [*Nat Genet*, 48:481-487.](http://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3538.html)
 
 **Multi-SNP-based SMR method**
 
-Yang Wu, Jian Zeng, Futao Zhang, Zhihong Zhu, Ting Qi, Zhili Zheng, Luke R. Lloyd-Jones, Riccardo E. Marioni, Nicholas G. Martin, Grant W. Montgomery, Ian J. Deary, Naomi R. Wray, Peter M. Visscher, Allan F. McRae & Jian Yang (2018) Integrative analysis of omics summary data reveals putative mechanisms underlying complex traits. [*Nature Communications*, volume 9, Article number: 918.](https://www.nature.com/articles/s41467-018-03371-0)
+Wu Y, Zeng J, Zhang F, Zhu Z, Qi T, Zheng Z, Lloyd-Jones LR, Marioni RE, Martin NG, Montgomery GW, Deary IJ, Wray NR, Visscher PM, McRae AF & Yang J (2018) Integrative analysis of omics summary data reveals putative mechanisms underlying complex traits. [*Nature Communications*, 9: 918.](https://www.nature.com/articles/s41467-018-03371-0)
