@@ -24,7 +24,7 @@ rs1002	C	G	0.03606	0.0034	0.0115	0.7659	129799
 rs1003	A	C	0.5128	0.045	0.038	0.2319	129830
 ......
 ```
-Columns are SNP, the effect (coded) allele, the other allele, frequency of the effect allele, effect size, standard error, p-value and sample size. The headers are not keywords and will be omitted by the program. <font color='red'>Important: “A1” needs to be the effect allele with “A2” being the other allele and “freq” needs to be the frequency of “A1”</font>. **NOTE:1) For a case-control study, the effect size should be log(odds ratio) with its corresponding standard error**.
+Columns are SNP, the effect (coded) allele, the other allele, frequency of the effect allele, effect size, standard error, p-value and sample size. The headers are not keywords and will be omitted by the program. <font color='red'>Important: “A1” needs to be the effect allele with “A2” being the other allele and “freq” needs to be the frequency of “A1”</font>. **NOTE:1) For a case-control study, the effect size should be log(odds ratio) with its corresponding standard error. 2) We use the COJO format here for compatibility considerations. It is of note that the columns "freq" and "n" will not be used in either SMR or HEIDI analysis and thus can be replaced by "NA" if they are not available.**
 
 **\--beqtl-summary** reads summary-level data from a eQTL study in
 binary format. We store eQTL summary data in three separate files
