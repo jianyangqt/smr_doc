@@ -1,6 +1,6 @@
 
 ## Download {: .expand}
-### Executable Files (version 0.705) 
+### Executable Files (version 0.706) 
 
 [smr\_Linux.zip](download/smr_Linux.zip)
 
@@ -154,4 +154,5 @@ feature to remove technical eQTLs.
 
 **23.**   Version 0.705 (16 Feburary, 2018): Updated MeCS and removed some confusing log information when making BESD files. 
 
+**24.**   Version 0.706 (1 April, 2018): fixed a link problem and a bug with --target-snp. 
 
