@@ -199,9 +199,9 @@ smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --out mytrans
 
 **\--trans** turns on SMR and HEIDI tests in trans regions.
 
-**\--trans-wind** defines a window centred around the top associated
+**\--trans-wind** defines the size of a window in either side of the top associated
 trans-eQTL to select SNPs (passing a p-value threshold) for the SMR
-and HEIDI test. The default value is 1000Kb.
+and HEIDI test. The default value is 1000 Kb (i.e. a whole region of 2000 Kb).
 
 ***mytrans.smr***
 
@@ -252,7 +252,8 @@ this option is not specified.
 Here we provide an option to test the pleotropic association between two
 molecular traits using summary data. Take the analysis of DNA
 methylation and gene expression data as an example. In this case, we
-will need mQTL and eQTL summary data in BESD format.
+will need mQTL and eQTL summary data in BESD format. The current version of the program focuses only on the analysis 
+in the cis-region, i.e. only testing for associations between genes and DNA methylation sites that are in less than 2 Mb distance.
 
 ```
 smr --bfile mydata --beqtl-summary myexposure --beqtl-summary myoutcome  --out myomics
