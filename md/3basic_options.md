@@ -199,7 +199,7 @@ smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --out mytrans
 
 **\--trans** turns on SMR and HEIDI tests in trans regions.
 
-**\--trans-wind** defines the size of a window in either side of the top associated
+**\--trans-wind** defines the size of a window on either side of the top associated
 trans-eQTL to select SNPs (passing a p-value threshold) for the SMR
 and HEIDI test. The default value is 1000 Kb (i.e. a whole region of 2000 Kb).
 
