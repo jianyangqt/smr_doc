@@ -13,21 +13,15 @@ The executable files (binary code) are released under MIT lincense.
 ### eQTL summary data 
 
 #### \# Westra eQTL summary data
-
 Westra eQTL summary data [(Westra et al. 2013 Nat Genet)](http://www.ncbi.nlm.nih.gov/pubmed/24013639) in SMR
-binary (BESD) format:
-
-[westra\_eqtl\_data\_hg18.zip (hg18)](../../data/SMR/westra_eqtl_hg18.zip) (10.3 MB)
-
+binary (BESD) format:<br/>
+[westra\_eqtl\_data\_hg18.zip (hg18)](../../data/SMR/westra_eqtl_hg18.zip) (10.3 MB)<br/>
 [westra\_eqtl\_data\_hg19.zip (hg19)](../../data/SMR/westra_eqtl_hg19.zip) (10.3 MB)
 
 
 #### \# CAGE eQTL summary data
-
-CAGE eQTL summary data [(Luke R. Lloyd-Jones et al. 2017 AJHG)](http://www.cell.com/ajhg/abstract/S0002-9297(16)30532-8) in SMR binary (BESD) format:
-
-[cage\_eqtl\_data\_hg19.tgz (hg19)](../../data/SMR/cage_eqtl_data_hg19.tgz) (3.8 GB)
-
+CAGE eQTL summary data [(Luke R. Lloyd-Jones et al. 2017 AJHG)](http://www.cell.com/ajhg/abstract/S0002-9297(16)30532-8) in SMR binary (BESD) format:<br/>
+[cage\_eqtl\_data\_hg19.tgz (hg19)](../../data/SMR/cage_eqtl_data_hg19.tgz) (3.8 GB)<br/>
 [cage\_eqtl\_data\_lite\_hg19.tgz (hg19)](../../data/SMR/cage_eqtl_data_lite_hg19.tar.gz) Lite version of the CAGE data (only SNPs with P < 1e-5 are included; 86.1 MB)
 
 The CAGE eQTL results have finer coverage than the Westra et al. 2013
@@ -40,34 +34,38 @@ Please see the associated [Shiny App](http://cnsgenomics.com/shiny/CAGE/) for fu
 interrogation of the results generated in the CAGE analysis.
 
 #### \# McRae et al. mQTL summary data
-
-McRae et al. mQTL summary data [(Allan McRae et al. 2017 bioRxi)](https://www.biorxiv.org/content/early/2017/07/21/166710) in SMR binary (BESD) format:
-
-[LBC\_BSGS\_meta.tar.gz (hg19)](../../data/SMR/LBC_BSGS_meta.tar.gz) (7.4 GB)
-
+McRae et al. mQTL summary data [(Allan McRae et al. 2017 bioRxi)](https://www.biorxiv.org/content/early/2017/07/21/166710) in SMR binary (BESD) format:<br/>
+[LBC\_BSGS\_meta.tar.gz (hg19)](../../data/SMR/LBC_BSGS_meta.tar.gz) (7.4 GB)<br/>
 [LBC\_BSGS\_meta\_lite.tar.gz (hg19)](../../data/SMR/LBC_BSGS_meta_lite.tar.gz) Lite version of the McRae et al. mQTL data (only SNPs with P < 1e-5 are included; 220.8 MB)
 
 This is a set of mQTL summary data from a meta-analysis of the BSGS and LBC data (McRae et al. 2017 bioRxiv). Only the DNA methylation probes with at least an cis-mQTL at P < 5e-8 and only SNPs within 2Mb distance from each probe are available. 
 
 #### \# V7 release of the GTEx eQTL summary data
-
-V7 release of the GTEx eQTL summary data [(GTEx Consortium 2017 Nature)](https://www.nature.com/articles/nature24277) in SMR binary (BESD) format:
-
-[GTEx\_V7\_cis\_eqtl\_summary.tar.gz (hg19)](../../data/SMR/GTEx_V7_cis_eqtl_summary.tar.gz) (53.6 GB)
-
+V7 release of the GTEx eQTL summary data [(GTEx Consortium 2017 Nature)](https://www.nature.com/articles/nature24277) in SMR binary (BESD) format:<br/>
+[GTEx\_V7\_cis\_eqtl\_summary.tar.gz (hg19)](../../data/SMR/GTEx_V7_cis_eqtl_summary.tar.gz) (53.6 GB)<br/>
 [GTEx\_V7\_cis\_eqtl\_summary\_lite.tar.gz (hg19)](../../data/SMR/GTEx_V7_cis_eqtl_summary_lite.tar.gz) Lite version of the GTEx V7 data (only SNPs with P < 1e-5 are included; 357.6 MB)
 
 This is a set of cis-eQTL summary data across 48 human tissues from the GTEx project. Only SNPs within 1Mb of the transcription start site are available. The standard errors in the BESD files were re-computed from the observed effect sizes and p-values based on a chi-squared distribution with 1 degree of freedom. The forth column of the *.epi file is the middle position of the probe sequence rather than the transcription start site. See [GTEx Portal](http://www.gtexportal.org/) for details about the eQTL analysis.
 
 #### \# Geuvadis eQTL summary data
-
-Geuvadis eQTL summary data [(Lappalainen et al. 2013 Nature)](https://www.nature.com/articles/nature12531) in SMR binary (BESD) format:
-
+Geuvadis eQTL summary data [(Lappalainen et al. 2013 Nature)](https://www.nature.com/articles/nature12531) in SMR binary (BESD) format:<br/>
 [geuvadis\_EUR\_rsid.tar.gz (hg19)](../../data/SMR/geuvadis_EUR_rsid.tar.gz) (650.5MB)
 
-We would like to acknowledge [Mikhail Spivakov](mailto:Mikhail.Spivakov@babraham.ac.uk) for his effort in transforming the data to SMR BESD format and writing the description below.
+Unthresholded Geuvadis eQTL data for lymphoblastoid cell lines isolated from 373 EUR individuals were used, with YRI individuals excluded. The eQTL summary data were from [EUR373.gene.K10.noplim.cis\_assembled.txt.gz](http://jungle.unige.ch/~lappalainen/geuvadis/EUR373.gene.K10.noplim.cis_assembled.txt.gz). Since betas are not available for the unthresholded dataset, they were estimated from t-values, allele freqs and n=373 according to Formula (6) in the SMR paper [(Zhu et al. 2016 Nat Genet)](http://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3538.html). Geuvadis SNP ids were converted to rsids for compatibility with external GWAS data and plink 1KG files. The data are based on GRCh37 assembly, and gene IDs deprecated in the GRCh37 version of Ensembl were removed. We would like to acknowledge [Mikhail Spivakov](mailto:Mikhail.Spivakov@babraham.ac.uk) for his effort in transforming the data to SMR BESD format and writing the description above.
 
-Unthresholded Geuvadis eQTL data for lymphoblastoid cell lines isolated from 373 EUR individuals were used, with YRI individuals excluded. The eQTL summary data were from [EUR373.gene.K10.noplim.cis\_assembled.txt.gz](http://jungle.unige.ch/~lappalainen/geuvadis/EUR373.gene.K10.noplim.cis_assembled.txt.gz). Since betas are not available for the unthresholded dataset, they were estimated from t-values, allele freqs and n=373 according to Formula (6) in the SMR paper [(Zhu et al. 2016 Nat Genet)](http://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3538.html). Geuvadis SNP ids were converted to rsids for compatibility with external GWAS data and plink 1KG files. The data are based on GRCh37 assembly, and gene IDs deprecated in the GRCh37 version of Ensembl were removed. 
+#### \# Hannon et al. mQTL summary data
+Three mQTL datasets used in Hannon et al. ([2017 AJHG](https://www.sciencedirect.com/science/article/pii/S0002929717301581?via%3Dihub)). All the files are in SMR BESD format.
+
+Two blood mQTL datasets ([Hannon et al. 2016 Genome Biology](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-1041-x)) <br/>
+[Hannon et al. Blood dataset1.zip](../../data/SMR/Hannon_Blood_dataset1.zip) (sample size = 639; 42MB)<br/>
+[Hannon et al. Blood dataset2.zip](../../data/SMR/Hannon_Blood_dataset2.zip) (sample size = 665; 25MB)
+
+Fetal brain mQTL data ([Hannon et al. 2015 Nat Neurosci](https://www.nature.com/articles/nn.4182)) <br/>
+[Hannon et al. FetalBrain.zip](../../data/SMR/Hannon_FetalBrain.zip) (sample size = 166; 4.8MB)
+
+Note: 1) The SNPs are coded as chr:bp (based on the genome build hg19)
+rather than with rsIDs. 2) SNPs with mQTL p-values > 1e-10 are not included. 3) Any question regarding to these datasets should be addressed to [Eilis Hannon](mailto:E.J.Hannon@exeter.ac.uk) or [Jonathan Mill](mailto:J.Mill@exeter.ac.uk). 
+
 
 ### R script for SMR locus plot 
 
