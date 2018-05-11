@@ -187,6 +187,17 @@ HEIDI tests as described above.
 smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --heidi-off --out mysmr 
 ```
 
+#### \# Run SMR_SO (SMR Sample Overlap)
+```
+smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --sample-overlap --pmecs 0.01 --mmecs 2 --out mysmr 
+```
+**\--sample-overlap** turns on SMR_SO.
+
+**\--pmecs** specifies a p-value threshold to select insignificant SNPs to calculate the correlation between the outcome and the exposure. The default value is 0.01.
+
+**\--mmecs** specifies a minimum SNP number to calculate the correlation. The default value is 2.
+
+
 **\--heidi-off** turns off the HEIDI test.
 
 ### SMR and HEIDI tests in trans regions

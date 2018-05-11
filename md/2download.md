@@ -1,6 +1,6 @@
 
 ## Download {: .expand}
-### Executable Files (version 0.706) 
+### Executable Files (version 0.708) 
 
 [smr\_Linux.zip](download/smr_Linux.zip)
 
@@ -153,4 +153,9 @@ feature to remove technical eQTLs.
 **23.**   Version 0.705 (16 Feburary, 2018): Updated MeCS and removed some confusing log information when making BESD files. 
 
 **24.**   Version 0.706 (1 April, 2018): fixed a problem of linking a library in Linux and a bug with --target-snp. 
+
+**25.**   Version 0.707 (1 May, 2018): added a flag --sample-overlap for sample overlap in SMR test.
+
+**26.**   Version 0.708 (11 May, 2018): chaged the default LD pruning threshold for Multi-SNP based SMR from 0.9 to 0.1.
+
 
