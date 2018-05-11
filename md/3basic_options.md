@@ -186,6 +186,8 @@ HEIDI tests as described above.
 ```
 smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --heidi-off --out mysmr 
 ```
+**\--heidi-off** turns off the HEIDI test.
+
 
 #### \# Run SMR_SO (SMR Sample Overlap)
 ```
@@ -197,8 +199,6 @@ smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --sample-over
 
 **\--mmecs** specifies a minimum SNP number to calculate the correlation. The default value is 2.
 
-
-**\--heidi-off** turns off the HEIDI test.
 
 ### SMR and HEIDI tests in trans regions
 The trans-eQTLs are defined as the eQTLs that are more than 5Mb away
