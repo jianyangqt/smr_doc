@@ -1,6 +1,6 @@
 
 ## Download {: .expand}
-### Executable Files (version 0.708) 
+### Executable Files (version 0.707) 
 
 [smr\_Linux.zip](download/smr_Linux.zip)
 
@@ -154,8 +154,6 @@ feature to remove technical eQTLs.
 
 **24.**   Version 0.706 (1 April, 2018): fixed a problem of linking a library in Linux and a bug with --target-snp. 
 
-**25.**   Version 0.707 (1 May, 2018): added a flag --sample-overlap to run SMR_SO.
-
-**26.**   Version 0.708 (11 May, 2018): changed the default LD pruning threshold for Multi-SNP based SMR from 0.9 to 0.1.
+**25.**   Version 0.707 (11 May, 2018): changed the default LD pruning r<sup>2</sup> threshold for SMR-multi from 0.9 to 0.1.
 
 
