@@ -181,24 +181,38 @@ smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --target-snp 
 **\--target-snp** specifies a SNP as the target for the SMR and
 HEIDI tests as described above.
 
+#### \# Specify a target SNP-probe list for the SMR and HEIDI tests
+
+SMR will read all the SNP-probe pairs. For each SNP-probe pair, the specified SNP will be used as the target SNP (i.e. the instrument) for the SMR test. In addition, it will read data of SNPs around the specified target SNP for each probe for the HEIDI test.
+
+```
+smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --extract-target-snp-probe snp_probe.list --out mysmr 
+```
+**\--extract-target-snp-probe** specifies a target SNP-probe list for the SMR and HEIDI tests.
+
+***snp_probe.list***
+```
+rs1001  probe1001
+rs1002  probe1002
+rs1002  probe1003
+...
+```
+
+#### \# Specify a SNP-probe list for the SMR and HEIDI tests
+
+SMR will read all the SNP-probe pairs. For each SNP-probe pair, it will read data of SNPs around the specified SNP for each probe. The top SNP will be used as the instrument for the SMR test and the HEIDI test.
+
+```
+smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --extract-snp-probe snp_probe.list --out mysmr 
+```
+**\--extract-snp-probe** specifies a SNP-probe list for the SMR and HEIDI tests.
+
 #### \# Turn off the HEIDI test
 
 ```
 smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --heidi-off --out mysmr 
 ```
 **\--heidi-off** turns off the HEIDI test.
-
-
-#### \# Run SMR_SO (SMR Sample Overlap)
-```
-smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --sample-overlap --pmecs 0.01 --mmecs 2 --out mysmr 
-```
-**\--sample-overlap** turns on SMR_SO.
-
-**\--pmecs** specifies a p-value threshold to select insignificant SNPs to calculate the correlation between the outcome and the exposure. The default value is 0.01.
-
-**\--mmecs** specifies a minimum SNP number to calculate the correlation. The default value is 2.
-
 
 ### SMR and HEIDI tests in trans regions
 The trans-eQTLs are defined as the eQTLs that are more than 5Mb away
@@ -258,6 +272,12 @@ smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --out mymulti
 associated cis-eQTL to select SNPs in the cis-region. The default
 value is -9 resulting in selecting SNPs in the whole cis-region if
 this option is not specified.
+
+```
+smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --out mymulti --smr-multi  --ld-multi-snp 0.1 
+```
+
+**\--ld-multi-snp** LD r-squared threshold used to prune SNPs (eQTLs) in the Multi-SNP based SMR test. The default value is 0.1.
 
 ### SMR analysis of two molecular traits
 Here we provide an option to test the pleotropic association between two

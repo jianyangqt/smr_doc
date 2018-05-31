@@ -154,8 +154,7 @@ feature to remove technical eQTLs.
 
 **24.**   Version 0.706 (1 April, 2018): fixed a problem of linking a library in Linux and a bug with --target-snp. 
 
-**25.**   Version 0.707 (1 May, 2018): added a flag --sample-overlap to run SMR_SO.
+**25.**   Version 0.707 (11 May, 2018): changed the default LD pruning r2 threshold for SMR-multi from 0.9 to 0.1.
 
-**26.**   Version 0.708 (11 May, 2018): changed the default LD pruning threshold for Multi-SNP based SMR from 0.9 to 0.1.
-
+**26.**   Version 0.708 (31 May, 2018): added --extract-target-snp-probe and --extract-snp-probe to run SMR analysis.
 
