@@ -181,14 +181,19 @@ smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --target-snp 
 **\--target-snp** specifies a SNP as the target for the SMR and
 HEIDI tests as described above.
 
-#### \# Specify a target SNP-probe list for the SMR and HEIDI tests
+#### \# Specify a list of SNP-probe pairs for the SMR and HEIDI tests
 
-SMR will read all the SNP-probe pairs. For each SNP-probe pair, the specified SNP will be used as the target SNP (i.e. the instrument) for the SMR test. In addition, it will read data of SNPs around the specified target SNP for each probe for the HEIDI test.
+Here we provide two flags to run a batch of SMR analyses with a user-specified list of SNP-probe pairs. For each SNP-probe pair, the program will only read data of SNPs within +/- 2000Kb (can be changed by the --smr-wind flag) of the specified SNP for each probe for analysis. Note that the SNP can be distant from the probe in each pair.
+
+```
+smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --extract-snp-probe snp_probe.list --out mysmr 
+```
+**\--extract-snp-probe** specifies a SNP-probe list (see the format below).
 
 ```
 smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --extract-target-snp-probe snp_probe.list --out mysmr 
 ```
-**\--extract-target-snp-probe** specifies a target SNP-probe list for the SMR and HEIDI tests.
+**\--extract-target-snp-probe** specifies a SNP-probe list and forces the specified SNP (not necessarily being the top associated SNP) as the target SNP for the SMR and HEIDI tests.
 
 ***snp_probe.list***
 ```
@@ -197,15 +202,6 @@ rs1002  probe1002
 rs1002  probe1003
 ...
 ```
-
-#### \# Specify a SNP-probe list for the SMR and HEIDI tests
-
-SMR will read all the SNP-probe pairs. For each SNP-probe pair, it will read data of SNPs around the specified SNP for each probe. The top SNP will be used as the instrument for the SMR test and the HEIDI test.
-
-```
-smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --extract-snp-probe snp_probe.list --out mysmr 
-```
-**\--extract-snp-probe** specifies a SNP-probe list for the SMR and HEIDI tests.
 
 #### \# Turn off the HEIDI test
 

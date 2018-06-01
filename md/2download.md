@@ -156,5 +156,5 @@ feature to remove technical eQTLs.
 
 **25.**   Version 0.707 (11 May, 2018): changed the default LD pruning r2 threshold for SMR-multi from 0.9 to 0.1.
 
-**26.**   Version 0.708 (31 May, 2018): added --extract-target-snp-probe and --extract-snp-probe to run SMR analysis.
+**26.**   Version 0.708 (31 May, 2018): added two flags --extract-target-snp-probe and --extract-snp-probe to extract specific SNP-probe pairs for the SMR analysis.
 
