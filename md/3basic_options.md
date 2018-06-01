@@ -183,7 +183,7 @@ HEIDI tests as described above.
 
 #### \# Specify a list of SNP-probe pairs for the SMR and HEIDI tests
 
-Here we provide two flags to run a batch of SMR analyses with a user-specified list of SNP-probe pairs. For each SNP-probe pair, the program will only read data of SNPs within +/- 2000Kb (can be changed by the --smr-wind flag) of the specified SNP for each probe for analysis. Note that the SNP can be distant from the probe in each pair.
+Here we provide two flags to run a batch of SMR analyses based on a user-specified list of SNP-probe pairs. For each probe, the program will only read the data of SNPs within +/- 2000Kb (can be changed by the —smr-wind flag) of the specified SNP. Note that the SNP can be distant from the corresponding probe.
 
 ```
 smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --extract-snp-probe snp_probe.list --out mysmr 
