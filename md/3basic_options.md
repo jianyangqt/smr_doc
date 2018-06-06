@@ -24,7 +24,7 @@ rs1002	C	G	0.03606	0.0034	0.0115	0.7659	129799
 rs1003	A	C	0.5128	0.045	0.038	0.2319	129830
 ......
 ```
-Columns are SNP, the coded allele (also called the effect allele or the reference allele), the other allele (also called the alternative allele), frequency of the effect allele, effect size, standard error, p-value and sample size. The headers are not keywords and will be omitted by the program. <font color='red'>Important: “A1” needs to be the effect allele with “A2” being the other allele and “freq” needs to be the frequency of “A1”</font>. **NOTE:1) For a case-control study, the effect size should be log(odds ratio) with its corresponding standard error. 2) We use the GCTA-COJO format here for compatibility considerations. It is of note that the columns "freq" and "n" will not be used in either SMR or HEIDI analysis and thus can be replaced by "NA" if they are not available.**
+Columns are SNP, the coded allele (also called the effect allele or the reference allele), the other allele (also called the alternative allele), frequency of the effect allele, effect size, standard error, p-value and sample size. The headers are not keywords and will be omitted by the program. <font color='red'>Important: “A1” needs to be the effect allele with “A2” being the other allele and “freq” needs to be the frequency of “A1”</font>. **NOTE:1) For a case-control study, the effect size should be log(odds ratio) with its corresponding standard error. 2) We use the GCTA-COJO format here for compatibility considerations. It is of note that the column "n" will not be used in either SMR or HEIDI analysis and thus can be replaced by "NA" if it is not available.** <font color='red'> **3) the column "freq" is compulsory and missing is not allowed.** </font>
 
 **\--beqtl-summary** reads summary-level data from a eQTL study in
 binary format. We store eQTL summary data in three separate files
@@ -76,6 +76,16 @@ smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --maf 0.01 --
 
 **\--maf** removes SNPs based on a minor allele frequency (MAF)
      threshold in the reference sample.
+
+#### \# Specify thresholds for effect allele frequency check
+
+```
+smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --diff-freq 0.1 --diff-freq-ratio 0.05 --out mysmr  
+```
+
+**\--diff-freq** reads a threshold of the pairwise allele frequency difference for the corresponding SNP between the LD reference panel, the eQTL summary and the GWAS summary. The default value is 0.1.
+
+**\--diff-freq-raito** reads a raito threshold of the SNPs that fail in allele frequency check. The default value is 0.05.
 
 
 #### \# Include or exclude a subset of individuals

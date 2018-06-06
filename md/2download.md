@@ -1,12 +1,20 @@
 
 ## Download {: .expand}
-### Executable Files (version 0.708) 
+### Executable Files (version 0.709) 
 
-[smr\_Linux.zip](download/smr_Linux.zip)
+[smr\_Linux\_0.709.zip](download/smr_Linux_0.709.zip)
 
-[smr\_Mac.zip](download/smr_Mac.zip)
+[smr\_Mac\_0.709.zip](download/smr_Mac_0.709.zip)
 
-[smr\_Win.zip](download/smr_Win.zip)
+[smr\_Win\_0.709.zip](download/smr_Win_0.709.zip)
+
+#### \# previous vesrions
+
+[smr\_Linux\_0.708.zip](download/smr_Linux_0.708.zip)
+
+[smr\_Mac\_0.708.zip](download/smr_Mac_0.708.zip)
+
+[smr\_Win\_0.708.zip](download/smr_Win_0.708.zip)
 
 The executable files (binary code) are released under MIT lincense.
 
@@ -157,4 +165,6 @@ feature to remove technical eQTLs.
 **25.**   Version 0.707 (11 May, 2018): changed the default LD pruning r2 threshold for SMR-multi from 0.9 to 0.1.
 
 **26.**   Version 0.708 (31 May, 2018): added two flags --extract-target-snp-probe and --extract-snp-probe to extract specific SNP-probe pairs for the SMR analysis.
+
+**27.**   Version 0.709 (5 June, 2018): added frequency check for SMR analysis.
 
