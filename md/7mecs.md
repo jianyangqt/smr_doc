@@ -43,4 +43,4 @@ smr --besd-flist my_file.list --meta --thread-num 5 --out meta_result
 
 
 #### Citation
-Qi et al. (2018) Identifying gene targets for brain-related traits using transcriptomic and methylomic data from blood. [bioRxiv 274472; doi: https://doi.org/10.1101/274472](https://www.biorxiv.org/content/early/2018/03/07/274472)
+Qi T, Wu Y, Zeng J, Zhang F, Xue A, Jiang L, Zhu Z, Kemper K, Yengo L, Zheng Z, eQTLGen Consortium, Marioni RE, Montgomery GW, Deary IJ, Wray NR, Visscher PM, McRae AF & Yang J (2018) Identifying gene targets for brain-related traits using transcriptomic and methylomic data from blood. [Nature Communications, 9: 2282.](https://www.nature.com/articles/s41467-018-04558-1)

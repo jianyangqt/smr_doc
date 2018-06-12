@@ -26,5 +26,8 @@
         "jsdom": "^9.12.0",
         "showdown": "^1.6.4",
         "uglify-js": "^2.8.22"
+    },
+    "dependencies": {
+        "npm": "^5.0.0"
     }
 }
