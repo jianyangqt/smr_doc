@@ -36,15 +36,15 @@ interrogation of the results generated in the CAGE analysis.
 
 #### \# McRae et al. mQTL summary data
 McRae et al. mQTL summary data [(Allan McRae et al. 2017 bioRxi)](https://www.biorxiv.org/content/early/2017/07/21/166710) in SMR binary (BESD) format:<br/>
-[LBC\_BSGS\_meta.tar.gz (hg19)](../../data/SMR/LBC_BSGS_meta.tar.gz) (7.4 GB)<br/>
-[LBC\_BSGS\_meta\_lite.tar.gz (hg19)](../../data/SMR/LBC_BSGS_meta_lite.tar.gz) Lite version of the McRae et al. mQTL data (only SNPs with P < 1e-5 are included; 220.8 MB)
+[LBC\_BSGS\_meta.tar.gz (hg19)](../../data/SMR/LBC_BSGS_meta.tar.gz) (7.5 GB)<br/>
+[LBC\_BSGS\_meta\_lite.tar.gz (hg19)](../../data/SMR/LBC_BSGS_meta_lite.tar.gz) Lite version of the McRae et al. mQTL data (only SNPs with P < 1e-5 are included; 241 MB)
 
 This is a set of mQTL summary data from a meta-analysis of the BSGS and LBC data (McRae et al. 2017 bioRxiv). Only the DNA methylation probes with at least an cis-mQTL at P < 5e-8 and only SNPs within 2Mb distance from each probe are available. 
 
 #### \# V7 release of the GTEx eQTL summary data
 V7 release of the GTEx eQTL summary data [(GTEx Consortium 2017 Nature)](https://www.nature.com/articles/nature24277) in SMR binary (BESD) format:<br/>
-[GTEx\_V7\_cis\_eqtl\_summary.tar.gz (hg19)](../../data/SMR/GTEx_V7_cis_eqtl_summary.tar.gz) (53.6 GB)<br/>
-[GTEx\_V7\_cis\_eqtl\_summary\_lite.tar.gz (hg19)](../../data/SMR/GTEx_V7_cis_eqtl_summary_lite.tar.gz) Lite version of the GTEx V7 data (only SNPs with P < 1e-5 are included; 357.6 MB)
+[GTEx\_V7\_cis\_eqtl\_summary.tar.gz (hg19)](../../data/SMR/GTEx_V7_cis_eqtl_summary.tar.gz) (55 GB)<br/>
+[GTEx\_V7\_cis\_eqtl\_summary\_lite.tar.gz (hg19)](../../data/SMR/GTEx_V7_cis_eqtl_summary_lite.tar.gz) Lite version of the GTEx V7 data (only SNPs with P < 1e-5 are included; 5.3 GB)
 
 This is a set of cis-eQTL summary data across 48 human tissues from the GTEx project. Only SNPs within 1Mb of the transcription start site are available. The standard errors in the BESD files were re-computed from the observed effect sizes and p-values based on a chi-squared distribution with 1 degree of freedom. The forth column of the *.epi file is the middle position of the probe sequence rather than the transcription start site. See [GTEx Portal](http://www.gtexportal.org/) for details about the eQTL analysis.
 
