@@ -1,6 +1,6 @@
 
 ## Download {: .expand}
-### Executable Files (version 0.709) 
+### Executable Files (version 0.710) 
 
 [smr\_Linux.zip](download/smr_Linux.zip)
 
@@ -96,7 +96,7 @@ R script and sample file for SMR locus plot:
 
 ### Update log 
 
-**28.**   Version 0.7091 (21 June, 2018): improved the allele frequency checking step of SMR (more flexible than the previous version). Note that we also updated the frequencies of the effect alleles in the McRae et al. mQTL data, GTEx eQTL data and Brain-mMeta mQTL data.
+**28.**   Version 0.710 (21 June, 2018): improved the allele frequency checking step of SMR (more flexible than the previous version). Note that we also updated the frequencies of the effect alleles in the McRae et al. mQTL data, GTEx eQTL data and Brain-mMeta mQTL data.
 
 **27.**   Version 0.709 (14 June, 2018): added a QC step to check the differences in allele frequency among eQTL, GWAS and LD reference data for the SMR analysis.
 
