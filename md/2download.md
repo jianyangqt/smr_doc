@@ -96,6 +96,8 @@ R script and sample file for SMR locus plot:
 
 ### Update log 
 
+**28.**  (21 June, 2018): updated the allele frequency of the effect allele in McRae et al. mQTL summary data, V7 release of the GTEx eQTL summary data and Brain-mMeta mQTL data.
+
 **27.**   Version 0.709 (14 June, 2018): added a QC step to check the differences in allele frequency among eQTL, GWAS and LD reference data for the SMR analysis.
 
 **26.**   Version 0.708 (31 May, 2018): added two flags --extract-target-snp-probe and --extract-snp-probe to extract specific SNP-probe pairs for the SMR analysis.
