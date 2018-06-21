@@ -83,7 +83,7 @@ smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --maf 0.01 --
 smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --diff-freq 0.1 --diff-freq-prop 0.05 --out mysmr  
 ```
 
-**\--diff-freq** reads a threshold for allele frequency QC. That is, the SNPs with allele frequency differences between any pairwise data sets (including the LD reference sample, the eQTL summary data and the GWAS summary data) large than the specified threshold will be excluded. The default value is 0.1.
+**\--diff-freq** reads a threshold for allele frequency QC. That is, the SNPs with allele frequency differences between any pairwise data sets (including the LD reference sample, the eQTL summary data and the GWAS summary data) large than the specified threshold will be excluded. The default value is 0.2.
 
 **\--diff-freq-prop** reads a value as the maximum proportion of SNPs that are allowed to have allele frequency differences. The analysis will stop (with an error massage) if the proportion of SNPs being excluded by --diff-freq is larger than the specified value here. The default value is 0.05.
 
