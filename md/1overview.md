@@ -42,6 +42,10 @@ Powell JE, Montgomery GW, Goddard ME, Wray NR, Visscher PM & Yang J (2016) Integ
 from GWAS and eQTL studies predicts complex trait gene targets. 
 [*Nature Genetics*, 48:481-487.](http://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3538.html)
 
-**Multi-SNP-based SMR method**
+**Multi-SNP-based SMR method and omic-data-based SMR analysis**
 
 Wu Y, Zeng J, Zhang F, Zhu Z, Qi T, Zheng Z, Lloyd-Jones LR, Marioni RE, Martin NG, Montgomery GW, Deary IJ, Wray NR, Visscher PM, McRae AF & Yang J (2018) Integrative analysis of omics summary data reveals putative mechanisms underlying complex traits. [*Nature Communications*, 9: 918.](https://www.nature.com/articles/s41467-018-03371-0)
+
+**MeCS method**
+
+Qi T, Wu Y, Zeng J, Zhang F, Xue A, Jiang L, Zhu Z, Kemper K, Yengo L, Zheng Z, eQTLGen Consortium, Marioni RE, Montgomery GW, Deary IJ, Wray NR, Visscher PM, McRae AF & Yang J (2018) Identifying gene targets for brain-related traits using transcriptomic and methylomic data from blood. [*Nature Communications, 9: 2282.](https://www.nature.com/articles/s41467-018-04558-1)
