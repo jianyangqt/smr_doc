@@ -48,4 +48,4 @@ Wu Y, Zeng J, Zhang F, Zhu Z, Qi T, Zheng Z, Lloyd-Jones LR, Marioni RE, Martin 
 
 **MeCS method**
 
-Qi T, Wu Y, Zeng J, Zhang F, Xue A, Jiang L, Zhu Z, Kemper K, Yengo L, Zheng Z, eQTLGen Consortium, Marioni RE, Montgomery GW, Deary IJ, Wray NR, Visscher PM, McRae AF & Yang J (2018) Identifying gene targets for brain-related traits using transcriptomic and methylomic data from blood. [*Nature Communications, 9: 2282.](https://www.nature.com/articles/s41467-018-04558-1)
+Qi T, Wu Y, Zeng J, Zhang F, Xue A, Jiang L, Zhu Z, Kemper K, Yengo L, Zheng Z, eQTLGen Consortium, Marioni RE, Montgomery GW, Deary IJ, Wray NR, Visscher PM, McRae AF & Yang J (2018) Identifying gene targets for brain-related traits using transcriptomic and methylomic data from blood. [*Nature Communications*, 9: 2282.](https://www.nature.com/articles/s41467-018-04558-1)
