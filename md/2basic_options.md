@@ -61,7 +61,7 @@ smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --heidi-mtd 0
 **\--heidi-mtd** specifies a method for HEIDI test. 0 for the
 original HEIDI test approach as in Zhu et al. ([2016 Nature
 Genetics](http://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3538.html)),
-and 1 for a new HEIDI test ( beta version for testing). The default
+and 1 for a new HEIDI test. The default
 value is 1. The new approach uses up to the top 20 SNPs in the
 cis-eQTL region (including the top cis-eQTL) for heterogeneity test
 because our latest simulation shows that the power of HEIDI test
