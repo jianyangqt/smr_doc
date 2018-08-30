@@ -1,6 +1,6 @@
 
 ## Download {: .expand}
-### Executable Files (version 0.710) 
+### Executable Files (version 0.711) 
 
 [smr\_Linux.zip](download/smr_Linux.zip)
 
@@ -19,6 +19,7 @@ R script and sample file for SMR locus plot:
 
 
 ### Update log 
+**29.**   Version 0.711 (30 August, 2018): Added flag --qtltoos-nominal-format and --qtltoos-permu-format to transform the eQTL summary statistics in QTLtools outformat to SMR BESD format.
 
 **28.**   Version 0.710 (21 June, 2018): improved the allele frequency checking step of SMR (more flexible than the previous version). Note that we also updated the frequencies of the effect alleles in the McRae et al. mQTL data, GTEx eQTL data and Brain-mMeta mQTL data.
 

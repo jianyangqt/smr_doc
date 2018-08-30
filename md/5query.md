@@ -73,7 +73,7 @@ To query based on a flanking region of a SNP
 smr --beqtl-summary myeqtl --query 5.0e-8 --snp rs123 --snp-wind 50 --out myquery 
 ```
 
-**\--snp-wind** defines a window centred on a specified SNP.
+**\--snp-wind** defines a window (in Kb unit) centred on a specified SNP.
 
 #### \# Command line options for probes
 
@@ -129,7 +129,7 @@ To query based on a flanking region of a probe
 smr --beqtl-summary myeqtl --query 5.0e-8 --probe cg123 --probe-wind 1000 --out myquery 
 ```
 
-**\--probe-wind** defines a window centred on a specified probe.
+**\--probe-wind** defines a window (in Kb unit) centred on a specified probe.
 
 To query based on a gene
 
