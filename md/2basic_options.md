@@ -16,6 +16,11 @@ binary format) from a reference sample for LD estimation, i.e. .bed,
 format follows that for GCTA-COJO analysis (
 <http://cnsgenomics.com/software/gcta/#COJO>).
 
+```
+smr --bld mybld --gwas-summary mygwas.ma --beqtl-summary myeqtl --out mysmr --thread-num 10 
+```
+**\--bld** reads LD information from a binary file in [BLD format](#BLDformat)
+
 ***mygwas.ma***
 ```
 SNP	A1	A2	freq	b	se	p	n

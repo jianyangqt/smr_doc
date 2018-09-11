@@ -465,6 +465,62 @@ smr --beqtl-summary myeqtl --extract-cis --make-besd --out mybesd
 ```
 **\--extract-cis** extracts the cis-eQTL summary data.
 
+### BLD format
+
+We store LD information in two separate files .esi (SNP information, similar as a PLINK .bim file) and .bld (a binary file to store LD correlations). 
+
+#### \# Make a BLD file from SNP genotype data.
+
+```
+smr --bfile mydata --make-bld --r --ld-wind 4000 --out mybld
+```
+**\--make-bld** saves the LD correlations between SNPs in binary format.
+
+**\--r** calculates the LD correlations.
+
+**\--ld-wind** specifies a window in Kb unit to select SNP pairs for the LD computation. The default value is 4000 Kb.
+
+
+To specify a chromosome for the LD computation
+```
+smr --bfile mydata --make-bld --r --ld-wind 4000 --chr 21 --out mybld
+```
+
+To specify a SNP as an anchor for the LD computation (computing the LD correlations between the anchor SNPs and other SNPs in a window)
+```
+smr --bfile mydata --make-bld --r --ld-wind 4000 --snp rs123 --out mybld
+```
+
+#### \# Query a BLD file.
+
+```
+smr --query --bld mybld --out myld
+```
+**\--bld** specifies a BLD file.
+
+To specify a chromosome to query the LD information
+```
+smr --query --bld mybld --chr 21 --out myld
+```
+
+To query the LD between a specified SNP and other SNPs in a window
+
+```
+smr --query --bld mybld --snp rs123 --out myld.ld
+```
+
+```
+smr --query --bld mybld --snp rs123 --ld-wind 2000 --out myld.ld
+```
+***myld.ld***
+```
+CHR_A	BP_A	SNP_A	CHR_B	BP_B	SNP_B	R
+21	13446559	rs36061596	21	14571990	rs2822531	-0.000768446
+21	13517135	rs2847443	21	14571990	rs2822531	0.00351777
+21	13523286	rs2775537	21	14571990	rs2822531	-0.0312363
+......
+```
+
 ### Remove technical eQTLs
 
 #### \# Remove technical eQTLs

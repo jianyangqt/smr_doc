@@ -1,6 +1,6 @@
 
 ## Download {: .expand}
-### Executable Files (version 0.711) 
+### Executable Files (version 0.712) 
 
 [smr\_Linux.zip](download/smr_Linux.zip)
 
@@ -9,7 +9,7 @@
 [smr\_Win.zip](download/smr_Win.zip)
 
 
-The executable files (binary code) are released under MIT lincense.
+The executable files (binary code) are released under MIT license.
 
 ### R script for SMR locus plot 
 
@@ -19,6 +19,8 @@ R script and sample file for SMR locus plot:
 
 
 ### Update log 
+**30.**   Version 0.712 (6 September, 2018): Added an option to make and query LD information in binary format (i.e. .bld, and .esi files) and an interface to read LD matrix (in BLD format) as the reference for the HEIDI test.
+
 **29.**   Version 0.711 (30 August, 2018): Added flags --qtltoos-nominal-format and --qtltoos-permu-format to transform eQTL summary statistics in QTLtools output format to SMR BESD format.
 
 **28.**   Version 0.710 (21 June, 2018): improved the allele frequency checking step of SMR (more flexible than the previous version). Note that we also updated the frequencies of the effect alleles in the McRae et al. mQTL data, GTEx eQTL data and Brain-mMeta mQTL data.
