@@ -1,6 +1,6 @@
 
 ## Download {: .expand}
-### Executable Files (version 0.712) 
+### Executable Files (version 1.0) 
 
 [smr\_Linux.zip](download/smr_Linux.zip)
 
@@ -11,6 +11,9 @@
 
 The executable files (binary code) are released under MIT license.
 
+### Source code Files (version 1.0) 
+[smr\_src.zip](download/smr_src.tar.gz)
+
 ### R script for SMR locus plot 
 
 R script and sample file for SMR locus plot:
@@ -19,6 +22,8 @@ R script and sample file for SMR locus plot:
 
 
 ### Update log 
+**31.**   Version 1.0 (15 January, 2019): 1) Formally released SMR version 1.0; 2) Added flags to query descriptive summary of  the cis-eQTL and trans-eQTL data.
+
 **30.**   Version 0.712 (6 September, 2018): Added an option to make and query LD information in binary format (i.e. .bld, and .esi files) and an interface to read LD matrix (in BLD format) as the reference for the HEIDI test.
 
 **29.**   Version 0.711 (30 August, 2018): Added flags --qtltoos-nominal-format and --qtltoos-permu-format to transform eQTL summary statistics in QTLtools output format to SMR BESD format.

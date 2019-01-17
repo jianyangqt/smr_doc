@@ -1,6 +1,6 @@
 ## SMR locus plot
 
-### Visualization of SMR results
+### SMR locus plot
 
 Here we provide an R script to plot SMR results as presented in Zhu et
 al. ([2016 Nature Genetics](http://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3538.html)).
@@ -79,4 +79,7 @@ SMREffectPlot(data=SMRData, trait_name="BMI")
 ```
 ![alt text](./download/smr.effect.size.png "effectsize")
 
+### Omics SMR  plot
+A web-based tool to generate [omics SMR plots](https://cnsgenomics.com/software/omicsplot) (see the example below).
 
+![alt text](./download/demo.gif "Omics")

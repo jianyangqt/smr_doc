@@ -175,3 +175,28 @@ gene2
 gene3
 ...
 ```
+### Descriptive summary of the  cis-eQTL data
+
+```
+smr  --descriptive-cis --beqtl-summary myeqtl --out mydescriptive 
+```
+**\--descriptive-cis** outputs the descriptive summary of the cis-eQTL data (including the number of probes, the boundaries of the each cis-region, the top cis-eQTL in each cis-eQTL region and the summary statistics of the top cis-eQTL) at p-value threshold (the default value is 5.0e-8; can be changed by --peqtl-cis). The size of the cis-region can be changed by --cis-wind (the default value is 2000Kb).
+
+
+```
+smr  --descriptive-cis --beqtl-summary myeqtl --cis-wind 2000 --out mydescriptive 
+```
+
+
+### Descriptive summary of the  trans-eQTL data
+
+```
+smr --descriptive-trans --beqtl-summary myeqtl --out mydescriptive 
+```
+**\--descriptive-trans**  outputs the descriptive summary of the trans-eQTL data at p-value threshold (the default value is 5.0e-8; can be changed by --peqtl-trans). The size of a trans-region can be changed by --trans-wind (the default value is 1000Kb). Note that the trans-eQTLs are defined those that are more than 5Mb away from the probe (this distance threshold can be changed by --cis-wind).
+
+
+```
+smr --descriptive-trans --beqtl-summary myeqtl --trans-wind 1000 --out mydescriptive 
+```
+
