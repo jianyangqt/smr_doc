@@ -1,0 +1,1349 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>SMR</title>
+    <link type="text/css" rel="stylesheet" href="./static/css/jquery.tocify.css">
+    <link type="text/css" rel="stylesheet" href="./static/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="./static/css/solarized-light.css">
+    <link type="text/css" rel="stylesheet" href="./static/css/main.css">
+    <script src="./static/js/jquery-1.12.4.min.js"></script>
+    <script src="./static/js/jquery-ui.min.js"></script>
+    <script src="./static/js/jquery.tocify.js"></script>
+    <script src="./static/js/hljs.js"></script>
+</head>
+<body>
+    <div class="page-header" id="PAGE-header" style="height:auto;padding:0">
+        <div class="container-fluid">
+            <p class="TOP_head">&nbsp;</p>
+            <div class="span5">
+                <h1>&nbsp;SMR</h1>
+                <p class="TOP_head">Summary-data-based Mendelian Randomization</p>
+            </div>
+            <div class="span7">
+                <ul class="nav nav-pills" style="margin:0">
+                    <li role="presentation"><a href="http://cnsgenomics.com/software/gcta/">GCTA</a></li>
+                    <li role="presentation" class="active"><a href="http://cnsgenomics.com/software/smr/">SMR</a></li>
+                    <li role="presentation"><a href="http://cnsgenomics.com/software/gsmr/">GSMR</a></li>
+                    <li role="presentation"><a href="http://cnsgenomics.com/software/osca/">OSCA</a></li>
+                    <li role="presentation"><a href="http://cnsgenomics.com/software/gctb/">GCTB</a></li>
+                    <li role="presentation"><a href="http://cnsgenomics.com/software.html">Program in PCTG</a></li>
+                    <li role="presentation"><a href="http://gcta.freeforums.net/">CTG forum</a></li>
+                </ul>
+            </div>
+       </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span3">
+                <div id="toc"></div>
+                <!--[if lt IE 9]>
+				<div style=" margin-top: 230px; position: fixed; width: 230px; background-color: yellow; z-index: 10000;">
+				<p>Due to our shortage of testing, the document can't view correctly under Internet Explorer <= 8.0. You may need update your browser, or downlad offline <a href="./static/gcta_doc_latest.pdf">PDF document</a>, <a href="./static/gcta_latest.zip">executable Files</a></p>
+				</div>
+				<![endif]-->
+            </div>
+            <div id="show" class="span9">
+                <p> Loading...</p>
+                <p> If it not work properly, you may need update your Internet browser and enable javascript</p>
+                <p> or downlad offline <a href="./download/SMR.pdf">PDF document</a>, <a href="./download/smr_Linux.zip">executable Files</a></p>
+            </div>
+            <div id="content" class="span9" style="display: none;"><body><h2 id="overviewexpand" class="expand">Overview </h2>
+<hr><h3 id="about">About</h3>
+<p>This software tool implements the SMR &amp; HEIDI methods to test for
+pleiotropic association between the expression level of a gene and a
+complex trait of interest using summary-level data from GWAS and
+expression quantitative trait loci (eQTL) studies <a href="http://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3538.html">(Zhu et al. 2016 Nature Genetics)</a>.
+The methodology can be interpreted as an analysis to test if the effect
+size of a SNP on the phenotype is mediated by gene expression. This tool
+can therefore be used to prioritize genes underlying GWAS hits for follow-up functional studies.</p>
+<hr><h3 id="credits">Credits</h3>
+<p><a href="http://researchers.uq.edu.au/researcher/12709">Futao Zhang</a> developed
+the software tool and webpages with supports from <a href="mailto:zhilizheng@outlook.com">Zhili Zheng</a>, 
+<a href="http://researchers.uq.edu.au/researcher/3051">Zhihong Zhu</a>, 
+<a href="http://researchers.uq.edu.au/researcher/15871">Ting Qi</a>,
+<a href="y.wu2@uq.edu.au">Yang Wu</a>, 
+and <a href="http://researchers.uq.edu.au/researcher/2713">Jian Yang</a>.</p>
+<p><a href="http://researchers.uq.edu.au/researcher/3051">Zhihong Zhu</a> 
+and <a href="http://researchers.uq.edu.au/researcher/2713">Jian Yang</a> 
+developed the SMR and HEIDI methods.</p>
+<p><a href="http://researchers.uq.edu.au/researcher/15871">Ting Qi</a> 
+and <a href="http://researchers.uq.edu.au/researcher/2713">Jian Yang</a> 
+developed the MeCS method.</p>
+<hr><h3 id="questionsandhelprequests">Questions and Help Requests</h3>
+<p>Bug reports or questions to Jian Yang (<a href="mailto:jian.yang@uq.edu.au">jian.yang@uq.edu.au</a>) at
+Institute for Molecular Bioscience, The University of Queensland.</p>
+<hr><h3 id="citations">Citations</h3>
+<p><strong>SMR &amp; HEIDI methods and software tool</strong></p>
+<p>Zhu Z, Zhang F, Hu H, Bakshi A, Robinson MR,
+Powell JE, Montgomery GW, Goddard ME, Wray NR, Visscher PM &amp; Yang J (2016) Integration of summary data
+from GWAS and eQTL studies predicts complex trait gene targets. 
+<a href="http://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3538.html"><em>Nature Genetics</em>, 48:481-487.</a></p>
+<p><strong>Multi-SNP-based SMR method and omic-data-based SMR analysis</strong></p>
+<p>Wu Y, Zeng J, Zhang F, Zhu Z, Qi T, Zheng Z, Lloyd-Jones LR, Marioni RE, Martin NG, Montgomery GW, Deary IJ, Wray NR, Visscher PM, McRae AF &amp; Yang J (2018) Integrative analysis of omics summary data reveals putative mechanisms underlying complex traits. <a href="https://www.nature.com/articles/s41467-018-03371-0"><em>Nature Communications</em>, 9: 918.</a></p>
+<p><strong>MeCS method</strong></p>
+<p>Qi T, Wu Y, Zeng J, Zhang F, Xue A, Jiang L, Zhu Z, Kemper K, Yengo L, Zheng Z, eQTLGen Consortium, Marioni RE, Montgomery GW, Deary IJ, Wray NR, Visscher PM, McRae AF &amp; Yang J (2018) Identifying gene targets for brain-related traits using transcriptomic and methylomic data from blood. <a href="https://www.nature.com/articles/s41467-018-04558-1"><em>Nature Communications</em>, 9: 2282.</a></p>
+<h2 id="smrheidianalysisexpand" class="expand">SMR &amp; HEIDI analysis </h2>
+<hr><h3 id="smr">SMR</h3>
+<h4 id="runsmrandheiditest"># run SMR and HEIDI test</h4>
+<pre><code>smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --out mysmr --thread-num 10 
+</code></pre>
+<p><strong><span class="kwd">--bfile</span></strong> reads individual-level SNP genotype data (in PLINK
+binary format) from a reference sample for LD estimation, i.e. .bed,
+.bim, and .fam files.</p>
+<p><strong><span class="kwd">--gwas-summary</span></strong> reads summary-level data from GWAS. The input
+format follows that for GCTA-COJO analysis (
+<a href="http://cnsgenomics.com/software/gcta/#COJO">http://cnsgenomics.com/software/gcta/#COJO</a>).</p>
+<pre><code>smr --bld mybld --gwas-summary mygwas.ma --beqtl-summary myeqtl --out mysmr --thread-num 10 
+</code></pre>
+<p><strong><span class="kwd">--bld</span></strong> reads LD information from a binary file in <a href="#BLDformat">BLD format</a></p>
+<p><strong><em>mygwas.ma</em></strong></p>
+<pre><code>SNP    A1  A2  freq    b   se  p   n
+rs1001    A   G   0.8493  0.0024  0.0055  0.6653  129850
+rs1002    C   G   0.03606 0.0034  0.0115  0.7659  129799
+rs1003    A   C   0.5128  0.045   0.038   0.2319  129830
+......
+</code></pre>
+<p>Columns are SNP, the coded allele (also called the effect allele or the reference allele), the other allele (also called the alternative allele), frequency of the effect allele, effect size, standard error, p-value and sample size. The headers are not keywords and will be omitted by the program. <font color="red">Important: “A1” needs to be the effect allele with “A2” being the other allele and “freq” needs to be the frequency of “A1”</font>. <strong>NOTE:1) For a case-control study, the effect size should be log(odds ratio) with its corresponding standard error. 2) We use the GCTA-COJO format here to be compatible with the GCTA software. Note that the column "n" will not be used in either SMR or HEIDI analysis and thus can be replaced by "NA" if not available.</strong> <font color="red"> <strong>3) The allele frequency information in column "freq" will be used in a QC step to remove SNPs with discrepant allele frequencies between data sets.</strong> </font></p>
+<p><strong><span class="kwd">--beqtl-summary</span></strong> reads summary-level data from a eQTL study in
+binary format. We store eQTL summary data in three separate files
+.esi (SNP information, in the same format as the PLINK .bim file),
+.epi (probe information) and .besd (eQTL summary statistics in
+binary format). See <a href="#DataManagement">Data Management</a> for more
+information. We have prepared the data from the Westra study (Westra
+et al. 2013 Nat Genet) in this format, which is available for
+download at <a href="#Download">Download</a>.</p>
+<p><strong><span class="kwd">--out</span></strong> saves the results from the SMR analysis in .smr file
+(text format).</p>
+<p><strong><em>mysmr.smr</em></strong></p>
+<pre><code>ProbeID    Probe_Chr   Gene    Probe_bp    SNP SNP_Chr SNP_bp  A1  A2  Freq    b_GWAS  se_GWAS p_GWAS  b_eQTL  se_eQTL p_eQTL  b_SMR   se_SMR  p_SMR   p_HEIDI nsnp_HEIDI
+prb01    1   Gene1   1001    rs01    1   1011    C   T   0.95    -0.024  0.0063  1.4e-04 0.36    0.048   6.4e-14 -0.0668 0.0197  6.8e-04 NA  NA
+prb02    1   Gene2   2001    rs02    1   2011    G   C   0.0747  0.0034  0.0062  5.8e-01 0.62    0.0396  2e-55   0.0055  0.01    5.8e-01 4.17e-01    28
+......
+</code></pre>
+<p>Columns are probe ID, probe chromosome, gene name, probe position, SNP name,SNP chromosome, SNP position, the effect (coded) allele, the other allele, frequency of the effect allele (estimated from the reference samples), effect size from GWAS, SE from GWAS, p-value from GWAS, effect size from eQTL study, SE from eQTL study, p-value from eQTL study, effect size from SMR, SE from SMR, p-value from SMR, p-value from HEIDI (HEterogeneity In Depedent Instruments) test, and number of SNPs used in the HEIDI test.</p>
+<p><strong>Missing Value</strong> is represented by "<font color="red">NA</font>".</p>
+<p><strong><span class="kwd">--thread-num</span></strong> specifies the number of OpenMP threads for
+parallel computing. The default value is 1.</p>
+<h4 id="specifyamethodforheiditest"># Specify a method for HEIDI test</h4>
+<pre><code>smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --heidi-mtd 0 --out mysmr 
+</code></pre>
+<p><strong><span class="kwd">--heidi-mtd</span></strong> specifies a method for HEIDI test. 0 for the
+original HEIDI test approach as in Zhu et al. (<a href="http://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3538.html">2016 Nature
+Genetics</a>),
+and 1 for a new HEIDI test. The default
+value is 1. The new approach uses up to the top 20 SNPs in the
+cis-eQTL region (including the top cis-eQTL) for heterogeneity test
+because our latest simulation shows that the power of HEIDI test
+increases initially but then decreases with increasing number of
+SNPs (m) with a peak at m = ~20.</p>
+<h4 id="filtersnpsbymafinthereferencesample"># Filter SNPs by MAF (in the reference sample)</h4>
+<pre><code>smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --maf 0.01 --out mysmr  
+</code></pre>
+<p><strong><span class="kwd">--maf</span></strong> removes SNPs based on a minor allele frequency (MAF)
+     threshold in the reference sample.</p>
+<h4 id="specifyathresholdtoremovesnpswithdiscrepantallelefrequenciesbetweendatasets"># Specify a threshold to remove SNPs with discrepant allele frequencies between data sets</h4>
+<pre><code>smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --diff-freq 0.1 --diff-freq-prop 0.05 --out mysmr  
+</code></pre>
+<p><strong><span class="kwd">--diff-freq</span></strong> reads a threshold for allele frequency QC. That is, the SNPs with allele frequency differences between any pairwise data sets (including the LD reference sample, the eQTL summary data and the GWAS summary data) large than the specified threshold will be excluded. The default value is 0.2.</p>
+<p><strong><span class="kwd">--diff-freq-prop</span></strong> reads a value as the maximum proportion of SNPs that are allowed to have allele frequency differences. The analysis will stop (with an error massage) if the proportion of SNPs being excluded by <span class="kwd">--diff-freq</span> is larger than the specified value here. The default value is 0.05.</p>
+<h4 id="includeorexcludeasubsetofindividuals"># Include or exclude a subset of individuals</h4>
+<pre><code>smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --keep myindi.list --out mysmr 
+</code></pre>
+<p><strong><span class="kwd">--keep</span></strong> includes a subset of individuals in the reference sample
+for analysis.</p>
+<p><strong><span class="kwd">--remove</span></strong> excludes a subset of individuals in the reference
+sample from the analysis.</p>
+<p><strong><em>myindi.list</em></strong></p>
+<pre><code> F001 S001
+ F002 S002
+ F003 S001
+ ... 
+</code></pre>
+<h4 id="includeorexcludeasubsetofeqtlsummarydata"># Include or exclude a subset of eQTL summary data</h4>
+<pre><code>smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --extract-snp mysnp.list --extract-probe myprobe.list --out mysmr 
+</code></pre>
+<p><strong><span class="kwd">--extract-snp</span></strong> extracts a subset of SNPs for analysis.</p>
+<p><strong><span class="kwd">--exclude-snp</span></strong> excludes a subset of SNPs from analysis.</p>
+<p><strong><em>mysnp.list</em></strong></p>
+<pre><code>rs1001
+rs1002
+rs1003
+...
+</code></pre>
+<p><strong><span class="kwd">--extract-probe</span></strong> extracts a subset of probes for analysis.</p>
+<p><strong><span class="kwd">--exclude-probe</span></strong> excludes a subset of probes from analysis.</p>
+<p><strong><em>myprobe.list</em></strong></p>
+<pre><code>probe1001
+probe1002
+probe1003
+...
+</code></pre>
+<h4 id="otherparameters"># Other parameters</h4>
+<pre><code>smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --peqtl-smr 5e-8 --ld-upper-limit 0.9 --ld-lower-limit 0.05 --peqtl-heidi 1.57e-3 --heidi-min-m 3 --heidi-max-m 20 --cis-wind 2000 --thread-num 5 --out mysmr   
+</code></pre>
+<p><strong><span class="kwd">--peqtl-smr</span></strong> p-value threshold to select the top associated eQTL
+for the SMR test. The default value is 5.0e-8. By default, we only
+run the SMR analysis in the cis regions. Please see below for the
+SMR analysis in trans regions.</p>
+<p><strong><span class="kwd">--peqtl-heidi</span></strong> threshold of eQTL p-value to select eQTLs for the
+HEIDI test. The default value is 1.57e-3, which is equivalent to a
+chi-squared value (df=1) of 10.</p>
+<p><strong><span class="kwd">--ld-upper-limit</span></strong> LD r-squared threshold used to prune SNPs (eQTLs) in the
+HEIDI test, i.e. removing SNPs in very strong LD with the top associated eQTL.
+The default value is 0.9.</p>
+<p><strong><span class="kwd">--ld-lower-limit</span></strong> LD r-squared threshold used to prune SNPs (eQTLs) in the
+HEIDI test, i.e. removing SNPs in low LD or not in LD with the top associated eQTL.
+The default value is 0.05.</p>
+<p><strong><span class="kwd">--heidi-min-m</span></strong> minimum requirement of the number of cis-SNPs used in
+the HEIDI test. We will skip the HEIDI test if the number of SNPs is
+smaller than the threshold. This is because if the number of SNPs is
+too small, HEIDI test has little power to detect heterogeneity and
+possibly generates misleading result. The default value is 3.</p>
+<p><strong><span class="kwd">--heidi-max-m</span></strong> maximum number of eQTLs used in
+the HEIDI test. If the number of cis-SNPs included in the HEIDI test after LD pruning is larger than m, then only the top m SNPs (ranked by eQTL p-value) will be used in the test. The default value is 20.</p>
+<p><strong><span class="kwd">--cis-wind</span></strong> defines a window centred around the probe to select
+cis-eQTLs (passing a p-value threshold) for the SMR analysis. The
+default value is 2000Kb.</p>
+<h4 id="specifyatargetsnpforthesmrandheiditests"># Specify a target SNP for the SMR and HEIDI tests</h4>
+<p>By default, we use the top cis-eQTL as a target in the SMR analysis,
+i.e. using the top cis-eQTL in the SMR test and then using the top
+cis-eQTL to test against the other cis-eQTLs in the region for
+heterogeneity in the HEIDI test. You can also specific the target by the
+following option. Note that this option will ignore p-value specified by
+the <span class="kwd">--peqtl-smr</span> option (<span class="kwd">--peqtl-heidi</span> still applies).</p>
+<pre><code>smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --target-snp rs12345 --out mysmr 
+</code></pre>
+<p><strong><span class="kwd">--target-snp</span></strong> specifies a SNP as the target for the SMR and
+HEIDI tests as described above.</p>
+<h4 id="specifyalistofsnpprobepairsforthesmrandheiditests"># Specify a list of SNP-probe pairs for the SMR and HEIDI tests</h4>
+<p>Here we provide two flags to run a batch of SMR analyses based on a user-specified list of SNP-probe pairs. For each probe, the program will only read the data of SNPs within +/- 2000Kb (can be changed by the <span class="kwd">--smr-wind</span> flag) of the specified SNP. Note that the SNP can be distant from the corresponding probe.</p>
+<pre><code>smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --extract-snp-probe snp_probe.list --out mysmr 
+</code></pre>
+<p><strong><span class="kwd">--extract-snp-probe</span></strong> specifies a SNP-probe list (see the format below).</p>
+<pre><code>smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --extract-target-snp-probe snp_probe.list --out mysmr 
+</code></pre>
+<p><strong><span class="kwd">--extract-target-snp-probe</span></strong> specifies a SNP-probe list and forces the specified SNP (not necessarily being the top associated SNP) as the target SNP for the SMR and HEIDI tests.</p>
+<p><strong><em>snp_probe.list</em></strong></p>
+<pre><code>rs1001  probe1001
+rs1002  probe1002
+rs1002  probe1003
+...
+</code></pre>
+<h4 id="turnofftheheiditest"># Turn off the HEIDI test</h4>
+<pre><code>smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --heidi-off --out mysmr 
+</code></pre>
+<p><strong><span class="kwd">--heidi-off</span></strong> turns off the HEIDI test.</p>
+<hr><h3 id="smrandheiditestsintransregions">SMR and HEIDI tests in trans regions</h3>
+<p>The trans-eQTLs are defined as the eQTLs that are more than 5Mb away
+from the probe.</p>
+<pre><code>smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --out mytrans --trans --trans-wind 1000 
+</code></pre>
+<p><strong><span class="kwd">--trans</span></strong> turns on SMR and HEIDI tests in trans regions.</p>
+<p><strong><span class="kwd">--trans-wind</span></strong> defines the size of a window on either side of the top associated
+trans-eQTL to select SNPs (passing a p-value threshold) for the SMR
+and HEIDI test. The default value is 1000 Kb (i.e. a whole region of 2000 Kb).</p>
+<p><strong><em>mytrans.smr</em></strong></p>
+<pre><code>ProbeID    Probe_Chr   Gene    Probe_bp    trans_chr   trans_leftBound trans_rightBound    SNP SNP_Chr SNP_bp  A1  A2  Freq    b_GWAS  se_GWAS p_GWAS  b_eQTL  se_eQTL p_eQTL  b_SMR   se_SMR  p_SMR   p_HEIDI nsnp_HEIDI
+prb01    1   Gene1   1001    16  5349752 7350902 rs01    16  6349942 C   T   0.131   0.0021  0.0152  8.8e-01 -0.214  0.038   3.26e-08    -0.0098 0.071   8.9e-01 1.73e-1 19
+prb01    1   Gene1   1001    21  6443018 8459725 rs02    21  7460164 G   C   0.0747  0.0034  0.0062  5.8e-01 0.62    0.0396  2e-55   0.0055  0.01    5.8e-01 4.17e-01    8
+......                    
+</code></pre>
+<p>Columns are probe ID, probe chromosome, gene name, probe position,
+tans-eQTL chromosome, left boundary of the trans-region, right boundary
+of the trans-region, SNP name, SNP chromosome, SNP position, the effect
+(coded) allele, the other allele, frequency of the effect allele
+(estimated from the reference samples), effect size from GWAS, SE from
+GWAS, p-value from GWAS, effect size from eQTL study, SE from eQTL
+study, p-value from eQTL study, effect size from SMR, SE from SMR,
+p-value from SMR, p-value from HEIDI test, and number of SNPs used in
+the HEIDI test.</p>
+<hr><h3 id="multisnpbasedsmrtest">Multi-SNP-based SMR test</h3>
+<p>Below shows an option to combine the information from all the SNPs in a
+region that pass a p-value threshold (the default value is 5.0e-8 which
+can be modified by the flag <strong><span class="kwd">--peqtl-smr</span></strong>) to conduct a multi-SNP-based SMR
+analysis (<a href="https://www.nature.com/articles/s41467-018-03371-0">Wu et al. 2018 Nature Communications</a>).</p>
+<p>The SNPs are pruned for LD using a weighted vertex coverage algorithm
+with a LD r2 threshold (the default value is 0.9 which can be modified
+by the flag <strong><span class="kwd">--ld-pruning</span></strong>) and eQTL p-value as the weight.</p>
+<pre><code>smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --out mymulti --smr-multi 
+</code></pre>
+<p><strong><span class="kwd">--smr-multi</span></strong> turns on set-based SMR test in the cis-region.</p>
+<pre><code>smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --out mymulti --smr-multi --set-wind 500 
+</code></pre>
+<p><strong><span class="kwd">--set-wind</span></strong> defines a window width (Kb) centred around the top
+associated cis-eQTL to select SNPs in the cis-region. The default
+value is -9 resulting in selecting SNPs in the whole cis-region if
+this option is not specified.</p>
+<pre><code>smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --out mymulti --smr-multi  --ld-multi-snp 0.1 
+</code></pre>
+<p><strong><span class="kwd">--ld-multi-snp</span></strong> LD r-squared threshold used to prune SNPs (eQTLs) in the Multi-SNP based SMR test. The default value is 0.1.</p>
+<hr><h3 id="smranalysisoftwomoleculartraits">SMR analysis of two molecular traits</h3>
+<p>Here we provide an option to test the pleotropic association between two
+molecular traits using summary data. Take the analysis of DNA
+methylation and gene expression data as an example. In this case, we
+will need mQTL and eQTL summary data in BESD format. The current version of the program focuses only on the analysis 
+in the cis-region, i.e. only testing for associations between genes and DNA methylation sites that are in less than 2 Mb distance.</p>
+<pre><code>smr --bfile mydata --beqtl-summary myexposure --beqtl-summary myoutcome  --out myomics
+</code></pre>
+<p><strong><span class="kwd">--beqtl-summary</span></strong> the first one reads mQTL summary data as the
+exposure. The second one reads eQTL summary data from as the
+outcome.</p>
+<pre><code>smr --bfile mydata --beqtl-summary myexposure --beqtl-summary myoutcome --extract-exposure-probe myeprobein.list --out myomics
+</code></pre>
+<p><strong><span class="kwd">--extract-exposure-probe</span></strong> extracts a subset of exposure probes
+for analysis.</p>
+<p><strong><span class="kwd">--extract-outcome-probe</span></strong> extracts a subset of outcome probes for
+analysis.</p>
+<p><strong><span class="kwd">--exclude-exposure-probe</span></strong> excludes a subset of exposure probes
+from analysis.</p>
+<p><strong><span class="kwd">--exclude-outcome-probe</span></strong> excludes a subset of outcome probes
+from analysis.</p>
+<pre><code>smr --bfile mydata --beqtl-summary myexposure --beqtl-summary myoutcome --extract-single-exposure-probe eprobe1 --extract-single-outcome-probe oprobe1 --out myomics
+</code></pre>
+<p><strong><span class="kwd">--extract-single-exposure-probe</span></strong> extracts a single exposure
+probe for analysis.</p>
+<p><strong><span class="kwd">--extract-single-outcome-probe</span></strong> extracts a single outcome probe
+for analysis.</p>
+<pre><code>smr --bfile mydata --beqtl-summary myexposure --beqtl-summary myoutcome --exclude-single-exposure-probe eprobe1 --exclude-single-outcome-probe oprobe1 --out myomics
+</code></pre>
+<p><strong><span class="kwd">--exclude-single-outcome-probe</span></strong> excludes a single outcome probe
+from analysis.</p>
+<p><strong><span class="kwd">--exclude-single-exposure-probe</span></strong> excludes a single exposure
+probe from analysis.</p>
+<h2 id="datamanagementexpand" class="expand">Data Management </h2>
+<p>eQTL summary data are usually generated from association tools such as
+PLINK and stored in separate files in text format (usually one file for
+each probe) with a very large file size in total. Here we provide an
+efficient way to store the eQTL summary data in binary format (BESD),
+with flexible options to query the data for any subset of SNPs and/or
+probes (see <a href="#QueryeQTLResults">Query eQTL Results</a>). We further provide
+a sparse version of the BESD format (used as default), which is
+extremely storage-efficient without losing too much information. The
+basic idea is that we store summary data of all SNPs within 2Mb of a
+probe in either direction, all SNPs within 1Mb of any trans-eQTL in
+either direction, and all SNPs with p &lt; 1e-5 in the rest of the genome
+(note that all these parameters can be specified by users). We also
+provide several options to import data in various of formats (e.g.
+PLINK, GEMMA, BOLT-LMM and other text formats).</p>
+<hr><h3 id="besdformat">BESD format</h3>
+<h4 id="besdformatanefficientformattostoreeqtlsummarydata"># BESD format: an efficient format to store eQTL summary data</h4>
+<p>We store eQTL summary data in three separate files .esi (SNP
+information, similar as a PLINK .bim file), .epi (probe information) and
+.besd (a binary file to store the summary statistics).</p>
+<p><strong><em>myeqtl.esi</em></strong></p>
+<pre><code>1    rs1001  0   744055  A   G   0.23
+1    rs1002  0   765522  C   G   0.06
+1    rs1003  0   995669  T   C   0.11
+......
+</code></pre>
+<p>Columns are chromosome, SNP, genetic distance (can be any arbitary value
+since it will not be used in the SMR analysis), basepair position, the
+effect (coded) allele, the other allele and frequency of the effect
+allele.</p>
+<p><strong><em>myeqtl.epi</em></strong></p>
+<pre><code>1    probe1001   0   924243  Gene01  +
+1    probe1002   0   939564  Gene02  -
+1    probe1003   0   1130681 Gene03  -
+......
+</code></pre>
+<p>Columns are chromosome, probe ID(can be the ID of an exon or a
+transcript for RNA-seq data), genetic distance (can be any arbitary
+value), physical position, gene ID and gene orientation (this
+information will only be used for graphic presentation, please see <a href="#SMRlocusplot">[SMR plot]</a>).</p>
+<p><strong><em>myeqtl.besd</em></strong></p>
+<p>eQTL summary-level statistics (effect size and SE) in binary format.
+<font color="red">Please do not try to open this file with a text editor</font>.</p>
+<p>Given the large numbers of SNPs and probes, the size of a .besd file
+will still be very large. Since the eQTL association signals are highly
+enriched in the cis-region and often there are not many trans-eQTLs, we
+could reduce the size of the .besd file by orders of magnitude if we
+only store the data for SNPs within 2Mb of a probe in either direction,
+SNPs within 1Mb of any trans-eQTL in either direction, and SNPs with p &lt; 1e-5 
+in the rest of the genome (see below for options to change these
+paramters). We call this the sparse BESD format.</p>
+<p>We only store effect size (b) and SE in the BESD file, and re-calculate
+p-value for analysis when necessary, assuming b / SE follows a standard
+normal distribution, i.e. N(0, 1). Strictly speaking, b / SE follows a
+t-distribution which is approximately N(0, 1) if sample size is large.
+For data sets with small sample sizes (e.g. GTEx), this might lead to a bias
+in p-value. In this scenario, we recommend users to compute z* based on the original p-value from
+a standard normal distribution, and adjust the standard error as SE = b
+/ z*. This adjustment guarantees that the re-computed p-value from b
+and SE being exact the same as the original p-value.</p>
+<p>See <a href="#MakeaBESDfile">below</a> for options to make a BESD file from data in several different
+formats.</p>
+<hr><h3 id="makeabesdfile">Make a BESD file</h3>
+<p>We provide eight different ways of converting cis-eQTL data in other formats to BESD format.</p>
+<h4 id="1makeabesdfilefromeqtlsummarydatainesdformat">1. Make a BESD file from eQTL summary data in ESD format</h4>
+<p>To compile data in sparse BESD format</p>
+<pre><code>smr --eqtl-flist my.flist --make-besd --out mybesd 
+</code></pre>
+<p><strong><span class="kwd">--eqtl-flist</span></strong> reads a file to get probe information and file
+paths of the eQTL summary data.</p>
+<p><strong><span class="kwd">--make-besd</span></strong> saves summary data in BESD format. By default, the
+data will be stored in sparse BESD format (See below for the option
+<strong><span class="kwd">--make-besd-dense</span></strong> to store the data in dense BESD format). By
+default, the data will be stored in sparse BESD format if the
+sparsity given the parameters (by default, ±2Mb of the cis-region,
+±1Mb of any trans-eQTL and all SNP at p &lt; 1e-5) is lower than 0.4. It
+will also output a text file (.summary) to summarise the genomic
+regions stored in the .besd file (sparse format) for each probe.</p>
+<p><strong><em>my.flist</em></strong></p>
+<pre><code>Chr    ProbeID GeneticDistance ProbeBp Gene    Orientation PathOfEsd
+9    cg00000658  0   139997924   MAN1B1  -   path/my01.esd
+20    cg26036652  0   33735834    NA  NA  path/my02.esd
+1    cg00489772  0   3775078 NA  NA  path/my03.esd
+......
+</code></pre>
+<p>This is a text file <strong>with headers</strong>. The first 6 columns are the same as in .epi. The last column is the full path of an eQTL summary data file (.esd file, see below for the format of a .esd file). </p>
+<p><strong><em>my01.esd</em></strong></p>
+<pre><code>Chr    SNP Bp  A1  A2  Freq    Beta    se  p
+9    rs12349815  150048  T   A   0.968   0.019   0.016   0.2434
+20    rs141129176 62955484    G   A   0.89    0.012   0.009   0.2156
+......
+</code></pre>
+<p>This is a text file <strong>with headers</strong>. Columns are chromosome, SNP, the
+effect (coded) allele, the other allele, basepair position, frequency of
+the effect allele, effect size, standard error and p-value.</p>
+<p><strong>HINT</strong> : if the SNPs in all of the .esd files are identical, the
+efficiency of the analysis can be largely improved by adding the
+<span class="kwd">--geno-uni</span> option. This option call be used in all the commands of this
+section.</p>
+<pre><code>smr --eqtl-flist my.flist --make-besd --geno-uni --out mybesd 
+</code></pre>
+<p><strong><span class="kwd">--geno-uni</span></strong> indicates all the input .esd files are identical.</p>
+<p>To compile eQTL summary data in sparse BESD format with user-specified
+parameters</p>
+<pre><code>smr --eqtl-flist my.flist --make-besd  --cis-wind 2000 --trans-wind 1000 --peqtl-trans 5.0e-8 --peqtl-other 1.0e-5 --out mybesd 
+</code></pre>
+<p><strong><span class="kwd">--cis-wind</span></strong> specifies a window (in Kb unit) to store all the
+SNPs within the window of the probe in either direction. The default
+value is 2000Kb.</p>
+<p><strong><span class="kwd">--trans-wind</span></strong> specifies a window (in Kb unit) to store all the
+SNPs in a trans-region. If there is a trans-eQTL with p-value &lt; the
+specified threshold (<span class="kwd">--peqtl-trans</span>), it will store all the SNPs
+within the window of the top associated trans-eQTL in either
+direction. The default value is 1000Kb.</p>
+<p><strong><span class="kwd">--peqtl-trans</span></strong> p-value threshold for trans-eQTLs. The default
+value is 5.0e-8.</p>
+<p><strong><span class="kwd">--peqtl-other</span></strong> Apart from the cis and trans regions, it will
+also store all SNPs with eQTL p-values &lt; this threshold. The
+default value is 1.0e-5 .</p>
+<p>To compile the eQTL summary data in dense BESD format</p>
+<pre><code>smr --eqtl-flist my.flist --make-besd-dense --out mybesd 
+</code></pre>
+<p><strong><span class="kwd">--make-besd-dense</span></strong> saves summary data of all SNPs for all probes.</p>
+<p><strong>WARNING</strong> : This will generate a huge file.</p>
+<p><strong>NOTE</strong> : the <strong><span class="kwd">--make-besd-dense</span></strong> option can be used in all the commands above and below.</p>
+<h4 id="2makeabesdfilefrommatrixeqtloutput">2. Make a BESD file from Matrix eQTL output</h4>
+<pre><code>smr --eqtl-summary mateQTL.txt --matrix-eqtl-format --make-besd --out mybesd 
+</code></pre>
+<p><strong><span class="kwd">--eqtl-summary</span></strong> reads eQTL summary statistics in text format or compressed text format (e.g. *.tar.gz file).</p>
+<p><strong><span class="kwd">--matrix-eqtl-format</span></strong> indicates eQTL summary data in Matrix eQTL output format.</p>
+<p><strong><em>mateQTL.txt</em></strong></p>
+<pre><code>SNP    gene    beta    t-stat  p-value FDR
+rs13258200    ENSG00000071894.10  -1.00783189089702   -16.641554315712    2.3556801409867e-24 1.12905157909337e-18
+rs6599528    ENSG00000071894.10  -1.06253739134798   -15.8412867110849   2.73027622294589e-23    5.51886367106636e-18
+rs2272666    ENSG00000071894.10  -1.04810713295621   -15.6736668186937   4.6058755123246e-23 5.51886367106636e-18
+rs4313195    ENSG00000071894.10  -1.04810713295621   -15.6736668186937   4.6058755123246e-23 5.51886367106636e-18
+rs2280836    ENSG00000071894.10  -1.00773805984667   -15.2332537951202   1.84980830591084e-22    1.77318554626341e-17
+...
+</code></pre>
+<p>This file has headers. The six columns are SNP, gene, beta (i.e. SNP effect on gene expression), t-statistic, p-value and q-value
+(<a href="http://www.bios.unc.edu/research/genomic_software/Matrix_eQTL/">[http://www.bios.unc.edu/research/genomic_software/Matrix_eQTL/]</a>).</p>
+<p><strong>NOTE</strong> : 1) The program is able to read *.tar.gz file. 2) The SNP and probe information in the SMR eQTL output files (.esi and .epi) converted from Matrix eQTL output are not complete and need to be updated using the options in <a href="#UpdateaBESDfile">Update a BESD file</a>.</p>
+<h4 id="3makeabesdfilefromfastqtloutput">3. Make a BESD file from FastQTL output</h4>
+<pre><code>smr --eqtl-summary fastqtlnomi.txt --fastqtl-nominal-format --make-besd --out mybesd 
+</code></pre>
+<p><strong><span class="kwd">--fastqtl-nominal-format</span></strong> indicates eQTL summary data in FastQTL "nominal pass" output format.</p>
+<p><strong><em>fastqtlnomi.txt</em></strong></p>
+<pre><code>ENSG00000237438.1 indel:4D_22_16518157 -999303 0.542909 -0.0510761
+ENSG00000237438.1 snp_22_16519289 -998171 0.432764 0.124424
+ENSG00000237438.1 snp_22_16520141 -997319 0.0945196 -0.251906
+ENSG00000237438.1 snp_22_16520948 -996512 0.102846 -0.274157
+ENSG00000237438.1 snp_22_16523696 -993764 0.0676318 -0.324492
+ENSG00000237438.1 snp_22_16523730 -993730 0.0674215 -0.206578
+...
+</code></pre>
+<p>This file has <strong>no header</strong>. the five columns are gene, SNP, distance in bp between the SNP and the gene, p-value and beta (i.e. SNP effect on gene expression) 
+(<a href="http://fastqtl.sourceforge.net/pages/cis_nominal.html">[http://fastqtl.sourceforge.net/pages/cis_nominal.html]</a>).</p>
+<p><strong>NOTE</strong> : 1) The FastQTL output file should be generated by a FastQTL version higher than v2.184. 2) The program is able to read *.tar.gz file. 3) The SNP and probe information in the SMR output files (.esi and .epi) converted from FastQTL output are not complete and need to be updated using the options in <a href="#UpdateaBESDfile">Update a BESD file</a>.</p>
+<h4 id="4makeabesdfilefromeqtlsummarydatainplinkqassocoutputformat">4. Make a BESD file from eQTL summary data in PLINK-qassoc output format</h4>
+<p>The output file from a PLINK <span class="kwd">--assoc</span> analysis does not contain allele
+information. We therefore need to read the alleles from a PLINK .bim
+file. The file path of the PLINK .bim file needs to be added as the last
+column of the .flist file (see the example below).</p>
+<pre><code>smr --eqtl-flist my.flist  --plink-qassoc-format --make-besd --out mybesd 
+</code></pre>
+<p><strong><span class="kwd">--plink-qassoc-format</span></strong> reads eQTL summary data in PLINK-qassoc output format (output file from a PLINK <span class="kwd">--assoc</span> analysis for a quantitative trait).</p>
+<p><strong><em>my.flist</em></strong></p>
+<pre><code>Chr    ProbeID GeneticDistance ProbeBp Gene    Orientation PathOfEsd   PathOfBim
+9    cg00000658  0   139997924   MAN1B1  -   path_assoc/my01.qassoc  path_genotype/chr9
+20    cg26036652  0   33735834    NA  NA  path_assoc/my02.qassoc  path_genotype/chr20
+1    cg00489772  0   3775078 NA  NA  path_assoc/my03.qassoc  path_genotype/chr19
+......    
+</code></pre>
+<p><strong>NOTE</strong> : The program is able to read *.tar.gz file, e.g.
+path_assoc/my03.qassoc.tar.gz</p>
+<h4 id="5makeabesdfilefromeqtlsummarydataingemmaoutputformat">5. Make a BESD file from eQTL summary data in GEMMA output format</h4>
+<pre><code>smr --eqtl-flist my.flist --gemma-format --make-besd --out mybesd 
+</code></pre>
+<p><strong><span class="kwd">--gemma-format</span></strong> reads eQTL summary data in GEMMA association output format</p>
+<pre><code>chr    rs  ps  n_miss  allel1  allel0  af  beta    se  l_remle p_wald
+1    rs3683945   3197400 0   A   G   0.443   -7.788665e-02   6.193502e-02    4.317993e+00    2.087616e-01
+1    rs3707673   3407393 0   G   A   0.443   -6.654282e-02   6.210234e-02    4.316144e+00    2.841271e-01
+1    rs6269442   3492195 0   A   G   0.365   -5.344241e-02   5.377464e-02    4.323611e+00    3.204804e-01
+......    
+</code></pre>
+<p>The 11 columns are: chromosome, SNP ID, basepair position, number of
+missing values for a given SNP, the effect (coded) allele, the other
+allele, frequency of the effect allele, effect size, standard error,
+lambda and p-value
+(<a href="http://www.xzlab.org/software.html">[http://www.xzlab.org/software.html]</a>).</p>
+<h4 id="6makeabesdfilefromeqtlsummarydatainboltlmmoutputformat">6. Make a BESD file from eQTL summary data in BOLT-LMM output format</h4>
+<pre><code>smr --eqtl-flist my.flist  --bolt-assoc-format --make-besd --out mybesd 
+</code></pre>
+<p><strong><span class="kwd">--bolt-assoc-format</span></strong> reads eQTL summary data in BOLT_LMM output
+format</p>
+<pre><code>SNP    CHR BP  GENPOS  ALLELE1 ALLELE0 A1FREQ  F_MISS  BETA    SE  P_BOLT_LMM_INF  P_BOLT_LMM
+rs58108140    1   10583   0.000000    A   G   0.109810    0.011935    0.074942    0.045043    9.6E-02 9.7E-02
+rs180734498    1   13302   0.000000    T   C   0.061042    0.007595    0.084552    0.058078    1.5E-01 1.4E-01
+rs151118460    1   91581   0.000000    A   G   0.399377    0.013382    0.024344    0.034394    4.8E-01 4.8E-01
+......
+</code></pre>
+<p>The 12 columns are: SNP ID, chromosome, basepair position, genetic
+position, the effect (coded) allele, the other allele, frequency of the
+effect allele, fraction of individuals with missing genotype at the SNP,
+effect size, standard error, infinitesimal model (mixture model)
+association test p-value, and non-infinitesimal model association test
+p-value
+(<a href="https://data.broadinstitute.org/alkesgroup/BOLT-LMM/#x1-440008.1">[https://data.broadinstitute.org/alkesgroup/BOLT-LMM/#x1-440008.1]</a>).</p>
+<h4 id="7makeabesdfilefromsmrqueryoutput">7. Make a BESD file from SMR query output</h4>
+<pre><code>smr --qfile myquery.txt --make-besd --out mybesd 
+</code></pre>
+<p><strong><span class="kwd">--qfile</span></strong> reads eQTL summary data in SMR query output format (see
+<a href="#QueryeQTLResults">Query eQTL Results for the format of a query output
+file</a>).</p>
+<h4 id="8makeabesdfilefrombesdfiles">8. Make a BESD file from BESD file(s)</h4>
+<p>To make a sparse BESD file from a single dense BESD file</p>
+<pre><code>smr --beqtl-summary my_beqtl --make-besd --out my_sparse 
+</code></pre>
+<pre><code>smr --beqtl-summary my_beqtl --cis-wind 2000 --trans-wind 1000 --peqtl-trans 5.0e-8 --peqtl-other 1.0e-5 --make-besd --out my_sparse
+</code></pre>
+<p>To make a sparse BESD file from multiple sparse or dense BESD files (can
+be a mixture of both types)</p>
+<pre><code>smr --besd-flist my_file.list --make-besd --out my_sparse  
+</code></pre>
+<p><strong><span class="kwd">--besd-flist</span></strong> reads a file to get the full paths of the BESD
+files.</p>
+<p><strong><em>my_file.list</em></strong></p>
+<pre><code>path1/my_besd1
+path2/my_besd2
+path3/my_besd3
+...
+</code></pre>
+<p><strong>NOTE</strong> : this command can be used to merge multiple BESD files.</p>
+<p><strong>HINT</strong> : if the SNPs in all the .esi files are identical, you can speed up
+the analysis using the <strong><span class="kwd">--geno-uni</span></strong> option.</p>
+<h4 id="9makeabesdfilefromqtltoolsoutput">9. Make a BESD file from QTLtools output</h4>
+<pre><code>smr --eqtl-summary qtltoolsnomi.txt --qtltools-nominal-format --make-besd --out mybesd 
+</code></pre>
+<p><strong><span class="kwd">--qtltools-nominal-format</span></strong> indicates eQTL summary data in QTLtools "nominal pass" output format.</p>
+<p><strong><em>qtltoolsnomi.txt</em></strong></p>
+<pre><code>ENSG00000237438.2 chr22 17517460 17517460 + 5803 -165953 rs5748687 chr22 17351507 17351507 0.00227542 -0.225077 0
+ENSG00000237438.2 chr22 17517460 17517460 + 5803 -165363 rs4006343 chr22 17352097 17352097 0.0022876 -0.226253 0
+ENSG00000237438.2 chr22 17517460 17517460 + 5803 -164231 rs3875996 chr22 17353229 17353229 0.00181073 -0.233649 0
+ENSG00000099954.14 chr22 17840837 17840837 + 6200 469530 rs5992121 chr22 18310367 18310367 0.00653855 -0.00519037 0
+ENSG00000099954.14 chr22 17840837 17840837 + 6200 473554 rs367922 chr22 18314391 18314391 0.00125305 -0.00612444 0
+ENSG00000099954.14 chr22 17840837 17840837 + 6200 476586 rs11705197 chr22 18317423 18317423 0.00961104 -0.00498535 0
+...
+</code></pre>
+<p>This file has <strong>no header</strong>. the 14 columns are The columns are: 1. The phenotype ID 2. The chromosome ID of the phenotype 3. The start position of the phenotype 4. The end position of the phenotype 5. The strand orientation of the phenotype 6. The total number of variants tested in cis 7. The distance between the phenotype and the tested variant (accounting for strand orientation) 8. The ID of the tested variant 9. The chromosome ID of the variant 10. The start position of the variant 11. The end position of the variant 12. The nominal P-value of association between the variant and the phenotype 13. The corresponding regression slope 14. A binary flag equal to 1 is the variant is the top variant in cis. 
+(<a href="https://qtltools.github.io/qtltools/pages/mode_cis_nominal.html">[https://qtltools.github.io/qtltools/pages/mode<em>cis</em>nominal.html]</a>).</p>
+<pre><code>smr --eqtl-summary qtltoolspermu.txt --qtltools-permu-format --make-besd --out mybesd 
+</code></pre>
+<p><strong><span class="kwd">--qtltools-permu-format</span></strong> indicates eQTL summary data in QTLtools "permutaion pass" output format.</p>
+<p><strong><em>qtltoolspermu.txt</em></strong></p>
+<pre><code>ENSG00000273442.1 chr22 17561591 17561591 + 5911 -8065 rs73149812 chr22 17553526 17553526 356 308.754 1.08518 661.618 0.000244522 0.134045 0.318681 0.304744
+ENSG00000177663.9 chr22 17565844 17565844 + 5919 -52141 rs2908526 chr22 17513703 17513703 356 333.628 0.998034 982.885 8.03358e-14 -0.209617 0.000999001 4.92276e-10
+ENSG00000183307.3 chr22 17602257 17602257 - 5967 14282 rs6518661 chr22 17587975 17587975 356 335.297 0.983505 921.283 1.56789e-07 -0.00776053 0.000999001 0.00038022
+ENSG00000069998.8 chr22 17646177 17646177 - 6044 3400 rs71200232 chr22 17642776 17642777 356 332.081 1.03052 958.093 8.87771e-17 -1.49798 0.000999001 3.8205e-13
+ENSG00000093072.11 chr22 17702879 17702879 - 6048 3249 rs5747027 chr22 17699630 17699630 356 287.216 1.02518 511.292 0.000578649 0.640374 0.628372 0.629492
+...
+</code></pre>
+<p>This file has <strong>no header</strong>. the 19 columns are The columns are: 1. The phenotype ID 2. The chromosome ID of the phenotype 3. The start position of the phenotype 4. The end position of the phenotype 5. The strand orientation of the phenotype 6. The total number of variants tested in cis 7. The distance between the phenotype and the tested variant (accounting for strand orientation) 8. The ID of the top variant 9. The chromosome ID of the top variant 10. The start position of the top variant 11. The end position of the top variant 12. The number of degrees of freedom used to compute the P-values 13. Dummy 14. The first parameter value of the fitted beta distribution 15. The second parameter value of the fitted beta distribution (it also gives the effective number of independent tests in the region) 16. The nominal P-value of association between the phenotype and the top variant in cis 17. The corresponding regression slope 18. The P-value of association adjusted for the number of variants tested in cis given by the direct method (i.e. empirircal P-value) 19. The P-value of association adjusted for the number of variants tested in cis given by the fitted beta distribution. We strongly recommend to use this adjusted P-value in any downstream analysis
+(<a href="https://qtltools.github.io/qtltools/pages/mode_cis_permutation.html">[https://qtltools.github.io/qtltools/pages/mode<em>cis</em>permutation.html]</a>).</p>
+<p><strong>NOTE</strong> : 1) The program is able to read *.tar.gz file. 2) The SNP and probe information in the SMR eQTL output files (.esi and .epi) converted from QTLtools output are not complete and need to be updated using the options in <a href="#UpdateaBESDfile">Update a BESD file</a>.</p>
+<hr><h3 id="updateabesdfile">Update a BESD file</h3>
+<p>Some of the information such as SNP chromosome, SNP position, the effect allele, the other allele, probe chromosome and probe position might be missing in the output files generated by some of the eQTL analysis tools (e.g.  Matrix eQTL and FastQTL). These information are necessary for the SMR analysis and some of the data management operations in the SMR tool, and thus need to be updated in the .esi or .epi file.</p>
+<p>Users can update the .esi file and .epi file manually, but please be aware of not changing the order of SNPs in the .esi file or probes in the .epi file because they are associated with the information in the .besd file. We also provide the options below to update the information in the .esi  and .epi files.</p>
+<h4 id="updatetheesiorepifiles"># Update the .esi or .epi files</h4>
+<pre><code>smr --beqtl-summary my_beqtl --update-esi mybigpool.esi 
+</code></pre>
+<p><strong><span class="kwd">--update-esi</span></strong> reads a .esi file for updating and backup the original .esi file.</p>
+<pre><code>smr --beqtl-summary my_beqtl --update-epi mybigpool.epi
+</code></pre>
+<p><strong><span class="kwd">--update-epi</span></strong> reads a .epi file for updating and backup the original .epi file.</p>
+<h4 id="addorupdatethefrequenciesoftheeffectalleles"># Add or update the frequencies of the effect alleles</h4>
+<pre><code>smr --beqtl-summary myeqtl --update-freq mysnp.freq 
+</code></pre>
+<p><strong><span class="kwd">--update-freq</span></strong> reads an input file with allele frequency
+information and adds a new column (i.e. frequency the effect allele)
+to the .esi file.</p>
+<p><strong><em>mysnp.freq</em></strong></p>
+<pre><code>rs12349815    T   A   0.968
+rs141129176    G   A   0.89
+......
+</code></pre>
+<p>The input is a text file <strong>without headers</strong>. Columns are SNP, the
+effect allele, the other allele and frequency of the effect allele.</p>
+<p><strong>NOTE</strong> : the SMR program is compatible with .esi files with or without
+frequency information.</p>
+<hr><h3 id="mangethesamplesize">Mange the sample size</h3>
+<h4 id="addorupdatethesamplesizeinthebesdfile"># Add or update the sample size in the BESD file</h4>
+<pre><code>smr --beqtl-summary myeqtl --add-n 1000 --make-besd --out mybesd
+</code></pre>
+<p><strong><span class="kwd">--add-n</span></strong> reads the sample size.</p>
+<p><strong>NOTE</strong> : The flag is valid for all the options to make a BESD file. For example: </p>
+<pre><code>smr --qfile myquery.txt --add-n 100 --make-besd --out mybesd 
+</code></pre>
+<h4 id="showthesamplesize"># Show the sample size</h4>
+<pre><code>smr --beqtl-summary myeqtl --show-n 
+</code></pre>
+<p><strong><span class="kwd">--show-n</span></strong> shows the sample size on the screen or in the log output.</p>
+<hr><h3 id="extractremoveasubsetofdata">Extract/remove a subset of data</h3>
+<h4 id="extractasubsetofsnpsandorprobes"># Extract a subset of SNPs and/or probes</h4>
+<pre><code>smr --beqtl-summary myeqtl --extract-snp mysnp.list --extract-probe myprobe.list  --make-besd --out mybesd 
+</code></pre>
+<h4 id="removeasubsetofsnpsandorprobes"># Remove a subset of SNPs and/or probes</h4>
+<pre><code>smr --beqtl-summary myeqtl --exclude-snp mysnp.list --exclude-probe myprobe.list  --make-besd --out mybesd 
+</code></pre>
+<h4 id="extractasubsetofsnpswithpathreshold"># Extract a subset of SNPs with p &lt; a threshold</h4>
+<pre><code>smr --beqtl-summary myeqtl --extract-snp-p 1e-5  --make-besd --out mybesd 
+</code></pre>
+<p><strong><span class="kwd">--extract-snp-p</span></strong> reads a p-value threshold to extract SNPs</p>
+<h4 id="removeasubsetofsnpswithpathreshold"># Remove a subset of SNPs with p &lt; a threshold</h4>
+<pre><code>smr --beqtl-summary myeqtl --exclude-snp-p 1e-5  --make-besd --out mybesd 
+</code></pre>
+<p><strong><span class="kwd">--exclude-snp-p</span></strong> reads a p-value threshold to exclude SNPs</p>
+<h4 id="extractcisregionsofeqtlsummarydata"># Extract cis-regions of eQTL summary data</h4>
+<pre><code>smr --beqtl-summary myeqtl --extract-cis --make-besd --out mybesd
+</code></pre>
+<p><strong><span class="kwd">--extract-cis</span></strong> extracts the cis-eQTL summary data.</p>
+<hr><h3 id="bldformat">BLD format</h3>
+<p>We store LD information in two separate files .esi (SNP information, similar as a PLINK .bim file) and .bld (a binary file to store LD correlations). </p>
+<h4 id="makeabldfilefromsnpgenotypedata"># Make a BLD file from SNP genotype data.</h4>
+<pre><code>smr --bfile mydata --make-bld --r --ld-wind 4000 --out mybld
+</code></pre>
+<p><strong><span class="kwd">--make-bld</span></strong> saves the LD correlations between SNPs in binary format.</p>
+<p><strong><span class="kwd">--r</span></strong> calculates the LD correlations.</p>
+<p><strong><span class="kwd">--ld-wind</span></strong> specifies a window in Kb unit to select SNP pairs for the LD computation. The default value is 4000 Kb.</p>
+<p>To specify a chromosome for the LD computation</p>
+<pre><code>smr --bfile mydata --make-bld --r --ld-wind 4000 --chr 21 --out mybld
+</code></pre>
+<p>To specify a SNP as an anchor for the LD computation (computing the LD correlations between the anchor SNPs and other SNPs in a window)</p>
+<pre><code>smr --bfile mydata --make-bld --r --ld-wind 4000 --snp rs123 --out mybld
+</code></pre>
+<h4 id="queryabldfile"># Query a BLD file.</h4>
+<pre><code>smr --query --bld mybld --out myld
+</code></pre>
+<p><strong><span class="kwd">--bld</span></strong> specifies a BLD file.</p>
+<p>To specify a chromosome to query the LD information</p>
+<pre><code>smr --query --bld mybld --chr 21 --out myld
+</code></pre>
+<p>To query the LD between a specified SNP and other SNPs in a window</p>
+<pre><code>smr --query --bld mybld --snp rs123 --out myld.ld
+</code></pre>
+<pre><code>smr --query --bld mybld --snp rs123 --ld-wind 2000 --out myld.ld
+</code></pre>
+<p><strong><em>myld.ld</em></strong></p>
+<pre><code>CHR_A    BP_A    SNP_A   CHR_B   BP_B    SNP_B   R
+21    13446559    rs36061596  21  14571990    rs2822531   -0.000768446
+21    13517135    rs2847443   21  14571990    rs2822531   0.00351777
+21    13523286    rs2775537   21  14571990    rs2822531   -0.0312363
+......
+</code></pre>
+<hr><h3 id="removetechnicaleqtls">Remove technical eQTLs</h3>
+<h4 id="removetechnicaleqtls-1"># Remove technical eQTLs</h4>
+<p>Filtering out eQTLs for which there is a significant cis-eQTL in the
+hybridization region of the probe. This option will remove all the SNPs
+in the cis-region of the probe and save the removed data in a file in
+SMR Query format (see <a href="#QueryeQTLResults">Query eQTL Results for the format of a query
+output file</a>). The default p-value threshold is 5e-8,
+which can be changed by the <strong><span class="kwd">--p-technical</span></strong> (see below).</p>
+<pre><code>smr --beqtl-summary myeqtl --rm-technical probe_hybrid.txt --make-besd --out mybesd
+</code></pre>
+<p><strong><span class="kwd">--rm-technical</span></strong> specifies the probe hybridization region and
+excludes the technical eQTLs.</p>
+<p><strong><em>probe_hybrid.txt</em></strong></p>
+<pre><code>19    probe0  50310094    50310143
+19    probe1  406496  406545
+10    probe2  119293020   119293069
+......    
+</code></pre>
+<p>This is a text file <strong>without headers</strong>. Columns are chromosome, probe
+ID, start of the hybridization region and end of the hybridization
+region.</p>
+<pre><code>smr --beqtl-summary myeqtl --rm-technical probe_hybrid.txt --p-technical 5e-8 --make-besd --out mybesd
+</code></pre>
+<p><strong><span class="kwd">--p-technical</span></strong> reads a p-value threshold to select technical
+eQTLs. The default value is 5e-8.</p>
+<h2 id="smrlocusplot">SMR locus plot</h2>
+<hr><h3 id="smrlocusplot-1">SMR locus plot</h3>
+<p>Here we provide an R script to plot SMR results as presented in Zhu et
+al. (<a href="http://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3538.html">2016 Nature Genetics</a>).
+The data file for plot can be generated by the command below. The R
+script is avaliable at <a href="#Download">Download</a>.</p>
+<h4 id="smrcommandlinetogenerateadatafileforplot"># SMR command line to generate a data file for plot</h4>
+<pre><code>smr --bfile mydata --gwas-summary mygwas.ma --beqtl-summary myeqtl --out myplot --plot --probe ILMN_123 --probe-wind 500 --gene-list glist-hg19 
+</code></pre>
+<p><strong><span class="kwd">--plot</span></strong> saves the data file for plot in text format .</p>
+<p><strong><span class="kwd">--gene-list</span></strong> specifies a gene range list.</p>
+<p><strong><em>glist-hg19 (without strand information)</em></strong></p>
+<pre><code>19    58858171    58864865    A1BG
+19    58863335    58866549    A1BG-AS1
+10    52559168    52645435    A1CF
+......
+</code></pre>
+<p>This is a text file without headers. The columns are chromosome code,
+start of gene, end of gene and gene ID. </p>
+<p>The gene range lists ( mirrored from
+<a href="https://www.cog-genomics.org/plink2/resources#genelist">[PLINK2]</a>
+website) are</p>
+<ul>
+<li><strong>hg18:</strong>
+<a href="https://www.cog-genomics.org/static/bin/plink/glist-hg18">glist-hg18</a>
+(<a href="http://pngu.mgh.harvard.edu/~purcell/plink/dist/glist-hg18">older, ASCII-sorted PNGU
+version</a>)</li>
+<li><strong>hg19:</strong>
+<a href="https://www.cog-genomics.org/static/bin/plink/glist-hg19">glist-hg19</a></li>
+<li><strong>hg38:</strong>
+<a href="https://www.cog-genomics.org/static/bin/plink/glist-hg38">glist-hg38</a></li>
+</ul>
+<p>Not all the genes in the region but only those in the .epi file will be
+drawn in the locus plot since the strand information is absent from the
+gene list provied in the PLINK2 website. To fix this problem, we updated
+SMR to read a gene list with/without strand information.</p>
+<p><strong><em>glist-hg19 (with strand information)</em></strong></p>
+<pre><code>19    58858171    58864865    A1BG    -
+19    58863335    58866549    A1BG-AS1    +
+10    52559168    52645435    A1CF    -
+......    
+</code></pre>
+<p>This is a text file without headers. The columns are chromosome code,
+start of gene, end of gene, gene ID and gene strand.</p>
+<h4 id="rcommandstodrawtheplots"># R commands to draw the plots</h4>
+<pre><code>source("plot_SMR.r") 
+# Read the data file in R:
+SMRData = ReadSMRData("myplot.ILMN_123.txt")
+# Plot the SMR results in a genomic region centred around a probe:
+SMRLocusPlot(data=SMRData, smr_thresh=8.4e-6, heidi_thresh=0.05, plotWindow=1000, max_anno_probe=16)
+# smr_thresh: genome-wide significance level for the SMR test.
+# heidi_thresh: threshold for the HEIDI test. The default value is 0.05.
+# cis_wind: size of a window centred around the probe to select cis-eQTLs for plot. The default value is 2000Kb.
+# max_anno_probe: maximum number of probe names to be displayed on the figure. The default value is 16.
+</code></pre>
+<p><img src="./download/smr.regional.png" alt="alt text" title="regional"></p>
+<pre><code># Plot effect sizes from GWAS against those from eQTL study:
+SMREffectPlot(data=SMRData, trait_name="BMI") 
+# trait_name: name of the trait or disease. 
+</code></pre>
+<p><img src="./download/smr.effect.size.png" alt="alt text" title="effectsize"></p>
+<hr><h3 id="omicssmrplot">Omics SMR  plot</h3>
+<p>A web-based tool to generate <a href="https://cnsgenomics.com/software/omicsplot">omics SMR plots</a> (see the example below).</p>
+<p><img src="./download/demo.gif" alt="alt text" title="Omics"></p>
+<h2 id="queryeqtlresults">Query eQTL Results</h2>
+<hr><h3 id="queryeqtlsummaryresults">Query eQTL Summary Results</h3>
+<p>Since the eQTL summary are stored in binary format for a large number of
+probes and SNPs, we provide the options below to query the eQTL summary
+results from command line options or from file-list options given a
+specified eQTL p-value threshold.</p>
+<h4 id="commandlineoptionsforsnps"># Command line options for SNPs</h4>
+<p>To query the eQTL resutls for a single SNP, we could use this command</p>
+<pre><code>smr --beqtl-summary myeqtl --query 5.0e-8 --snp rs123 --out myquery 
+</code></pre>
+<p><strong><span class="kwd">--query</span></strong> saves in text format a subset of the eQTL summary
+dataset based on the specified eQTL p-value threshold. The default
+value is 5.0e-8.</p>
+<p><strong><span class="kwd">--snp</span></strong> specifies a single SNP.</p>
+<p><strong><em>myquery.txt</em></strong></p>
+<pre><code>SNP    Chr BP  A1  A2  Freq    Probe   Probe_Chr   Probe_bp    Gene    Orientation b   se  p
+rs01    1   1001    A   G   0.23    cg01    1   1101    gene1   +   -0.033  0.006   3.8e-08
+rs01    1   1001    A   G   0.06    cg02    1   1201    gene2   -   0.043   0.007   8.1e-10
+......    
+</code></pre>
+<p>To query eQTL resutls for a range of SNPs in a genomic region</p>
+<pre><code>smr --beqtl-summary myeqtl --query 5.0e-8 --from-snp rs123 --to-snp rs456 --out myquery 
+</code></pre>
+<p><strong><span class="kwd">--from-snp</span></strong> specifies the start SNP.</p>
+<p><strong><span class="kwd">--to-snp</span></strong> specifies the end SNP.</p>
+<p><strong>NOTE</strong> : All SNPs should be on the same chromosome.</p>
+<p>To query eQTL results for all SNP on a chromosome</p>
+<pre><code>smr --beqtl-summary myeqtl --query 5.0e-8 --snp-chr 1 
+</code></pre>
+<p><strong><span class="kwd">--snp-chr</span></strong> specifies a chromosome to select SNPs.</p>
+<p><strong>NOTE</strong> : The probes in the result could be on the other chromosomes if
+there are <em>trans</em>-eQTLs.</p>
+<p>To query SNPs based on physical positions</p>
+<pre><code>smr --beqtl-summary myeqtl --query 5.0e-8 --snp-chr 1 --from-snp-kb 100 --to-snp-kb 200 --out myquery 
+</code></pre>
+<p><strong><span class="kwd">--from-snp-kb</span></strong> specifies the start physical position of the
+region.</p>
+<p><strong><span class="kwd">--to-snp-kb</span></strong> specifies the end physical position of the region.</p>
+<p><strong>NOTE</strong> : You will need to specify a chromosome (using the '<span class="kwd">--snp-chr</span>'
+option) when using this option.</p>
+<p>To query based on a flanking region of a SNP</p>
+<pre><code>smr --beqtl-summary myeqtl --query 5.0e-8 --snp rs123 --snp-wind 50 --out myquery 
+</code></pre>
+<p><strong><span class="kwd">--snp-wind</span></strong> defines a window (in Kb unit) centred on a specified SNP.</p>
+<h4 id="commandlineoptionsforprobes"># Command line options for probes</h4>
+<p>To query based on a single probe</p>
+<pre><code>smr --beqtl-summary myeqtl --query 5.0e-8 --probe cg123 --out myquery 
+</code></pre>
+<p><strong><span class="kwd">--probe</span></strong> specifies a single probe.</p>
+<p>To query based on a range of probes</p>
+<pre><code>smr --beqtl-summary myeqtl --query 5.0e-8 --from-probe cg123 --to-probe cg456 --out myquery 
+</code></pre>
+<p><strong><span class="kwd">--from-probe</span></strong> specifies the start probe.</p>
+<p><strong><span class="kwd">--to-probe</span></strong> specifies the end probe.</p>
+<p>NOTE : All probes should be on the same chromosome.</p>
+<p>To query based on a chromosome</p>
+<pre><code>smr --beqtl-summary myeqtl --query 5.0e-8 --probe-chr 1 
+</code></pre>
+<p><strong><span class="kwd">--probe-chr</span></strong> specifies a chromosome to select probes.</p>
+<p><strong>NOTE</strong> : The SNPs in the result could be on the other chromosomes if there
+are <em>trans</em>-eQTLs.</p>
+<p>To query based on physical positions of the probes</p>
+<pre><code>smr --beqtl-summary myeqtl --query 5.0e-8 --probe-chr 1 --from-probe-kb 1000 --to-probe-kb 2000 --out myquery 
+</code></pre>
+<p><strong><span class="kwd">--from-probe-kb</span></strong> specifies the start physical position of the
+probes.</p>
+<p><strong><span class="kwd">--to-probe-kb</span></strong> specifies the end physical position of the
+probes.</p>
+<p><strong>NOTE</strong> : You will need to specify a chromosome (using the '<span class="kwd">--probe-chr</span>'
+option) when using this option.</p>
+<p>To query based on a flanking region of a probe</p>
+<pre><code>smr --beqtl-summary myeqtl --query 5.0e-8 --probe cg123 --probe-wind 1000 --out myquery 
+</code></pre>
+<p><strong><span class="kwd">--probe-wind</span></strong> defines a window (in Kb unit) centred on a specified probe.</p>
+<p>To query based on a gene</p>
+<pre><code>smr --beqtl-summary myeqtl --query 5.0e-8 --gene gene1 --out myquery 
+</code></pre>
+<p><strong><span class="kwd">--gene</span></strong> specifies a single gene to select probes.</p>
+<h4 id="commandlineoptionforcisregion"># Command line option for cis-region</h4>
+<pre><code>smr --beqtl-summary myeqtl --query 5.0e-8 --probe cg123 --cis-wind 2000 --out myquery 
+</code></pre>
+<h4 id="filelistoptions"># File-list options</h4>
+<p>To query based on a list of SNPs</p>
+<pre><code>smr --beqtl-summary myeqtl --extract-snp snp.list --query 5.0e-8 --out myquery 
+</code></pre>
+<p>To query based on a list of probes</p>
+<pre><code>smr --beqtl-summary myeqtl --extract-probe probe.list --query 5.0e-8 --out myquery
+</code></pre>
+<p>To qurey based on a list of genes</p>
+<pre><code>smr --beqtl-summary myeqtl --genes gene.list --query 5.0e-8 --out myquery 
+</code></pre>
+<p><strong><span class="kwd">--genes</span></strong> extracts a subset of probes which tag the genes in the
+list.</p>
+<p><strong><em>gene.list</em></strong></p>
+<pre><code>gene1
+gene2
+gene3
+...
+</code></pre>
+<hr><h3 id="descriptivesummaryoftheciseqtldata">Descriptive summary of the  cis-eQTL data</h3>
+<pre><code>smr  --descriptive-cis --beqtl-summary myeqtl --out mydescriptive 
+</code></pre>
+<p><strong><span class="kwd">--descriptive-cis</span></strong> outputs the descriptive summary of the cis-eQTL data (including the number of probes, the boundaries of the each cis-region, the top cis-eQTL in each cis-eQTL region and the summary statistics of the top cis-eQTL) at p-value threshold (the default value is 5.0e-8; can be changed by <span class="kwd">--peqtl-cis</span>). The size of the cis-region can be changed by <span class="kwd">--cis-wind</span> (the default value is 2000Kb).</p>
+<pre><code>smr  --descriptive-cis --beqtl-summary myeqtl --cis-wind 2000 --out mydescriptive 
+</code></pre>
+<hr><h3 id="descriptivesummaryofthetranseqtldata">Descriptive summary of the  trans-eQTL data</h3>
+<pre><code>smr --descriptive-trans --beqtl-summary myeqtl --out mydescriptive 
+</code></pre>
+<p><strong><span class="kwd">--descriptive-trans</span></strong>  outputs the descriptive summary of the trans-eQTL data at p-value threshold (the default value is 5.0e-8; can be changed by <span class="kwd">--peqtl-trans</span>). The size of a trans-region can be changed by <span class="kwd">--trans-wind</span> (the default value is 1000Kb). Note that the trans-eQTLs are defined those that are more than 5Mb away from the probe (this distance threshold can be changed by <span class="kwd">--cis-wind</span>).</p>
+<pre><code>smr --descriptive-trans --beqtl-summary myeqtl --trans-wind 1000 --out mydescriptive 
+</code></pre>
+<h2 id="mecs">MeCS</h2>
+<h4 id="mecsmetaanalysisofciseqtlincorrelatedsamples">MeCS: Meta-analysis of cis-eQTL in Correlated Samples</h4>
+<h4 id="overview"># Overview</h4>
+<p>MeCS is a method that only requires summary-level cis-eQTL data to
+perform a meta-analysis of cis-eQTLs from multiple cohorts (or tissues)
+with sample overlaps. It estimates the proportion of sample overlap from
+null SNPs in the cis-regions and meta-analysed the eQTL effects using a
+generalized least squares approach. The method can be applied to data
+from genetic studies of molecular phenotypes (e.g. DNA methylation and
+histone modification).</p>
+<p>Bug reports or questions to Jian Yang (<a href="mailto:jian.yang@uq.edu.au">jian.yang@uq.edu.au</a>) at
+Institute for Molecular Bioscience, The University of Queensland.</p>
+<h4 id="tutorial"># Tutorial</h4>
+<blockquote>
+  <p>Example</p>
+</blockquote>
+<pre><code>smr --besd-flist my_file.list --mecs --thread-num 5 --out mecs_result 
+</code></pre>
+<p><strong><span class="kwd">--mecs</span></strong> implements the MeCS analysis.</p>
+<p>Specify a p-value threshold to exclude the significant SNPs from calculating the cohort correlation matrix.</p>
+<pre><code>osca --besd-flist my_file.list --mecs --pmecs 0.01 --out mymecs
+</code></pre>
+<p><strong><span class="kwd">--pmecs</span></strong> reads a p-value threshold to exclude the significant SNPs from calculating the cohort correlation matrix. The default value is 0.01. </p>
+<p>Specify a minimum number of null SNPs for calculating the cohort correlation matrix.</p>
+<pre><code>osca --besd-flist my_file.list --mecs --nmecs 100 --out mymecs
+</code></pre>
+<p><strong><span class="kwd">--nmecs</span></strong> reads a minimum number of null SNPs  that are required to calculate the cohort correlation matrix. The default value is 100. </p>
+<blockquote>
+  <p>Example</p>
+</blockquote>
+<pre><code>smr --besd-flist my_file.list --meta --thread-num 5 --out meta_result 
+</code></pre>
+<p><strong><span class="kwd">--meta</span></strong> implements the conventional inverse-variance-weighted meta-analysis assuming all the cohorts are independent.</p>
+<h4 id="citation">Citation</h4>
+<p>Qi T, Wu Y, Zeng J, Zhang F, Xue A, Jiang L, Zhu Z, Kemper K, Yengo L, Zheng Z, eQTLGen Consortium, Marioni RE, Montgomery GW, Deary IJ, Wray NR, Visscher PM, McRae AF &amp; Yang J (2018) Identifying gene targets for brain-related traits using transcriptomic and methylomic data from blood. <a href="https://www.nature.com/articles/s41467-018-04558-1">Nature Communications, 9: 2282.</a></p>
+<h2 id="optionsreference">Options Reference</h2>
+<table width="1000" border="0" style="font-family:arial; font-size:14px; align-self:center">
+<tbody><tr>
+<td align="left"><b>Option</b></td>        
+<td align="left"><b>Description</b></td>        
+</tr>
+<tr>                           
+<td align="left"><font color="#993333">--beqtl-flist</font></td>
+<td align="left">reads a file to get the full paths of the BESD files.</td>                
+</tr> 
+<tr>    
+<td align="left"><font color="#993333">--beqtl-summary</font></td>
+<td align="left">reads summary-level data from a eQTL study in binary format.</td>                 
+</tr>
+<tr>                           
+<td align="left"><font color="#993333">--bfile</font></td>
+<td align="left">reads individual-level SNP genotype data in PLINK binary format.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--bolt-assoc-format</font></td>
+<td align="left">reads eQTL summary data in BOLT_LMM output format.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--cis-wind</font></td>
+<td align="left">defines a window centred around the probe to select cis-eQTLs.</td>                
+</tr>     
+<tr>                           
+<td align="left"><font color="#993333">--eqtl-flist</font></td>
+<td align="left">reads a file to get probe information and locations of the eQTL summary data files.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--exclude-exposure-probe</font></td>
+<td align="left">excludes a subset of exposure probes from analysis.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--exclude-outcome-probe</font></td>
+<td align="left">excludes a subset of outcome probes from analysis.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--exclude-probe</font></td>
+<td align="left">excludes a subset of probes from analysis.</td>                
+</tr>  
+<tr>                           
+<td align="left"><font color="#993333">--exclude-single-exposure-probe</font></td>
+<td align="left">excludes a single exposure probe from analysis.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--exclude-single-outcome-probe</font></td>
+<td align="left">excludes a single outcome probe from analysis.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--exclude-snp </font></td>
+<td align="left">excludes a subset of SNPs from analysis.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--extract-cis</font></td>
+<td align="left">extracts the cis-eQTLs.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--extract-exposure-probe</font></td>
+<td align="left">extracts a subset of exposure probes for analysis.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--extract-outcome-probe</font></td>
+<td align="left">extracts a subset of outcome probes for analysis.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--extract-probe</font></td>
+<td align="left">extracts a subset of probes for analysis.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--extract-single-exposure-probe</font></td>
+<td align="left">extracts a single exposure probe for analysis.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--extract-single-outcome-probe</font></td>
+<td align="left">extracts a single outcome probe for analysis.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--extract-snp</font></td>
+<td align="left">extracts a subset of SNPs for analysis.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--from-probe </font></td>
+<td align="left">specifies the start probe.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--from-probe-kb</font></td>
+<td align="left">specifies the start physical position of the probes.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--from-snp</font></td>
+<td align="left">specifies the start SNP.</td>                
+</tr>  
+<tr>                           
+<td align="left"><font color="#993333">--from-snp-kb</font></td>
+<td align="left"> specifies the start physical position of the region.</td>                
+</tr>
+<tr>                           
+<td align="left"><font color="#993333">--gemma-fomat</font></td>
+<td align="left">reads eQTL summary data in GEMMA association output format.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--gene</font></td>
+<td align="left">specifies a single gene to select probes.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--genes</font></td>
+<td align="left">extracts a subset of probes which tag the genes in the list.</td>                
+</tr>
+<tr>                           
+<td align="left"><font color="#993333">--gene-list</font></td>
+<td align="left">specifies a gene annotation file.</td>                
+</tr>
+<tr>                           
+<td align="left"><font color="#993333">--geno-uni</font></td>
+<td align="left">indicates all the input .esd files are identical.</td>                
+</tr>
+<tr>                           
+<td align="left"><font color="#993333">--gwas-summary</font></td>
+<td align="left">reads summary-level data from GWAS in GCTA-COJO format.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--heidi-m</font></td>
+<td align="left">minimum requirement of the number of eQTLs used in the HEIDI test.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--heidi-mtd</font></td>
+<td align="left">specify a method for HEIDI test.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--heidi-off</font></td>
+<td align="left">turns off the HEIDI test.</td>                
+</tr>
+<tr>                           
+<td align="left"><font color="#993333">--keep</font></td>
+<td align="left">includes a subset of individuals in the reference sample for analysis.</td>                
+</tr>   
+<tr>                           
+<td align="left"><font color="#993333">--ld-pruning</font></td>
+<td align="left">LD r-squared threshold for pruning SNPs (eQTLs) in HEIDI test, removing SNPs in high LD with the top associated eQTL.</td>                
+</tr>    
+<tr>                           
+<td align="left"><font color="#993333">--maf</font></td>
+<td align="left">removes SNPs based on a minor allele frequency (MAF) threshold in the reference sample.</td>                
+</tr>
+<tr>                           
+<td align="left"><font color="#993333">--make-besd</font></td>
+<td align="left">saves summary data in BESD format. By default, the data will be stored in sparse BESD format.</td>                
+</tr>  
+<tr>                           
+<td align="left"><font color="#993333">--make-besd-dense</font></td>
+<td align="left">saves summary data of all SNPs for all probes.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--out</font></td>
+<td align="left">specifies filename prefix for output files.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--p-technical</font></td>
+<td align="left">reads a p-value threshold to select technical eQTLs.</td>                
+</tr>
+<tr>                           
+<td align="left"><font color="#993333">--peqtl-heidi</font></td>
+<td align="left">threshold of eQTL p-value to select eQTLs for the HEIDI test.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--peqtl-other</font></td>
+<td align="left">threshold of eQTL p-value to select eQTLs apart from the cis and trans regions.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--peqtl-smr</font></td>
+<td align="left">threshold of eQTL p-value to select the top associated eQTL for the SMR test.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--peqtl-trans </font></td>
+<td align="left">threshold of eQTL p-value for trans-SNPs.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--plink-qassoc-fomat</font></td>
+<td align="left">reads eQTL summary data in PLINK-qassoc format.</td>                
+</tr>
+<tr>                           
+<td align="left"><font color="#993333">--plot</font></td>
+<td align="left">saves in text format the data for plot.</td>                
+</tr>
+<tr>                           
+<td align="left"><font color="#993333">--probe</font></td>
+<td align="left">specifies a single probe.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--probe-chr</font></td>
+<td align="left">specifies a chromosome to select probes.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--probe-wind</font></td>
+<td align="left">defines a window centred on a specified probe.</td>                
+</tr>
+<tr>                           
+<td align="left"><font color="#993333">--qfile</font></td>
+<td align="left">reads eQTL summary data in SMR query output format.</td>                
+</tr>
+<tr>                           
+<td align="left"><font color="#993333">--query</font></td>
+<td align="left">saves in text format a subset of the eQTL summary dataset based on the specified eQTL p-value threshold.</td>                
+</tr>  
+<tr>                           
+<td align="left"><font color="#993333">--remove</font></td>
+<td align="left">excludes a subset of individuals in the reference sample from the analysis.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--rm-technical</font></td>
+<td align="left">specifies the probe hybridization region and excludes the technical eQTLs.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--set-wind</font></td>
+<td align="left">defines a window width (Kb) centred around the top associated cis-eQTL to select SNPs in the cis-region.</td>                
+</tr>
+<tr>                           
+<td align="left"><font color="#993333">--smr-multi</font></td>
+<td align="left">turns on set-based SMR test in the cis-region.</td>                
+</tr>      
+<tr>                           
+<td align="left"><font color="#993333">--snp</font></td>
+<td align="left">specifies a single SNP.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--snp-chr</font></td>
+<td align="left">specifies a chromosome to select SNPs.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--to-probe</font></td>
+<td align="left">specifies the end probe.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--to-snp</font></td>
+<td align="left">specifies the end SNP.</td>                
+</tr>
+<tr>                           
+<td align="left"><font color="#993333">--snp-wind</font></td>
+<td align="left">defines a window centred on a specified SNP.</td>                
+</tr>
+<tr>                           
+<td align="left"><font color="#993333">--to-probe-kb</font></td>
+<td align="left">specifies the end physical position of the probes.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--to-snp-kb</font></td>
+<td align="left">specifies the end physical position of the region.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--trans</font></td>
+<td align="left">turns on SMR and HEIDI tests in trans regions.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--trans-wind</font></td>
+<td align="left">defines a window centred around the top associated trans-eQTL to select SNPs .</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--target-snp</font></td>
+<td align="left">specifies a SNP as the target for the SMR and HEIDI tests as described above.</td>                
+</tr> 
+<tr>                           
+<td align="left"><font color="#993333">--thread-num</font></td>
+<td align="left">specifies the number of OpenMP threads for parallel computing.</td>                
+</tr>             
+<tr>                           
+<td align="left"><font color="#993333">--update-freq </font></td>
+<td align="left">reads allele frequency file.</td>                
+</tr> 
+</tbody></table>
+<h2 id="downloadexpand" class="expand">Download </h2>
+<hr><h3 id="executablefilesversion101">Executable Files (version 1.01)</h3>
+<p><a href="download/smr_Linux.zip">smr_Linux.zip</a></p>
+<p><a href="download/smr_Mac.zip">smr_Mac.zip</a></p>
+<p><a href="download/smr_Win.zip">smr_Win.zip</a></p>
+<p>The executable files (binary code) are released under MIT license.</p>
+<hr><h3 id="rscriptforsmrlocusplot">R script for SMR locus plot</h3>
+<p>R script and sample file for SMR locus plot:</p>
+<p><a href="download/plot.zip">plot.zip</a></p>
+<hr><h3 id="updatelog">Update log</h3>
+<p><strong>32.</strong>   Version 1.01 (16 April, 2019): updated the log information of MeCS.</p>
+<p><strong>31.</strong>   Version 1.0 (15 January, 2019): 1) Formally released SMR version 1.0; 2) Added flags to query descriptive summary of  the cis-eQTL and trans-eQTL data.</p>
+<p><strong>30.</strong>   Version 0.712 (6 September, 2018): Added an option to make and query LD information in binary format (i.e. .bld, and .esi files) and an interface to read LD matrix (in BLD format) as the reference for the HEIDI test.</p>
+<p><strong>29.</strong>   Version 0.711 (30 August, 2018): Added flags <span class="kwd">--qtltoos-nominal-format</span> and <span class="kwd">--qtltoos-permu-format</span> to transform eQTL summary statistics in QTLtools output format to SMR BESD format.</p>
+<p><strong>28.</strong>   Version 0.710 (21 June, 2018): improved the allele frequency checking step of SMR (more flexible than the previous version). Note that we also updated the frequencies of the effect alleles in the McRae et al. mQTL data, GTEx eQTL data and Brain-mMeta mQTL data.</p>
+<p><strong>27.</strong> &nbsp; Version 0.709 (14 June, 2018): added a QC step to check the differences in allele frequency among eQTL, GWAS and LD reference data for the SMR analysis.</p>
+<p><strong>26.</strong> &nbsp; Version 0.708 (31 May, 2018): added two flags <span class="kwd">--extract-target-snp-probe</span> and <span class="kwd">--extract-snp-probe</span> to extract specific SNP-probe pairs for the SMR analysis.</p>
+<p><strong>25.</strong> &nbsp; Version 0.707 (11 May, 2018): changed the default LD pruning r2 threshold for SMR-multi from 0.9 to 0.1.</p>
+<p><strong>24.</strong> &nbsp; Version 0.706 (1 April, 2018): fixed a problem of linking a library in Linux and a bug with <span class="kwd">--target-snp</span>. </p>
+<p><strong>23.</strong> &nbsp; Version 0.705 (16 Feburary, 2018): Updated MeCS and removed some confusing log information when making BESD files. </p>
+<p><strong>22.</strong> &nbsp; Version 0.704 (01 Feburary, 2018): Fixed a bug in making BESD files. </p>
+<p><strong>21.</strong> &nbsp; Version 0.703 (19 January, 2018): 1) Added flags <span class="kwd">--add-n</span> to add sample size in a BESD file and <span class="kwd">--show-n</span> to display the sample size on screen or in a log output. 2) Added flag <span class="kwd">--matrix-eqtl-format</span> to transform the eQTL summary statistics in Matrix eQTL output format to SMR BESD format. 3) Added flag <span class="kwd">--fastqtl-nominal-format</span> to transform the eQTL summary statistics in FastQTL outformat to SMR BESD format. 4) Added flags <span class="kwd">--update-epi</span> and <span class="kwd">--update-esi</span> to update or complete the information in .epi file and .esi file respectively.</p>
+<p><strong>20.</strong> &nbsp; Version 0.702 (07 January, 2018): Added flags <span class="kwd">--extract-snp-p</span> and <span class="kwd">--exclude-snp-p</span> to make a subset of BESD with a p-value threshold. </p>
+<p><strong>19.</strong> &nbsp; (02 January, 2018): Released the GTEx eQTL summary data in SMR binary (BESD) format.</p>
+<p><strong>18.</strong> &nbsp; Version 0.701 (22 December, 2017): 1) Updated some parameters used in the HEIDI test. A lower limit of LD r-squared threshold (the default value is 0.05) has been added to remove SNPs that are not in LD or in low LD with the top eQTL. 2) Added a flag <span class="kwd">--heidi-max-m</span> to specify the maximum number of SNPs used in the HEIDI test. </p>
+<p><strong>17.</strong> &nbsp; Version 0.69 (7 October, 2017): added features to run
+multi-SNP based SMR and SMR analysis of two molecular traits. Also add a
+feature to remove technical eQTLs.</p>
+<p><strong>16.</strong> &nbsp; (12 September, 2017): Luke R. Lloyd-Jones et al. released CAGE
+eQTL summary statistics for SMR analysis.</p>
+<p><strong>15.</strong> &nbsp; Version 0.68 (11 August, 2017): updated the SMR and HEIDI
+tests in the trans regions (the previous version focuses only on the top
+trans-eQTL locus and the new version will run the tests for all the
+trans-eQTL loci one at a time).</p>
+<p><strong>14.</strong> &nbsp; Version 0.67 (22 June, 2017): updated the functions to make
+BESD file by the following strategy: 1) Z* from N(0, 1) given the
+p-value. 2) SE* = b / Z* . 3) store b and SE* in BESD. This
+adjustment guarantees that the re-computed p-value from b and SE being
+exact the same as the original p-value, useful for data with small
+sample size.</p>
+<p><strong>13.</strong> &nbsp; Version 0.66 (10 January, 2017): updated the function to
+generate the file for locus plot. The new version is able to read a gene
+list with/without strand information.</p>
+<p><strong>12.</strong> &nbsp; Version 0.65 (12 December, 2016): added a flag (<span class="kwd">--heidi-mtd</span>)
+for users to choose the original approach or a new approach for HEIDI
+test.</p>
+<p><strong>11.</strong> &nbsp; Version 0.64 (8 August, 2016): updated the .esi file format;
+updated the HEIDI test (a new method that improves the power of the
+HEIDI test); updated the SMR query output format; improved the analysis
+to combine multiple BESD files.</p>
+<p><strong>10.</strong> &nbsp; Version 0.632 (28 June, 2016): added a feature to make a BESD
+file from BOLT-LMM output format.</p>
+<p><strong>9.</strong> &nbsp; Version 0.631 (23 June, 2016): more options to make BESD files
+and more memory-efficient when making binary besd files.</p>
+<p><strong>8.</strong> &nbsp; Version 0.630 (23 May, 2016): updated features to make binary
+besd file from plain text file(s).</p>
+<p><strong>7.</strong> &nbsp; Version 0.628 (11 May, 2016): added a feature to visualize SMR
+results.</p>
+<p><strong>6.</strong> &nbsp; Version 0.620 (12 April, 2016): added a feature to deal with
+duplicate IDs.</p>
+<p><strong>5.</strong> &nbsp; Version 0.619 (4 April, 2016): updated sparse besd format;
+updated features to make sparse verison of BESD; added features to query
+eQTL summary results; added features to combine BESD files.</p>
+<p><strong>4.</strong> &nbsp; Version 0.6 (10 Nov, 2015): added features of SMR and HEIDI
+test for the trans regions.</p>
+<p><strong>3.</strong> &nbsp;12 Oct, 2015: Eigen library and OpenMP were used.</p>
+<p><strong>2.</strong> &nbsp;17 Sept, 2015: updated the format of sparse besd file; added a
+function to make sparse besd file by extracting information from full
+dense besd file; added a function to check quickly how many probes are
+associated with a SNP at p &lt; a threshold(e.g. 5e-8).</p>
+<p><strong>1.</strong> &nbsp;24 Aug, 2015: first release.</p>
+<h2 id="dataresourceexpand" class="expand">Data Resource </h2>
+<hr><h3 id="eqtlsummarydata">eQTL summary data</h3>
+<h4 id="westraeqtlsummarydata"># Westra eQTL summary data</h4>
+<p>Westra eQTL summary data <a href="http://www.ncbi.nlm.nih.gov/pubmed/24013639">(Westra et al. 2013 Nat Genet)</a> in SMR
+binary (BESD) format:<br>
+<a href="../../data/SMR/westra_eqtl_hg18.zip">westra_eqtl_data_hg18.zip (hg18)</a> (10.3 MB)<br>
+<a href="../../data/SMR/westra_eqtl_hg19.zip">westra_eqtl_data_hg19.zip (hg19)</a> (10.3 MB)</p>
+<h4 id="cageeqtlsummarydata"># CAGE eQTL summary data</h4>
+<p>CAGE eQTL summary data <a href="http://www.cell.com/ajhg/abstract/S0002-9297(16)30532-8">(Luke R. Lloyd-Jones et al. 2017 AJHG)</a> in SMR binary (BESD) format:<br>
+<a href="../../data/SMR/cage_eqtl_data_hg19.tgz">cage_eqtl_data_hg19.tgz (hg19)</a> (3.8 GB)<br>
+<a href="../../data/SMR/cage_eqtl_data_lite_hg19.tar.gz">cage_eqtl_data_lite_hg19.tgz (hg19)</a> Lite version of the CAGE data (only SNPs with P &lt; 1e-5 are included; 86.1 MB)</p>
+<p>The CAGE eQTL results have finer coverage than the Westra et al. 2013
+results with comparable power. Please note that the EGCUT cohort is
+common to both the Westra et al. 2013 and CAGE data sets. Please see the
+above link to the CAGE paper that outlines how these eQTL results were
+generated.</p>
+<p>Please see the associated <a href="http://cnsgenomics.com/shiny/CAGE/">Shiny App</a> for further interactive interrogation of the results generated in the CAGE analysis.</p>
+<h4 id="v7releaseofthegtexeqtlsummarydata"># V7 release of the GTEx eQTL summary data</h4>
+<p>V7 release of the GTEx eQTL summary data <a href="https://www.nature.com/articles/nature24277">(GTEx Consortium 2017 Nature)</a> in SMR binary (BESD) format:<br>
+<a href="../../data/SMR/GTEx_V7_cis_eqtl_summary.tar.gz">GTEx_V7_cis_eqtl_summary.tar.gz (hg19)</a> (55 GB)<br>
+<a href="../../data/SMR/GTEx_V7_cis_eqtl_summary_lite.tar.gz">GTEx_V7_cis_eqtl_summary_lite.tar.gz (hg19)</a> Lite version of the GTEx V7 data (only SNPs with P &lt; 1e-5 are included; 5.3 GB)</p>
+<p>This is a set of cis-eQTL summary data across 48 human tissues from the GTEx project. Only SNPs within 1Mb of the transcription start site are available. The standard errors in the BESD files were re-computed from the observed effect sizes and p-values based on a chi-squared distribution with 1 degree of freedom. The forth column of the *.epi file is the middle position of the probe sequence rather than the transcription start site. See <a href="http://www.gtexportal.org/">GTEx Portal</a> for details about the eQTL analysis.</p>
+<h4 id="qietalbraineqtlsummarydata"># Qi et al. brain eQTL summary data</h4>
+<p><strong>GTEx-brain eQTL data</strong> (estimated effective n = 233)</p>
+<p>GTEx-brain eQTL summary data (<a href="https://www.nature.com/articles/s41467-018-04558-1">Qi et al. 2018 Nat Commun</a>) in SMR binary (BESD) format: <a href="../../data/SMR/GTEx-brain.tar.gz">GTEx-brain.tar.gz</a> (1.1 GB)</p>
+<p>This is a set of eQTL data from a meta-analysis of 10 brain regions in GTEx v6 (<a href="https://www.nature.com/articles/nature24277">GTEx Consortium 2017 Nature</a>) correcting for sample overlap by the <a href="#MeCS">MeCS</a> method. Only SNPs within 1Mb distance from each probe are available. </p>
+<p><strong>Brain-eMeta eQTL data</strong> (estimated effective n = 1,194)</p>
+<p>Brain-eMeta eQTL summary data (<a href="https://www.nature.com/articles/s41467-018-04558-1">Qi et al. 2018 Nat Commun</a>) in SMR binary (BESD) format: <a href="../../data/SMR/Brain-eMeta.tar.gz">Brain-eMeta.tar.gz</a> (1.1 GB)</p>
+<p>This is a set of eQTL data from a meta-analysis of GTEx brain (<a href="https://www.nature.com/articles/nature24277">GTEx Consortium 2017 Nature</a>), CMC (<a href="https://www.nature.com/articles/nn.4399">Fromer et al. 2016 Nat Neurosci</a>), and ROSMAP (<a href="https://www.nature.com/articles/nn.4632">Ng et al. 2017 Nat Neurosci</a>) by <a href="#MeCS">MeCS</a>. Only SNPs within 1Mb distance from each probe are available.</p>
+<h4 id="geuvadiseqtlsummarydata"># Geuvadis eQTL summary data</h4>
+<p>Geuvadis eQTL summary data <a href="https://www.nature.com/articles/nature12531">(Lappalainen et al. 2013 Nature)</a> in SMR binary (BESD) format:<br>
+<a href="../../data/SMR/geuvadis_EUR_rsid.tar.gz">geuvadis_EUR_rsid.tar.gz (hg19)</a> (650.5MB)</p>
+<p>Unthresholded Geuvadis eQTL data for lymphoblastoid cell lines isolated from 373 EUR individuals were used, with YRI individuals excluded. The eQTL summary data were from <a href="http://jungle.unige.ch/~lappalainen/geuvadis/EUR373.gene.K10.noplim.cis_assembled.txt.gz">EUR373.gene.K10.noplim.cis_assembled.txt.gz</a>. Since betas are not available for the unthresholded dataset, they were estimated from t-values, allele freqs and n=373 according to Formula (6) in the SMR paper <a href="http://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3538.html">(Zhu et al. 2016 Nat Genet)</a>. Geuvadis SNP ids were converted to rsids for compatibility with external GWAS data and plink 1KG files. The data are based on GRCh37 assembly, and gene IDs deprecated in the GRCh37 version of Ensembl were removed. We would like to acknowledge <a href="mailto:Mikhail.Spivakov@babraham.ac.uk">Mikhail Spivakov</a> for his effort in transforming the data to SMR BESD format and writing the description above.</p>
+<h4 id="psychencodeeqtlsummarydata"># PsychENCODE eQTL summary data</h4>
+<p>Here are two sets of cis-eQTL summary data in the prefrontal cortex from the <a href="http://resource.psychencode.org/">PsychENCODE project</a>. Only the data of SNPs in a 1 Mb window around each gene are available.</p>
+<p>a.    PsychENCODE eQTL summary data (correcting for 50 PEER factors) in SMR binary (BESD) format: 
+<a href="http://cnsgenomics.com/data/SMR/PsychENCODE_cis_eqtl_PEER50_summary.tar.gz">PsychENCODE_cis_eqtl_PEER50_summary.tar.gz (hg19)</a> (33 MB)</p>
+<p>Only SNPs with FDR &lt; 0.05 are available for each gene. The eQTL analyses were performed with 50 probabilistic estimation of expression residuals (PEER) factors included as covariates (see <a href="http://science.sciencemag.org/content/362/6420/eaat8464">Wang et al. 2018 Science</a> for details about data generation and analysis). </p>
+<p>b.    PsychENCODE eQTL summary data (correcting for 100 HCP factors) in SMR binary (BESD) format:
+<a href="http://cnsgenomics.com/data/SMR/PsychENCODE_cis_eqtl_HCP100_summary.tar.gz">PsychENCODE_cis_eqtl_HCP100_summary.tar.gz (hg19)</a> (65 MB)</p>
+<p>Similar to the data set above but the eQTL analyses were performed including100 hidden covariate (HCP) factors as covariates (see <a href="http://science.sciencemag.org/content/362/6420/eaat8127">Gandal et al. 2018 Science</a> for details about data generation and analysis). </p>
+<hr><h3 id="mqtlsummarydata">mQTL summary data</h3>
+<h4 id="mcraeetalmqtlsummarydata"># McRae et al. mQTL summary data</h4>
+<p>McRae et al. mQTL summary data <a href="https://www.biorxiv.org/content/early/2017/07/21/166710">(Allan McRae et al. 2017 bioRxi)</a> in SMR binary (BESD) format:<br>
+<a href="../../data/SMR/LBC_BSGS_meta.tar.gz">LBC_BSGS_meta.tar.gz (hg19)</a> (7.5 GB)<br>
+<a href="../../data/SMR/LBC_BSGS_meta_lite.tar.gz">LBC_BSGS_meta_lite.tar.gz (hg19)</a> Lite version of the McRae et al. mQTL data (only SNPs with P &lt; 1e-5 are included; 241 MB)</p>
+<p>This is a set of mQTL summary data from a meta-analysis of the BSGS and LBC data (McRae et al. 2017 bioRxiv). Only the DNA methylation probes with at least an cis-mQTL at P &lt; 5e-8 and only SNPs within 2Mb distance from each probe are available. </p>
+<h4 id="qietalbrainmqtlsummarydata"># Qi et al. brain mQTL summary data</h4>
+<p><strong>Brain-mMeta mQTL data</strong> (estimated effective n = 1,160)</p>
+<p>Brain-mMeta mQTL summary data (<a href="https://www.nature.com/articles/s41467-018-04558-1">Qi et al. 2018 Nat Commun</a>) in SMR binary (BESD) format: <a href="../../data/SMR/Brain-mMeta.tar.gz">Brain-mMeta.tar.gz</a> (893 MB)</p>
+<p>This is a set of mQTL data from a meta-analysis of ROSMAP (<a href="https://www.nature.com/articles/nn.4632">Ng et al. 2017 Nat Neurosci</a>), Hannon et al. (<a href="https://www.nature.com/articles/nn.4182">Hannon et al. 2016 Nat Neurosci</a>) and Jaffe et al. (<a href="https://www.nature.com/articles/nn.4181">Jaffe et al. 2016 Nat Neurosci</a>). In the ROSMAP data, only SNPs within 5Kb of each DNA methylation probe are available. In the Hannon et al. data, only SNPs within 500Kb distance from each probe and with PmQTL &lt; 1.0e-10 are available. In the Jaffe et al. data, only SNPs within 20Kb distance from each probe and with FDR &lt; 0.1 are available. </p>
+<h4 id="hannonetalmqtlsummarydata"># Hannon et al. mQTL summary data</h4>
+<p>Whole blood mQTL data set used in Hannon et al. (<a href="https://www.sciencedirect.com/science/article/pii/S0002929718303185?via=ihub">2018 AJHG</a>).</p>
+<p><a href="https://www.dropbox.com/s/os4cgkb4519wbvn/US_mQTLS_SMR_format.zip?dl=0">Hannon et al. WholeBlood dataset.zip</a> (sample size = 1,175; 121MB)</p>
+<p>Three mQTL datasets used in Hannon et al. (<a href="https://www.sciencedirect.com/science/article/pii/S0002929717301581?via%3Dihub">2017 AJHG</a>). All the files are in SMR BESD format.</p>
+<p>Two blood mQTL datasets (<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-1041-x">Hannon et al. 2016 Genome Biology</a>) <br>
+<a href="../../data/SMR/Hannon_Blood_dataset1.zip">Hannon et al. Blood dataset1.zip</a> (sample size = 639; 42MB)<br>
+<a href="../../data/SMR/Hannon_Blood_dataset2.zip">Hannon et al. Blood dataset2.zip</a> (sample size = 665; 25MB)</p>
+<p>Fetal brain mQTL data (<a href="https://www.nature.com/articles/nn.4182">Hannon et al. 2015 Nat Neurosci</a>) <br>
+<a href="../../data/SMR/Hannon_FetalBrain.zip">Hannon et al. FetalBrain.zip</a> (sample size = 166; 4.8MB)</p>
+<p>Note: 1) The SNPs are coded as chr:bp (based on the genome build hg19)
+rather than with rsIDs. 2) SNPs with mQTL p-values &gt; 1e-10 are not included. 3) Any question regarding to these datasets should be addressed to <a href="mailto:E.J.Hannon@exeter.ac.uk">Eilis Hannon</a> or <a href="mailto:J.Mill@exeter.ac.uk">Jonathan Mill</a>. </p></body></div>
+        </div>
+
+        <script>
+            $(function() {
+                var toc = $("#toc").tocify({
+                    selectors: "h2, h3",
+                    ignoreSelector: ".notoc",
+                    expand: ".expand",
+                    showEffect: "fadeIn",
+                    scrollHistory: false,
+                    extendPage: false,
+                    scrollRef: "#PAGE-header",
+                    showDIV: "#show",
+                    tocID: "#toc"
+                }).data("toc-tocify");
+                toc.setOptions({
+                    appendContents: '<div style="text-align: center;font-size: 14px">Number of visits: <img src="http://hitwebcounter.com/counter/counter.php?page=6435797&style=0007&nbdigits=5&type=page&initCount=0" border="0" width="48"> </div>'
+                });
+                hljs.initHighlightingOnLoad();
+
+            });
+
+            $(function() {
+                setTimeout(function() {
+                    (function(i, s, o, g, r, a, m) {
+                        i['GoogleAnalyticsObject'] = r;
+                        i[r] = i[r] || function() {
+                            (i[r].q = i[r].q || []).push(arguments)
+                        }, i[r].l = 1 * new Date();
+                        a = s.createElement(o),
+                            m = s.getElementsByTagName(o)[0];
+                        a.async = 1;
+                        a.src = g;
+                        m.parentNode.insertBefore(a, m)
+                    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                    ga('create', 'UA-101733990-1', 'auto');
+                    ga('send', 'pageview');
+                }, 2000);
+            });
+        </script>
+    </div>
+
+
+
+
+</body></html>

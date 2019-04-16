@@ -54,12 +54,12 @@ Unthresholded Geuvadis eQTL data for lymphoblastoid cell lines isolated from 373
 Here are two sets of cis-eQTL summary data in the prefrontal cortex from the [PsychENCODE project](http://resource.psychencode.org/). Only the data of SNPs in a 1 Mb window around each gene are available.
 
 a.    PsychENCODE eQTL summary data (correcting for 50 PEER factors) in SMR binary (BESD) format: 
-[PsychENCODE\_cis\_eqtl\_PEER50\_summary.tar.gz (hg19)](/shares/compbio/Group-Yang/t.qi/data/PsychENCODE/BESD/PsychENCODE_cis_eqtl_PEER50_summary.tar.gz) (33 MB)
+[PsychENCODE\_cis\_eqtl\_PEER50\_summary.tar.gz (hg19)](http://cnsgenomics.com/data/SMR/PsychENCODE_cis_eqtl_PEER50_summary.tar.gz) (33 MB)
 
 Only SNPs with FDR < 0.05 are available for each gene. The eQTL analyses were performed with 50 probabilistic estimation of expression residuals (PEER) factors included as covariates (see [Wang et al. 2018 Science](http://science.sciencemag.org/content/362/6420/eaat8464) for details about data generation and analysis). 
 
 b.    PsychENCODE eQTL summary data (correcting for 100 HCP factors) in SMR binary (BESD) format:
-[PsychENCODE\_cis\_eqtl\_HCP100\_summary.tar.gz (hg19)](/shares/compbio/Group-Yang/t.qi/data/PsychENCODE/BESD/PsychENCODE_cis_eqtl_HCP100_summary.tar.gz) (65 MB)
+[PsychENCODE\_cis\_eqtl\_HCP100\_summary.tar.gz (hg19)](http://cnsgenomics.com/data/SMR/PsychENCODE_cis_eqtl_HCP100_summary.tar.gz) (65 MB)
 
 Similar to the data set above but the eQTL analyses were performed including100 hidden covariate (HCP) factors as covariates (see [Gandal et al. 2018 Science](http://science.sciencemag.org/content/362/6420/eaat8127) for details about data generation and analysis). 
 
