@@ -1,6 +1,6 @@
 
 ## Download {: .expand}
-### Executable Files (version 1.0) 
+### Executable Files (version 1.01) 
 
 [smr\_Linux.zip](download/smr_Linux.zip)
 
@@ -19,6 +19,8 @@ R script and sample file for SMR locus plot:
 
 
 ### Update log 
+**32.**   Version 1.01 (16 April, 2019): updated the log information of MeCS.
+
 **31.**   Version 1.0 (15 January, 2019): 1) Formally released SMR version 1.0; 2) Added flags to query descriptive summary of  the cis-eQTL and trans-eQTL data.
 
 **30.**   Version 0.712 (6 September, 2018): Added an option to make and query LD information in binary format (i.e. .bld, and .esi files) and an interface to read LD matrix (in BLD format) as the reference for the HEIDI test.
@@ -91,10 +93,10 @@ besd file from plain text file(s).
 **7.**   Version 0.628 (11 May, 2016): added a feature to visualize SMR
 results.
 
-**6.**   Version 0.620 (12 Aril, 2016): added a feature to deal with
+**6.**   Version 0.620 (12 April, 2016): added a feature to deal with
 duplicate IDs.
 
-**5.**   Version 0.619 (4 Aril, 2016): updated sparse besd format;
+**5.**   Version 0.619 (4 April, 2016): updated sparse besd format;
 updated features to make sparse verison of BESD; added features to query
 eQTL summary results; added features to combine BESD files.
 

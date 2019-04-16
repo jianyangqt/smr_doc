@@ -50,6 +50,20 @@ Geuvadis eQTL summary data [(Lappalainen et al. 2013 Nature)](https://www.nature
 
 Unthresholded Geuvadis eQTL data for lymphoblastoid cell lines isolated from 373 EUR individuals were used, with YRI individuals excluded. The eQTL summary data were from [EUR373.gene.K10.noplim.cis\_assembled.txt.gz](http://jungle.unige.ch/~lappalainen/geuvadis/EUR373.gene.K10.noplim.cis_assembled.txt.gz). Since betas are not available for the unthresholded dataset, they were estimated from t-values, allele freqs and n=373 according to Formula (6) in the SMR paper [(Zhu et al. 2016 Nat Genet)](http://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3538.html). Geuvadis SNP ids were converted to rsids for compatibility with external GWAS data and plink 1KG files. The data are based on GRCh37 assembly, and gene IDs deprecated in the GRCh37 version of Ensembl were removed. We would like to acknowledge [Mikhail Spivakov](mailto:Mikhail.Spivakov@babraham.ac.uk) for his effort in transforming the data to SMR BESD format and writing the description above.
 
+#### \# PsychENCODE eQTL summary data
+Here are two sets of cis-eQTL summary data in the prefrontal cortex from the [PsychENCODE project](http://resource.psychencode.org/). Only the data of SNPs in a 1 Mb window around each gene are available.
+
+a.    PsychENCODE eQTL summary data (correcting for 50 PEER factors) in SMR binary (BESD) format: 
+[PsychENCODE\_cis\_eqtl\_PEER50\_summary.tar.gz (hg19)](/shares/compbio/Group-Yang/t.qi/data/PsychENCODE/BESD/PsychENCODE_cis_eqtl_PEER50_summary.tar.gz) (33 MB)
+
+Only SNPs with FDR < 0.05 are available for each gene. The eQTL analyses were performed with 50 probabilistic estimation of expression residuals (PEER) factors included as covariates (see [Wang et al. 2018 Science](http://science.sciencemag.org/content/362/6420/eaat8464) for details about data generation and analysis). 
+
+b.    PsychENCODE eQTL summary data (correcting for 100 HCP factors) in SMR binary (BESD) format:
+[PsychENCODE\_cis\_eqtl\_HCP100\_summary.tar.gz (hg19)](/shares/compbio/Group-Yang/t.qi/data/PsychENCODE/BESD/PsychENCODE_cis_eqtl_HCP100_summary.tar.gz) (65 MB)
+
+Similar to the data set above but the eQTL analyses were performed including100 hidden covariate (HCP) factors as covariates (see [Gandal et al. 2018 Science](http://science.sciencemag.org/content/362/6420/eaat8127) for details about data generation and analysis). 
+
+
 ### mQTL summary data 
 
 #### \# McRae et al. mQTL summary data
@@ -68,6 +82,11 @@ Brain-mMeta mQTL summary data ([Qi et al. 2018 Nat Commun](https://www.nature.co
 This is a set of mQTL data from a meta-analysis of ROSMAP ([Ng et al. 2017 Nat Neurosci](https://www.nature.com/articles/nn.4632)), Hannon et al. ([Hannon et al. 2016 Nat Neurosci](https://www.nature.com/articles/nn.4182)) and Jaffe et al. ([Jaffe et al. 2016 Nat Neurosci](https://www.nature.com/articles/nn.4181)). In the ROSMAP data, only SNPs within 5Kb of each DNA methylation probe are available. In the Hannon et al. data, only SNPs within 500Kb distance from each probe and with PmQTL < 1.0e-10 are available. In the Jaffe et al. data, only SNPs within 20Kb distance from each probe and with FDR < 0.1 are available. 
 
 #### \# Hannon et al. mQTL summary data
+Whole blood mQTL data set used in Hannon et al. ([2018 AJHG](https://www.sciencedirect.com/science/article/pii/S0002929718303185?via=ihub)).
+
+[Hannon et al. WholeBlood dataset.zip](https://www.dropbox.com/s/os4cgkb4519wbvn/US_mQTLS_SMR_format.zip?dl=0) (sample size = 1,175; 121MB)
+
+
 Three mQTL datasets used in Hannon et al. ([2017 AJHG](https://www.sciencedirect.com/science/article/pii/S0002929717301581?via%3Dihub)). All the files are in SMR BESD format.
 
 Two blood mQTL datasets ([Hannon et al. 2016 Genome Biology](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-1041-x)) <br/>

@@ -32,6 +32,11 @@ osca --besd-flist my_file.list --mecs --pmecs 0.01 --out mymecs
 ```
 **\--pmecs** reads a p-value threshold to exclude the significant SNPs from calculating the cohort correlation matrix. The default value is 0.01. 
 
+Specify a minimum number of null SNPs for calculating the cohort correlation matrix.
+```
+osca --besd-flist my_file.list --mecs --nmecs 100 --out mymecs
+```
+**\--nmecs** reads a minimum number of null SNPs  that are required to calculate the cohort correlation matrix. The default value is 100. 
 
 
 >Example
