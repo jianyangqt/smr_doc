@@ -749,7 +749,7 @@ SMREffectPlot(data=SMRData, trait_name="BMI")
 </code></pre>
 <p><img src="./download/smr.effect.size.png" alt="alt text" title="effectsize"></p>
 <hr><h3 id="omicssmrplot">Omics SMR  plot</h3>
-<p>A web-based tool to generate <a href="https://cnsgenomics.com/software/omicsplot">omics SMR plots</a> (see the example below).</p>
+<p>A web-based tool to generate <a href="https://cnsgenomics.com/software/smr/omicsplot/">omics SMR plots</a> (see the example below).</p>
 <p><img src="./download/demo.gif" alt="alt text" title="Omics"></p>
 <h2 id="queryeqtlresults">Query eQTL Results</h2>
 <hr><h3 id="queryeqtlsummaryresults">Query eQTL Summary Results</h3>
@@ -903,14 +903,14 @@ Institute for Molecular Bioscience, The University of Queensland.</p>
 <td align="left"><b>Option</b></td>        
 <td align="left"><b>Description</b></td>        
 </tr>
-<tr>                           
-<td align="left"><font color="#993333">--beqtl-flist</font></td>
-<td align="left">reads a file to get the full paths of the BESD files.</td>                
-</tr> 
 <tr>    
 <td align="left"><font color="#993333">--beqtl-summary</font></td>
 <td align="left">reads summary-level data from a eQTL study in binary format.</td>                 
 </tr>
+<tr>                           
+<td align="left"><font color="#993333">--besd-flist</font></td>
+<td align="left">reads a file to get the full paths of the BESD files.</td>                
+</tr> 
 <tr>                           
 <td align="left"><font color="#993333">--bfile</font></td>
 <td align="left">reads individual-level SNP genotype data in PLINK binary format.</td>                
@@ -1169,7 +1169,7 @@ Institute for Molecular Bioscience, The University of Queensland.</p>
 </tr> 
 </tbody></table>
 <h2 id="downloadexpand" class="expand">Download </h2>
-<hr><h3 id="executablefilesversion101">Executable Files (version 1.01)</h3>
+<hr><h3 id="executablefilesversion102">Executable Files (version 1.02)</h3>
 <p><a href="download/smr_Linux.zip">smr_Linux.zip</a></p>
 <p><a href="download/smr_Mac.zip">smr_Mac.zip</a></p>
 <p><a href="download/smr_Win.zip">smr_Win.zip</a></p>
@@ -1178,6 +1178,7 @@ Institute for Molecular Bioscience, The University of Queensland.</p>
 <p>R script and sample file for SMR locus plot:</p>
 <p><a href="download/plot.zip">plot.zip</a></p>
 <hr><h3 id="updatelog">Update log</h3>
+<p><strong>33.</strong>   Version 1.02 (22 May, 2019): fixed a bug in generating the data file for Omics SMR plot.</p>
 <p><strong>32.</strong>   Version 1.01 (16 April, 2019): updated the log information of MeCS.</p>
 <p><strong>31.</strong>   Version 1.0 (15 January, 2019): 1) Formally released SMR version 1.0; 2) Added flags to query descriptive summary of  the cis-eQTL and trans-eQTL data.</p>
 <p><strong>30.</strong>   Version 0.712 (6 September, 2018): Added an option to make and query LD information in binary format (i.e. .bld, and .esi files) and an interface to read LD matrix (in BLD format) as the reference for the HEIDI test.</p>

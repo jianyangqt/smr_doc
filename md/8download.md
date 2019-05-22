@@ -1,6 +1,6 @@
 
 ## Download {: .expand}
-### Executable Files (version 1.01) 
+### Executable Files (version 1.02) 
 
 [smr\_Linux.zip](download/smr_Linux.zip)
 
@@ -19,6 +19,9 @@ R script and sample file for SMR locus plot:
 
 
 ### Update log 
+
+**33.**   Version 1.02 (22 May, 2019): fixed a bug in generating the data file for Omics SMR plot.
+
 **32.**   Version 1.01 (16 April, 2019): updated the log information of MeCS.
 
 **31.**   Version 1.0 (15 January, 2019): 1) Formally released SMR version 1.0; 2) Added flags to query descriptive summary of  the cis-eQTL and trans-eQTL data.

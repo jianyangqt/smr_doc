@@ -5,14 +5,14 @@
 <td align="left"><b>Option</b></td>        
 <td align="left"><b>Description</b></td>        
 </tr>
-<tr>                           
-<td align="left"><font color="#993333">--beqtl-flist</font></td>
-<td align="left">reads a file to get the full paths of the BESD files.</td>                
-</tr> 
 <tr>    
 <td align="left"><font color="#993333">--beqtl-summary</font></td>
 <td align="left">reads summary-level data from a eQTL study in binary format.</td>                 
 </tr>
+<tr>                           
+<td align="left"><font color="#993333">--besd-flist</font></td>
+<td align="left">reads a file to get the full paths of the BESD files.</td>                
+</tr> 
 <tr>                           
 <td align="left"><font color="#993333">--bfile</font></td>
 <td align="left">reads individual-level SNP genotype data in PLINK binary format.</td>                
