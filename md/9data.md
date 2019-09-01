@@ -67,11 +67,12 @@ Similar to the data set above but the eQTL analyses were performed including100 
 ### mQTL summary data 
 
 #### \# McRae et al. mQTL summary data
-McRae et al. mQTL summary data [(Allan McRae et al. 2017 bioRxi)](https://www.biorxiv.org/content/early/2017/07/21/166710) in SMR binary (BESD) format:<br/>
-[LBC\_BSGS\_meta.tar.gz (hg19)](../../data/SMR/LBC_BSGS_meta.tar.gz) (7.5 GB)<br/>
+
+McRae et al. mQTL summary data ([McRae et al. 2018 Sci Rep](https://www.nature.com/articles/s41598-018-35871-w); [Wu et al. 2018 Nat Commun](https://www.nature.com/articles/s41467-018-03371-0)) in SMR binary (BESD) format (n = 1,980):  
+[LBC\_BSGS\_meta.tar.gz (hg19)](../../data/SMR/LBC_BSGS_meta.tar.gz) (7.5 GB)  
 [LBC\_BSGS\_meta\_lite.tar.gz (hg19)](../../data/SMR/LBC_BSGS_meta_lite.tar.gz) Lite version of the McRae et al. mQTL data (only SNPs with P < 1e-5 are included; 241 MB)
 
-This is a set of mQTL summary data from a meta-analysis of the BSGS and LBC data (McRae et al. 2017 bioRxiv). Only the DNA methylation probes with at least an cis-mQTL at P < 5e-8 and only SNPs within 2Mb distance from each probe are available. 
+The original mQTL data were generated in two cohorts BSGS (n = 614) and LBC (n = 1366) in peripheral blood ([McRae et al. 2018 Sci Rep](https://www.nature.com/articles/s41598-018-35871-w)). The methylation states of all the samples which are of European descent were measured based onIllumina HumanMethylation450 chips. The mQTL summary data available here were a meta-analysis of the BSGS and LBC data ([Wu et al. 2018 Nat Commun](https://www.nature.com/articles/s41467-018-03371-0)). Only the DNA methylation probes withat least a cis-mQTL at P < 5e-8 and only SNPs within 2Mb distance from each probe are available.
 
 #### \# Qi et al. brain mQTL summary data
 
