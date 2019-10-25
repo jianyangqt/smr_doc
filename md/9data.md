@@ -4,14 +4,14 @@
 ### eQTL summary data 
 
 #### \# Westra eQTL summary data
-Westra eQTL summary data [(n = 3511; Westra et al. 2013 Nat Genet)](http://www.ncbi.nlm.nih.gov/pubmed/24013639) in SMR
+Westra eQTL summary data [(Westra et al. 2013 Nat Genet)](http://www.ncbi.nlm.nih.gov/pubmed/24013639) in SMR
 binary (BESD) format:<br/>
 [westra\_eqtl\_data\_hg18.zip (hg18)](../../data/SMR/westra_eqtl_hg18.zip) (10.3 MB)<br/>
 [westra\_eqtl\_data\_hg19.zip (hg19)](../../data/SMR/westra_eqtl_hg19.zip) (10.3 MB)
 
 
 #### \# CAGE eQTL summary data
-CAGE eQTL summary data [(n = 2765; Luke R. Lloyd-Jones et al. 2017 AJHG)](http://www.cell.com/ajhg/abstract/S0002-9297(16)30532-8) in SMR binary (BESD) format:<br/>
+CAGE eQTL summary data [(Luke R. Lloyd-Jones et al. 2017 AJHG)](http://www.cell.com/ajhg/abstract/S0002-9297(16)30532-8) in SMR binary (BESD) format:<br/>
 [cage\_eqtl\_data\_hg19.tgz (hg19)](../../data/SMR/cage_eqtl_data_hg19.tgz) (3.8 GB)<br/>
 [cage\_eqtl\_data\_lite\_hg19.tgz (hg19)](../../data/SMR/cage_eqtl_data_lite_hg19.tar.gz) Lite version of the CAGE data (only SNPs with P < 1e-5 are included; 86.1 MB)
 
@@ -24,7 +24,7 @@ generated.
 Please see the associated [Shiny App](http://cnsgenomics.com/shiny/CAGE/) for further interactive interrogation of the results generated in the CAGE analysis.
 
 #### \# V7 release of the GTEx eQTL summary data
-V7 release of the GTEx eQTL summary data [(n = 80 - 491; GTEx Consortium 2017 Nature)](https://www.nature.com/articles/nature24277) in SMR binary (BESD) format:<br/>
+V7 release of the GTEx eQTL summary data [(GTEx Consortium 2017 Nature)](https://www.nature.com/articles/nature24277) in SMR binary (BESD) format:<br/>
 [GTEx\_V7\_cis\_eqtl\_summary.tar.gz (hg19)](../../data/SMR/GTEx_V7_cis_eqtl_summary.tar.gz) (55 GB)<br/>
 [GTEx\_V7\_cis\_eqtl\_summary\_lite.tar.gz (hg19)](../../data/SMR/GTEx_V7_cis_eqtl_summary_lite.tar.gz) Lite version of the GTEx V7 data (only SNPs with P < 1e-5 are included; 5.3 GB)
 
