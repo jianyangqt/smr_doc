@@ -1,6 +1,6 @@
 
 ## Download {: .expand}
-### Executable Files (version 1.02) 
+### Executable Files (version 1.03) 
 
 [smr\_Linux.zip](download/smr_Linux.zip)
 
@@ -19,6 +19,8 @@ R script and sample file for SMR locus plot:
 
 
 ### Update log 
+
+**33.**   Version 1.03 (25 October, 2019): updated Mecs to allow data management flags.
 
 **33.**   Version 1.02 (22 May, 2019): fixed a bug in generating the data file for Omics SMR plot.
 

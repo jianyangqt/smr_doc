@@ -4,14 +4,14 @@
 ### eQTL summary data 
 
 #### \# Westra eQTL summary data
-Westra eQTL summary data [(Westra et al. 2013 Nat Genet)](http://www.ncbi.nlm.nih.gov/pubmed/24013639) in SMR
+Westra eQTL summary data [(n = 3511; Westra et al. 2013 Nat Genet)](http://www.ncbi.nlm.nih.gov/pubmed/24013639) in SMR
 binary (BESD) format:<br/>
 [westra\_eqtl\_data\_hg18.zip (hg18)](../../data/SMR/westra_eqtl_hg18.zip) (10.3 MB)<br/>
 [westra\_eqtl\_data\_hg19.zip (hg19)](../../data/SMR/westra_eqtl_hg19.zip) (10.3 MB)
 
 
 #### \# CAGE eQTL summary data
-CAGE eQTL summary data [(Luke R. Lloyd-Jones et al. 2017 AJHG)](http://www.cell.com/ajhg/abstract/S0002-9297(16)30532-8) in SMR binary (BESD) format:<br/>
+CAGE eQTL summary data [(n = 2765; Luke R. Lloyd-Jones et al. 2017 AJHG)](http://www.cell.com/ajhg/abstract/S0002-9297(16)30532-8) in SMR binary (BESD) format:<br/>
 [cage\_eqtl\_data\_hg19.tgz (hg19)](../../data/SMR/cage_eqtl_data_hg19.tgz) (3.8 GB)<br/>
 [cage\_eqtl\_data\_lite\_hg19.tgz (hg19)](../../data/SMR/cage_eqtl_data_lite_hg19.tar.gz) Lite version of the CAGE data (only SNPs with P < 1e-5 are included; 86.1 MB)
 
@@ -24,7 +24,7 @@ generated.
 Please see the associated [Shiny App](http://cnsgenomics.com/shiny/CAGE/) for further interactive interrogation of the results generated in the CAGE analysis.
 
 #### \# V7 release of the GTEx eQTL summary data
-V7 release of the GTEx eQTL summary data [(GTEx Consortium 2017 Nature)](https://www.nature.com/articles/nature24277) in SMR binary (BESD) format:<br/>
+V7 release of the GTEx eQTL summary data [(n = 80 - 491; GTEx Consortium 2017 Nature)](https://www.nature.com/articles/nature24277) in SMR binary (BESD) format:<br/>
 [GTEx\_V7\_cis\_eqtl\_summary.tar.gz (hg19)](../../data/SMR/GTEx_V7_cis_eqtl_summary.tar.gz) (55 GB)<br/>
 [GTEx\_V7\_cis\_eqtl\_summary\_lite.tar.gz (hg19)](../../data/SMR/GTEx_V7_cis_eqtl_summary_lite.tar.gz) Lite version of the GTEx V7 data (only SNPs with P < 1e-5 are included; 5.3 GB)
 
@@ -37,7 +37,7 @@ GTEx-brain eQTL summary data ([Qi et al. 2018 Nat Commun](https://www.nature.com
 
 This is a set of eQTL data from a meta-analysis of 10 brain regions in GTEx v6 ([GTEx Consortium 2017 Nature](https://www.nature.com/articles/nature24277)) correcting for sample overlap by the [MeCS](#MeCS) method. Only SNPs within 1Mb distance from each probe are available. 
 
-**Brain-eMeta eQTL data** (estimated effective n = 1,194)
+**Brain-eMeta eQTL data** (estimated effective n = 1194)
 
 Brain-eMeta eQTL summary data ([Qi et al. 2018 Nat Commun](https://www.nature.com/articles/s41467-018-04558-1)) in SMR binary (BESD) format: [Brain-eMeta.tar.gz](../../data/SMR/Brain-eMeta.tar.gz) (1.1 GB)
 
@@ -51,7 +51,7 @@ Geuvadis eQTL summary data [(Lappalainen et al. 2013 Nature)](https://www.nature
 Unthresholded Geuvadis eQTL data for lymphoblastoid cell lines isolated from 373 EUR individuals were used, with YRI individuals excluded. The eQTL summary data were from [EUR373.gene.K10.noplim.cis\_assembled.txt.gz](http://jungle.unige.ch/~lappalainen/geuvadis/EUR373.gene.K10.noplim.cis_assembled.txt.gz). Since betas are not available for the unthresholded dataset, they were estimated from t-values, allele freqs and n=373 according to Formula (6) in the SMR paper [(Zhu et al. 2016 Nat Genet)](http://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3538.html). Geuvadis SNP ids were converted to rsids for compatibility with external GWAS data and plink 1KG files. The data are based on GRCh37 assembly, and gene IDs deprecated in the GRCh37 version of Ensembl were removed. We would like to acknowledge [Mikhail Spivakov](mailto:Mikhail.Spivakov@babraham.ac.uk) for his effort in transforming the data to SMR BESD format and writing the description above.
 
 #### \# PsychENCODE eQTL summary data
-Here are two sets of cis-eQTL summary data in the prefrontal cortex from the [PsychENCODE project](http://resource.psychencode.org/). Only the data of SNPs in a 1 Mb window around each gene are available.
+Here are two sets of cis-eQTL summary data in the prefrontal cortex from the [PsychENCODE project](http://resource.psychencode.org/) (n = 1387). Only the data of SNPs in a 1 Mb window around each gene are available.
 
 a.    PsychENCODE eQTL summary data (correcting for 50 PEER factors) in SMR binary (BESD) format: 
 [PsychENCODE\_cis\_eqtl\_PEER50\_summary.tar.gz (hg19)](http://cnsgenomics.com/data/SMR/PsychENCODE_cis_eqtl_PEER50_summary.tar.gz) (33 MB)
@@ -76,7 +76,7 @@ The original mQTL data were generated in two cohorts BSGS (n = 614) and LBC (n =
 
 #### \# Qi et al. brain mQTL summary data
 
-**Brain-mMeta mQTL data** (estimated effective n = 1,160)
+**Brain-mMeta mQTL data** (estimated effective n = 1160)
 
 Brain-mMeta mQTL summary data ([Qi et al. 2018 Nat Commun](https://www.nature.com/articles/s41467-018-04558-1)) in SMR binary (BESD) format: [Brain-mMeta.tar.gz](../../data/SMR/Brain-mMeta.tar.gz) (893 MB)
 
@@ -99,4 +99,13 @@ Fetal brain mQTL data ([Hannon et al. 2015 Nat Neurosci](https://www.nature.com/
 
 Note: 1) The SNPs are coded as chr:bp (based on the genome build hg19)
 rather than with rsIDs. 2) SNPs with mQTL p-values > 1e-10 are not included. 3) Any question regarding to these datasets should be addressed to [Eilis Hannon](mailto:E.J.Hannon@exeter.ac.uk) or [Jonathan Mill](mailto:J.Mill@exeter.ac.uk). 
+
+### caQTL summary data 
+
+#### \# Bryois et al. chromatin accessibility QTL (caQTL) data
+
+Bryois et al. caQTL summary data in SMR binary (BESD) format:<br/>
+[Bryois\_caQTL\_summary.tar.gz](/shares/compbio/Group-Yang/t.qi/data/caQTL/Bryois_caQTL_summary.tar.gz) (208 MB)
+
+This is a set of cis-caQTL summary data from the prefrontal cortex of 135 schizophrenia patients and 137 controls. Only the SNPs in a 50 Kb window around each chromatin accessibility peak are available (see [Bryois et al. 2018 Nat Commun](https://www.nature.com/articles/s41467-018-05379-y) for details about data generation and analysis).
 
