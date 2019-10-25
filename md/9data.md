@@ -76,7 +76,7 @@ The original mQTL data were generated in two cohorts BSGS (n = 614) and LBC (n =
 
 #### \# Qi et al. brain mQTL summary data
 
-**Brain-mMeta mQTL data** (estimated effective n = 1160)
+**Brain-mMeta mQTL data** (estimated effective n = 1,160)
 
 Brain-mMeta mQTL summary data ([Qi et al. 2018 Nat Commun](https://www.nature.com/articles/s41467-018-04558-1)) in SMR binary (BESD) format: [Brain-mMeta.tar.gz](../../data/SMR/Brain-mMeta.tar.gz) (893 MB)
 
@@ -105,7 +105,7 @@ rather than with rsIDs. 2) SNPs with mQTL p-values > 1e-10 are not included. 3) 
 #### \# Bryois et al. chromatin accessibility QTL (caQTL) data
 
 Bryois et al. caQTL summary data in SMR binary (BESD) format:<br/>
-[Bryois\_caQTL\_summary.tar.gz](/shares/compbio/Group-Yang/t.qi/data/caQTL/Bryois_caQTL_summary.tar.gz) (208 MB)
+[Bryois\_caQTL\_summary.tar.gz](../../data/SMR/Bryois_caQTL_summary.tar.gz) (208 MB)
 
 This is a set of cis-caQTL summary data from the prefrontal cortex of 135 schizophrenia patients and 137 controls. Only the SNPs in a 50 Kb window around each chromatin accessibility peak are available (see [Bryois et al. 2018 Nat Commun](https://www.nature.com/articles/s41467-018-05379-y) for details about data generation and analysis).
 
