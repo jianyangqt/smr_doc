@@ -11,6 +11,12 @@
 
 The executable files (binary code) are released under MIT license.
 
+### Source code 
+
+[smr\_1.03_src.zip](download/smr_1.03_src.zip)
+
+The source code are released under GPL v2. 
+
 ### R script for SMR locus plot 
 
 R script and sample file for SMR locus plot:
