@@ -80,6 +80,6 @@ SMREffectPlot(data=SMRData, trait_name="BMI")
 ![alt text](./download/smr.effect.size.png "effectsize")
 
 ### Omics SMR  plot
-A web-based tool to generate [omics SMR plots](https://cnsgenomics.com/software/smr/omicsplot/) (see the example below).
+A web-based tool to generate [omics SMR plots](https://plot.cnsgenomics.com/omicsplot/) (see the example below).
 
 ![alt text](./download/demo.gif "Omics")
