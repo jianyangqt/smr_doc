@@ -13,7 +13,7 @@ can therefore be used to prioritize genes underlying GWAS hits for follow-up fun
 ### Credits 
 
 
-[Futao Zhang](http://researchers.uq.edu.au/researcher/12709) developed
+[Futao Zhang](https://scholar.google.com/citations?user=lXCr6p4AAAAJ&hl=en&oi=ao) developed
 the software tool and webpages with supports from [Zhili Zheng](mailto:zhilizheng@outlook.com), 
 [Zhihong Zhu](http://researchers.uq.edu.au/researcher/3051), 
 [Ting Qi](http://researchers.uq.edu.au/researcher/15871),
@@ -29,7 +29,7 @@ and [Jian Yang](http://researchers.uq.edu.au/researcher/2713)
 developed the MeCS method.
 
 ### Questions and Help Requests 
-Bug reports or questions to Jian Yang (<jian.yang@uq.edu.au>) at
+Bug reports or questions to Jian Yang (<jian.yang.qt@gmail.com>) at
 Institute for Molecular Bioscience, The University of Queensland.
 
 
